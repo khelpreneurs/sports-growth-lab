@@ -5,7 +5,7 @@ import { BookOpen, Users, Briefcase, ArrowRight, Award, TrendingUp } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-main.jpg";
-import mentorImage from "@/assets/mentor-sagar.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const Home = () => {
   return (

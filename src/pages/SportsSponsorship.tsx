@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import sponsorshipHero from "@/assets/sponsorship-hero.jpg";
-import mentorImage from "@/assets/mentor-sagar.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const SportsSponsorship = () => {
   const [stickyVisible, setStickyVisible] = useState(false);

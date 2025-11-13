@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Target, Users, TrendingUp, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import mentorImage from "@/assets/mentor-sagar.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {
   return (
