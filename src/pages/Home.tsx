@@ -1,0 +1,284 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { BookOpen, Users, Briefcase, ArrowRight, Award, TrendingUp } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import heroImage from "@/assets/hero-main.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpg";
+
+const Home = () => {
+  return (
+    <div className="min-h-screen">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={heroImage}
+            alt="Khelpreneurs - Launch Your Sports Industry Career"
+            className="w-full h-full object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
+        </div>
+
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="mb-6 leading-tight">
+              Launch Your Sports Industry Career
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Industry-led cohorts with real internships & job pathways in sports
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
+              >
+                <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-6 border-2"
+              >
+                <Link to="/cohorts">Explore Programs</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-16 md:py-24 bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <BookOpen className="w-10 h-10" />,
+                title: "Industry-Led Training",
+                description: "Learn from sports business leaders & mentors with real-world experience",
+              },
+              {
+                icon: <Briefcase className="w-10 h-10" />,
+                title: "Placement-Driven",
+                description: "Internships, PPO pathways, and access to our hiring network",
+              },
+              {
+                icon: <Users className="w-10 h-10" />,
+                title: "Community & Network",
+                description: "Join a thriving, supportive ecosystem of sports professionals",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="shadow-medium hover:shadow-strong transition-smooth border-none">
+                <CardContent className="p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Cohorts */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="mb-4">Our Cohort Programs</h2>
+            <p className="text-lg text-muted-foreground">
+              Intensive, industry-led programs designed to launch your sports career
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Sports Sponsorship - Current */}
+            <Card className="shadow-strong hover:shadow-primary transition-smooth border-primary/20">
+              <CardContent className="p-8">
+                <div className="inline-block px-4 py-1 bg-accent text-accent-foreground text-sm font-semibold rounded-full mb-4">
+                  Now Open
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Sports Sponsorship</h3>
+                <p className="text-muted-foreground mb-6">
+                  Master the art of pitching, negotiating, and executing sports sponsorship deals
+                </p>
+                <div className="space-y-2 mb-6 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Duration:</span>
+                    <span className="font-semibold">16 weeks</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Format:</span>
+                    <span className="font-semibold">Live + Internship</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Mentor:</span>
+                    <span className="font-semibold">Sagar Rai, KIBI Sports</span>
+                  </div>
+                </div>
+                <Button asChild className="w-full bg-accent hover:bg-accent-hover">
+                  <Link to="/cohorts/sports-sponsorship">
+                    Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Sports Journalism - Coming Soon */}
+            <Card className="shadow-medium hover:shadow-strong transition-smooth opacity-90">
+              <CardContent className="p-8">
+                <div className="inline-block px-4 py-1 bg-muted text-muted-foreground text-sm font-semibold rounded-full mb-4">
+                  Coming Soon
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Sports Journalism</h3>
+                <p className="text-muted-foreground mb-6">
+                  Learn storytelling, reporting, and content creation for sports media
+                </p>
+                <div className="space-y-2 mb-6 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Duration:</span>
+                    <span className="font-semibold">TBA</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Format:</span>
+                    <span className="font-semibold">Live Online</span>
+                  </div>
+                </div>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/cohorts">
+                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Sports Entrepreneurship - Coming Soon */}
+            <Card className="shadow-medium hover:shadow-strong transition-smooth opacity-90">
+              <CardContent className="p-8">
+                <div className="inline-block px-4 py-1 bg-muted text-muted-foreground text-sm font-semibold rounded-full mb-4">
+                  Coming Soon
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Sports Entrepreneurship</h3>
+                <p className="text-muted-foreground mb-6">
+                  Build and scale sports businesses with guidance from industry founders
+                </p>
+                <div className="space-y-2 mb-6 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Duration:</span>
+                    <span className="font-semibold">TBA</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Format:</span>
+                    <span className="font-semibold">Live Online</span>
+                  </div>
+                </div>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/cohorts">
+                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes & Social Proof */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="mb-4 text-primary-foreground">Real Outcomes, Real Impact</h2>
+            <p className="text-lg text-primary-foreground/80">
+              Our cohorts are designed for placement and career acceleration
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              { icon: <Award />, value: "50+", label: "Cohort Seats" },
+              { icon: <Briefcase />, value: "₹10,000", label: "Monthly Internship Stipend" },
+              { icon: <TrendingUp />, value: "PPO", label: "Pathways Available" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
+                  <div className="text-primary-foreground w-8 h-8">{stat.icon}</div>
+                </div>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                <div className="text-primary-foreground/80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mentor Spotlight */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="mb-4">Learn from Industry Leaders</h2>
+            <p className="text-lg text-muted-foreground">
+              Our mentors are practitioners with real-world experience in sports business
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-strong overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2">
+                  <div className="aspect-square md:aspect-auto">
+                    <img
+                      src={mentorImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold mb-2">Sagar Rai</h3>
+                    <p className="text-primary font-semibold mb-4">Founder & CEO, KIBI Sports</p>
+                    <p className="text-muted-foreground mb-6">
+                      Leading the Sports Sponsorship cohort with years of experience in building and executing sponsorship deals across athletes, teams, and leagues. KIBI Sports has a proven track record in the Indian sports ecosystem.
+                    </p>
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-secondary via-primary/5 to-accent/5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="mb-6">Ready to Kickstart Your Sports Career?</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Join our next cohort and transform your passion for sports into a thriving career
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
+            >
+              <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;
