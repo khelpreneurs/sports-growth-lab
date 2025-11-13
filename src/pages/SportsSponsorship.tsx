@@ -69,7 +69,7 @@ const SportsSponsorship = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
             >
-              <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
                 Apply Now <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
@@ -368,7 +368,7 @@ const SportsSponsorship = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
             >
-              <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
                 Apply Now <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
@@ -387,7 +387,7 @@ const SportsSponsorship = () => {
             size="lg"
             className="w-full bg-accent hover:bg-accent-hover"
           >
-            <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
               Apply Now
             </a>
           </Button>

@@ -39,9 +39,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent mb-4">
-              Khelpreneurs
-            </div>
+            <img
+              src="/company-logo.jpg"
+              alt="Khelpreneurs"
+              className="h-8 mb-4"
+            />
             <p className="text-sm text-muted-foreground mb-4">
               Launch your sports industry career with industry-led cohorts, mentorship, and real job pathways.
             </p>

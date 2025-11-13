@@ -25,6 +25,13 @@ const Home = () => {
 
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img
+                src="/company-logo.jpg"
+                alt="Company Logo"
+                className="h-16 md:h-24 mx-auto mb-6"
+              />
+            </div>
             <h1 className="mb-6 leading-tight">
               Launch Your Sports Industry Career
             </h1>
@@ -37,7 +44,7 @@ const Home = () => {
                 size="lg"
                 className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
               >
-                <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+                <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
               </Button>
               <Button
                 asChild
@@ -123,9 +130,9 @@ const Home = () => {
                   </div>
                 </div>
                 <Button asChild className="w-full bg-accent hover:bg-accent-hover">
-                  <Link to="/cohorts/sports-sponsorship">
+                  <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
                     Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -270,7 +277,7 @@ const Home = () => {
               size="lg"
               className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
             >
-              <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
           </div>
         </div>
