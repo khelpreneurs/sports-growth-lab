@@ -5,7 +5,11 @@ import { BookOpen, Users, Briefcase, ArrowRight, Award, TrendingUp } from "lucid
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-main.jpg";
-import mentorImage from "@/assets/mentor-sagar.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
+import saurabhImage from "@/assets/mentor-saurabh.jpeg";
+import karanImage from "@/assets/mentor-karan.jpeg";
+import amitImage from "@/assets/mentor-amit.jpeg";
+import hussainImage from "@/assets/mentor-hussain.jpeg";
 
 const Home = () => {
   return (
@@ -25,6 +29,13 @@ const Home = () => {
 
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img
+                src="/company-logo.jpg"
+                alt="Company Logo"
+                className="h-16 md:h-24 mx-auto mb-6"
+              />
+            </div>
             <h1 className="mb-6 leading-tight">
               Launch Your Sports Industry Career
             </h1>
@@ -37,7 +48,7 @@ const Home = () => {
                 size="lg"
                 className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
               >
-                <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+                <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
               </Button>
               <Button
                 asChild
@@ -123,9 +134,9 @@ const Home = () => {
                   </div>
                 </div>
                 <Button asChild className="w-full bg-accent hover:bg-accent-hover">
-                  <Link to="/cohorts/sports-sponsorship">
+                  <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
                     Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -217,45 +228,194 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Mentor Spotlight */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="mb-4">Learn from Industry Leaders</h2>
-            <p className="text-lg text-muted-foreground">
-              Our mentors are practitioners with real-world experience in sports business
-            </p>
-          </div>
+{/* Mentor Spotlight */}
+<section className="py-16 md:py-24">
+  <div className="container mx-auto px-4">
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <h2 className="mb-4">Learn from Industry Leaders</h2>
+      <p className="text-lg text-muted-foreground">
+        Our mentors are practitioners with real-world experience in sports business
+      </p>
+    </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-strong overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-2">
-                  <div className="aspect-square md:aspect-auto">
-                    <img
-                      src={mentorImage}
-                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold mb-2">Sagar Rai</h3>
-                    <p className="text-primary font-semibold mb-4">Founder & CEO, KIBI Sports</p>
-                    <p className="text-muted-foreground mb-6">
-                      Leading the Sports Sponsorship cohort with years of experience in building and executing sponsorship deals across athletes, teams, and leagues. KIBI Sports has a proven track record in the Indian sports ecosystem.
-                    </p>
-                    <Button asChild variant="outline" className="w-fit">
-                      <Link to="/mentors">
-                        View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+
+<div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={mentorImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
+
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-2">Sagar Rai</h3>
+          <p className="text-primary font-semibold mb-4">
+            Founder & CEO, KIBI Sports
+          </p>
+
+          <p className="text-muted-foreground mb-4">
+            Leading the Sports Sponsorship cohort with years of experience in
+            building and executing sponsorship deals across athletes, teams,
+            and leagues. KIBI Sports has a proven track record in the Indian
+            sports ecosystem.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+        <div className="h-[260px] md:h-full">
+          <img
+            src={saurabhImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-2 line-clamp-1">Saurabh Aggarwal</h3>
+          <p className="text-primary font-semibold mb-4">
+            Co-Founder of Hyfit(Bengaluru)
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Saurabh is a fitness entrepreneur and endurance athlete. 
+            He co-founded Hyfit, a hybrid fitness club offering multi-format 
+            training journeys combining strength, skill, endurance and recovery 
+            for urban members in Bengaluru.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={karanImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-2 line-clamp-1">Karan Bahadur</h3>
+
+          <p className="text-primary font-semibold mb-4">
+            Co-Founder & Head of Operations, Draper Startup House – India
+          </p>
+
+          <p className="text-muted-foreground mb-4">
+            Karan builds and leads one of India’s startup-community hubs, focused on fostering 
+            entrepreneurship, providing space, events and networks for early-stage founders and 
+            innovators in Bengaluru and beyond.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+
+      </div>
+    </CardContent>
+  </Card>
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={amitImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-2 line-clamp-1">Amit Kumar Sahu</h3>
+
+          <p className="text-primary font-semibold mb-4">
+            Co-Founder, Finnoto Solutions Private Limited
+          </p>
+
+          <p className="text-muted-foreground mb-4">
+            Amit is a Bengaluru-based entrepreneur who co-founded Finnoto Solutions in 2022,
+            a fintech platform focused on financial management. He holds an engineering degree
+            from Motilal Nehru National Institute of Technology, Allahabad. Prior to Finnoto, 
+            his experience spans business development, operations and startup roles.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={hussainImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-2 line-clamp-1">Hussa K </h3>
+          <p className="text-primary font-semibold mb-4">
+            Strategic Investor & Board Director in Global Sport
+          </p>
+          <p className="text-muted-foreground mb-4">
+            With over 20 years of leadership in sport governance and emerging markets,
+             Hussa specialises in aligning governance frameworks with commercial strategies 
+             for federations, clubs and investors. Based in the Middle East, she serves on multiple 
+             regional and international boards, writes and speaks internationally on governance, gender and 
+             sport-for-development, and focuses on building “trust capital” as a foundation for sustainable 
+             sport investment and growth. 
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View All Mentors <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+
+      </div>
+    </CardContent>
+  </Card>
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-secondary via-primary/5 to-accent/5">
@@ -265,12 +425,14 @@ const Home = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join our next cohort and transform your passion for sports into a thriving career
             </p>
+            
             <Button
               asChild
               size="lg"
               className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
             >
-              <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+              
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
           </div>
         </div>

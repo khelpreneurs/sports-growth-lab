@@ -82,9 +82,9 @@ const Cohorts = () => {
                   size="lg"
                   className="w-full md:w-auto bg-accent hover:bg-accent-hover shadow-accent text-lg px-8"
                 >
-                  <Link to="/cohorts/sports-sponsorship">
+                  <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
                     View Full Details & Apply <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -207,7 +207,7 @@ const Cohorts = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover text-lg px-8 py-6 shadow-accent"
             >
-              <Link to="/cohorts/sports-sponsorship">Apply Now</Link>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
           </div>
         </div>

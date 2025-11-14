@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Target, Users, TrendingUp, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import mentorImage from "@/assets/mentor-sagar.jpg";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {
   return (
@@ -17,7 +17,10 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-6">About Khelpreneurs</h1>
             <p className="text-xl text-muted-foreground">
-              Empowering the next generation of sports industry leaders
+              Khelpreneurs designs outcome‑driven, cohort‑based programs that turn passion for sport into real careers.
+              In collaboration with KIBI Sports and the Khelaxy community platform, learners build practical skills through
+              live sessions, hands‑on projects, and a paid internship—then convert that into portfolios, PPOs, and freelance
+              opportunities. Our approach is community‑first and industry‑linked, with mentorship from practitioners like Sagar Rai (Founder & CEO, KIBI Sports)
             </p>
           </div>
         </div>
@@ -98,7 +101,7 @@ const About = () => {
       </section>
 
       {/* Founder/Team */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      {/* <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="mb-12 text-center">Meet Our Team</h2>
@@ -129,7 +132,7 @@ const About = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Outcomes */}
       <section className="py-16 md:py-24">
@@ -141,21 +144,24 @@ const About = () => {
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { value: "50+", label: "Cohort Seats" },
-                { value: "16", label: "Week Program" },
-                { value: "₹10K", label: "Monthly Stipend" },
+              { value: "50+", label: "Cohort Seats" },
+              { value: "16", label: "Week Program" },
+              { value: "₹10K", label: "Monthly Stipend" },
               ].map((stat, index) => (
-                <div key={index}>
-                  <div className="text-4xl md:text-5xl font-bold gradient-primary bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+              <div key={index}>
+               <div
+             className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md"
+            >
+          {stat.value}
+          </div>
+          <div className="text-muted-foreground">{stat.label}</div>
+          </div>
+          ))}
+          </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-light to-primary-dark text-primary-foreground">

@@ -58,8 +58,8 @@ const Events = () => {
                       <div className="flex items-start gap-3">
                         <Calendar className="w-5 h-5 shrink-0 mt-0.5" />
                         <div>
-                          <div className="font-semibold">Date TBA</div>
-                          <div className="text-sm text-primary-foreground/80">Stay tuned for announcement</div>
+                          <div className="font-semibold">Date</div>
+                          <div className="text-sm text-primary-foreground/80">10th May, 2025 </div>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
@@ -113,12 +113,12 @@ const Events = () => {
                       </div>
                     </div>
 
-                    <Button size="lg" className="bg-accent hover:bg-accent-hover shadow-accent">
+                    {/* <Button size="lg" className="bg-accent hover:bg-accent-hover shadow-accent">
                       Register for Event <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                     <p className="text-xs text-muted-foreground mt-3">
                       Registration details will be announced soon
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </CardContent>
@@ -176,12 +176,12 @@ const Events = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="outline">
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/company/khelpreneurs/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
                   Follow on LinkedIn
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/khelpreneurs/" target="_blank" rel="noopener noreferrer">
                   Follow on Instagram
                 </a>
               </Button>
