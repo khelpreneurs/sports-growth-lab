@@ -1,12 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, ArrowRight, Download, MessageCircle, Award, Users, TrendingUp, Target, Briefcase } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import sponsorshipHero from "@/assets/sponsorship-hero.jpg";
@@ -14,53 +10,22 @@ import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const SportsSponsorship = () => {
   const [stickyVisible, setStickyVisible] = useState(false);
-  const [eligibilityForm, setEligibilityForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    status: "",
-    reason: "",
-    startDate: "",
-  });
-  const { toast } = useToast();
 
-  useEffect(() => {
+  // Show sticky CTA on scroll
+  useState(() => {
     const handleScroll = () => {
       setStickyVisible(window.scrollY > 500);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleEligibilitySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Submission Received!",
-      description: "Our program advisor will contact you within 24 hours to discuss your eligibility.",
-    });
-    setEligibilityForm({
-      name: "",
-      email: "",
-      phone: "",
-      status: "",
-      reason: "",
-      startDate: "",
-    });
-  };
-
-  const handleDownloadBrochure = () => {
-    toast({
-      title: "Brochure Download Started",
-      description: "The program brochure will be downloaded shortly.",
-    });
-  };
+  });
 
   return (
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+      {/* Hero */}
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={sponsorshipHero}
@@ -71,71 +36,59 @@ const SportsSponsorship = () => {
         </div>
 
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-bold rounded-full mb-4">
-                  Cohort 01 · 16 Weeks · Applications Open
-                </div>
-                <h1 className="mb-6">The Art & Science of Sports Sponsorship</h1>
-                <p className="text-xl text-muted-foreground mb-6">
-                  Master pitching, negotiating, and executing sponsorship deals with live mentorship and a 16-week guided journey.
-                </p>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Cohort-based learning + real projects + paid internship opportunity via KIBI Sports.
-                </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-bold rounded-full mb-6">
+              NOW ENROLLING
+            </div>
+            <h1 className="mb-6">The Art & Science of Sports Sponsorship</h1>
+            <p className="text-xl text-muted-foreground mb-8">
+              Hands-on cohort to master pitching, negotiating, and executing sponsorship deals
+            </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-accent hover:bg-accent-hover shadow-accent"
-                    data-event="apply_now_clicked"
-                  >
-                    <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
-                      Apply Now <ArrowRight className="ml-2 w-5 h-5" />
-                    </a>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="gap-2"
-                    data-event="download_brochure_clicked"
-                    onClick={handleDownloadBrochure}
-                  >
-                    <Download className="w-5 h-5" />
-                    Download Brochure
-                  </Button>
-                </div>
+            {/* Quick Facts Row */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {[
+                { label: "Duration", value: "16 weeks" },
+                { label: "Format", value: "Live + Internship" },
+                { label: "Stipend", value: "₹10,000/month" },
+                { label: "Fee", value: "₹40,000" },
+                { label: "Seats", value: "50" },
+                { label: "Next Batch", value: "TBA" },
+              ].map((fact) => (
+                <Card key={fact.label} className="shadow-soft border-none">
+                  <CardContent className="p-4 text-center">
+                    <div className="text-sm text-muted-foreground mb-1">{fact.label}</div>
+                    <div className="font-bold">{fact.value}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-                <a
-                  href="#eligibility"
-                  className="text-primary hover:underline font-semibold"
-                  data-event="check_eligibility_clicked"
-                >
-                  Check Eligibility Before You Apply →
-                </a>
-              </div>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
+            >
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
+                Apply Now <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-              <Card className="shadow-strong">
-                <CardContent className="p-8">
-                  <h3 className="font-bold text-xl mb-6">Quick Facts</h3>
-                  <div className="space-y-4">
-                    {[
-                      { label: "Duration", value: "16 weeks (8 live + 8 internship)" },
-                      { label: "Format", value: "Live online + recordings + masterclasses" },
-                      { label: "Mentor", value: "Sagar Rai, CEO KIBI Sports" },
-                      { label: "Seats", value: "50 (first-come basis)" },
-                      { label: "Type", value: "Cohort-based, not pre-recorded" },
-                    ].map((fact) => (
-                      <div key={fact.label} className="flex justify-between items-start">
-                        <span className="text-muted-foreground">{fact.label}:</span>
-                        <span className="font-semibold text-right max-w-[60%]">{fact.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+      {/* Overview */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="mb-6">Program Overview</h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
+              <p>
+                This cohort is designed for anyone looking to build a career in sports sponsorship - whether you're a student, early professional, athlete, league staff member, or considering a career switch.
+              </p>
+              <p>
+                What makes it different? You'll learn directly from industry practitioners, work on real projects, complete a paid internship with live deals, and gain access to career pathways including PPO opportunities.
+              </p>
             </div>
           </div>
         </div>
@@ -144,41 +97,44 @@ const SportsSponsorship = () => {
       {/* Key Highlights */}
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">What You'll Get</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="mb-12 text-center">Key Highlights</h2>
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  icon: <Users />,
-                  title: "Live mentorship from industry practitioners",
+                  title: "Live Mentorship",
+                  description: "Learn directly from practitioners with real-world sponsorship experience",
                 },
                 {
-                  icon: <Target />,
-                  title: "Build a full sponsorship pitch deck",
+                  title: "Real Projects",
+                  description: "Build a complete sponsorship pitch deck for your portfolio",
                 },
                 {
-                  icon: <Briefcase />,
-                  title: "Work on real sponsorship opportunities",
+                  title: "Paid Internship @ KIBI",
+                  description: "8-week internship (₹10,000/month) working on live deals",
                 },
                 {
-                  icon: <Award />,
-                  title: "Masterclasses with brand & league executives",
+                  title: "Masterclasses",
+                  description: "Sessions with brand managers and league executives",
                 },
                 {
-                  icon: <TrendingUp />,
-                  title: "Career support, PPO pathways, and community",
+                  title: "PPO & Career Support",
+                  description: "Pre-Placement Offer eligibility, resume help, mock interviews, and referrals",
                 },
                 {
-                  icon: <CheckCircle2 />,
-                  title: "2-month applied internship with KIBI Sports",
+                  title: "Community Access",
+                  description: "Lifetime access to alumni network and industry connections",
                 },
               ].map((highlight, index) => (
-                <Card key={index} className="shadow-medium border-none text-center">
+                <Card key={index} className="shadow-medium border-none">
                   <CardContent className="p-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4">
-                      {highlight.icon}
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+                      <div>
+                        <h3 className="font-bold mb-2">{highlight.title}</h3>
+                        <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                      </div>
                     </div>
-                    <p className="font-semibold">{highlight.title}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -187,128 +143,57 @@ const SportsSponsorship = () => {
         </div>
       </section>
 
-      {/* Why Sports Sponsorship, Why Now */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-6 text-center">Why Sports Sponsorship, and Why Now?</h2>
-            <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
-              Sports sponsorship is booming in India across digital, OTT, and grassroots sports. Brands are actively looking for ways to connect with fans through leagues, athletes, and venues. There's a gap between academic theory and real execution talent—this cohort is designed to fill that gap with practical, real-world training.
-            </p>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { value: "15,000+", label: "Athletes in KIBI Network" },
-                { value: "800+", label: "Sports Institutions" },
-                { value: "5,000+", label: "Venues for Branding" },
-                { value: "1,000+", label: "Brand Campaigns Led" },
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold gradient-primary bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Your Mentor */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Meet Your Mentor – Sagar Rai</h2>
-            <Card className="shadow-strong overflow-hidden">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-5">
-                  <div className="md:col-span-2">
-                    <img
-                      src={mentorImage}
-                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:col-span-3 p-8 md:p-12">
-                    <h3 className="text-2xl font-bold mb-2">Sagar Rai</h3>
-                    <p className="text-primary font-bold text-lg mb-6">
-                      Founder & CEO, KIBI Sports
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        "National Startup Award winner",
-                        "Felicitated by Hon. Prime Minister Narendra Modi",
-                        "Led 1000+ sponsorship campaigns across cricket, kabaddi, running events",
-                        "Engineer and former national-level athlete",
-                        "Academic speaker & mentor in sports entrepreneurship",
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="outline">View Mentor Profile</Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Curriculum */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12 text-center">What You'll Learn Over 16 Weeks</h2>
+            <h2 className="mb-12 text-center">Curriculum (16 Weeks)</h2>
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  weeks: "Weeks 1-2",
-                  title: "Foundations",
-                  content: "Sponsorship ecosystem & stakeholders. Brand objectives, KPIs, and evaluation frameworks.",
+                  weeks: "Week 1-2",
+                  title: "Sponsorship Foundations",
+                  content: "Sports sponsorship ecosystem, brand objectives & strategies, KPI frameworks for measuring sponsorship success",
                 },
                 {
-                  weeks: "Weeks 3-4",
+                  weeks: "Week 3-4",
                   title: "Athlete Sponsorships",
-                  content: "Talent scouting, rights management, contracts, and deliverables. Building athlete brands & creator collaborations.",
+                  content: "Individual athlete partnerships, contract structures, athlete branding, and workflow management",
                 },
                 {
-                  weeks: "Weeks 5-6",
-                  title: "Teams, Leagues & Venues",
-                  content: "League and team sponsorship models. Jersey/title sponsorships. Venue branding & on-ground activations.",
+                  weeks: "Week 5-6",
+                  title: "Team & League Sponsorships",
+                  content: "Team partnerships, league-level deals, venue branding, and large-scale activations",
                 },
                 {
-                  weeks: "Weeks 7-8",
-                  title: "Digital & CSR Sponsorships",
-                  content: "OTT, streaming, and social media sponsorships. Influencer-led campaigns. CSR-driven sports partnerships & community impact.",
+                  weeks: "Week 7-8",
+                  title: "Digital & CSR Models",
+                  content: "OTT & digital sponsorships, CSR-linked partnerships, community activations, and social impact measurement",
                 },
                 {
-                  weeks: "Weeks 9-10",
-                  title: "Pitching & Deck Creation",
-                  content: "Storytelling for brands. Structuring high-conversion sponsorship proposals.",
+                  weeks: "Week 9-10",
+                  title: "Advanced Pitching",
+                  content: "Storytelling techniques, deck creation, tailoring pitches to different stakeholders",
                 },
                 {
-                  weeks: "Weeks 11-12",
-                  title: "Pricing, Budget & ROI",
-                  content: "How to price sponsorship assets. Budget planning. Measuring ROI and using tools/dashboards.",
+                  weeks: "Week 11-12",
+                  title: "Negotiation & Closing",
+                  content: "Budgeting & pricing strategies, ROI measurement tools, negotiation tactics, closing deals",
                 },
                 {
-                  weeks: "Weeks 13-14",
-                  title: "Internship Onboarding",
-                  content: "Orientation to KIBI Sports ecosystem. Tools, processes, and project planning.",
+                  weeks: "Week 13-14",
+                  title: "Internship Phase 1",
+                  content: "Onboarding at KIBI Sports, working on live sponsorship projects and deals",
                 },
                 {
                   weeks: "Week 15",
-                  title: "Industry Masterclass",
-                  content: "Live session with a brand/league executive.",
+                  title: "Masterclass Week",
+                  content: "Special sessions with senior brand managers and league executives",
                 },
                 {
                   weeks: "Week 16",
-                  title: "Capstone Project",
-                  content: "Final sponsorship strategy deck. Presentation to mentors and feedback.",
+                  title: "Capstone Presentation",
+                  content: "Present your sponsorship pitch deck to a panel - portfolio-ready deliverable",
                 },
               ].map((module, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-6 shadow-soft">
@@ -333,23 +218,33 @@ const SportsSponsorship = () => {
         </div>
       </section>
 
-      {/* Paid Internship Highlight */}
+      {/* Mentor */}
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="mb-6 text-center">2-Month Applied Internship with KIBI Sports</h2>
-            <Card className="shadow-strong border-none">
-              <CardContent className="p-8 md:p-12">
-                <p className="text-lg text-muted-foreground mb-6">
-                  After live sessions, learners get a structured internship opportunity within the KIBI Sports ecosystem. They work on real sponsorships for brands, athletes, leagues, or venues. They get hands-on experience executing what they learned in the cohort.
-                </p>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Top performers may receive performance-based PPO opportunities or referrals.
-                </p>
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-                  <p className="text-muted-foreground italic">
-                    <strong>Note:</strong> Compensation and benefits are discussed individually with selected candidates during the internship onboarding process.
-                  </p>
+            <h2 className="mb-12 text-center">Your Mentor</h2>
+            <Card className="shadow-strong overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-5">
+                  <div className="md:col-span-2">
+                    <img
+                      src={mentorImage}
+                      alt="Sagar Rai"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:col-span-3 p-8 md:p-12">
+                    <h3 className="text-2xl font-bold mb-2">Sagar Rai</h3>
+                    <p className="text-primary font-semibold mb-4">
+                      Founder & CEO, KIBI Sports
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Sagar has built KIBI Sports into a recognized name in sports sponsorship across India. With a large network spanning athletes, teams, and institutions, he brings hands-on experience in structuring and executing sponsorship deals.
+                    </p>
+                    <p className="text-muted-foreground">
+                      In this cohort, he'll share real insights from his work, give you access to live projects, and guide you through the complete sponsorship lifecycle.
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -357,47 +252,29 @@ const SportsSponsorship = () => {
         </div>
       </section>
 
-      {/* Career Outcomes */}
+      {/* Outcomes */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Where This Cohort Can Take You</h2>
-
-            <div className="mb-12">
-              <h3 className="font-bold text-xl mb-6 text-center">Potential Job Roles</h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  "Sports Marketing Executive",
-                  "Sponsorship Coordinator",
-                  "Brand Partnerships Associate",
-                  "Athlete Manager (Trainee)",
-                  "Business Development (Sports)",
-                  "Freelance Sponsorship Consultant",
-                ].map((role, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold"
-                  >
-                    {role}
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="mb-6 text-center">Outcomes & Career Support</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              This cohort is designed to be a direct pathway into the sports industry
+            </p>
 
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="shadow-medium border-none">
                 <CardContent className="p-8">
-                  <h3 className="font-bold text-lg mb-4">What You'll Build</h3>
+                  <h3 className="font-bold mb-4 text-lg">During the Program</h3>
                   <ul className="space-y-3">
                     {[
-                      "Portfolio of real sponsorship pitches and decks",
-                      "Experience working with real brands and sports properties",
-                      "Confidence to approach leagues, teams, and brands",
-                      "Network of mentors, peers, and industry professionals",
+                      "8-week paid internship at KIBI Sports",
+                      "Work on live sponsorship deals",
+                      "Build a portfolio-ready pitch deck",
+                      "Masterclasses with industry leaders",
                     ].map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                      <li key={index} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
-                        <span>{item}</span>
+                        <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -406,17 +283,18 @@ const SportsSponsorship = () => {
 
               <Card className="shadow-medium border-none">
                 <CardContent className="p-8">
-                  <h3 className="font-bold text-lg mb-4">Career Pathways</h3>
+                  <h3 className="font-bold mb-4 text-lg">After Completion</h3>
                   <ul className="space-y-3">
                     {[
-                      "Full-time roles at agencies, leagues, or brands",
-                      "Freelancing as sponsorship consultant",
-                      "Sports entrepreneurship opportunities",
-                      "Transition from athlete/coach to business role",
+                      "PPO eligibility based on performance",
+                      "Resume & portfolio review",
+                      "Mock interviews & career coaching",
+                      "Referrals to hiring partners",
+                      "Lifetime alumni community access",
                     ].map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                      <li key={index} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
-                        <span>{item}</span>
+                        <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -427,248 +305,40 @@ const SportsSponsorship = () => {
         </div>
       </section>
 
-      {/* Who Should Join */}
+      {/* FAQs */}
       <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Is This Cohort Right For You?</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  emoji: "🎓",
-                  title: "Students & Fresh Graduates",
-                  description: "Final year or recent grads in sports management, marketing, business, or media.",
-                },
-                {
-                  emoji: "💼",
-                  title: "Freelancers & Early Professionals",
-                  description: "Marketers or sales professionals looking to specialise in sports.",
-                },
-                {
-                  emoji: "🔄",
-                  title: "Career Switchers & Sports Enthusiasts",
-                  description: "Working professionals who want to transition into sports sponsorship.",
-                },
-                {
-                  emoji: "⚽",
-                  title: "Athletes, Coaches & Creators",
-                  description: "Those who want to monetize their sports presence and network.",
-                },
-                {
-                  emoji: "🏢",
-                  title: "Agency & Team Staff",
-                  description: "Junior staff at agencies/teams who handle brand deals or marketing.",
-                },
-                {
-                  emoji: "🚀",
-                  title: "Aspiring Entrepreneurs",
-                  description: "Those exploring sports business ventures and partnerships.",
-                },
-              ].map((persona, index) => (
-                <Card key={index} className="shadow-medium border-none">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-4">{persona.emoji}</div>
-                    <h3 className="font-bold mb-2">{persona.title}</h3>
-                    <p className="text-sm text-muted-foreground">{persona.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Khelpreneurs */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Why Choose Khelpreneurs Cohorts?</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: <Users />,
-                  title: "Live Experts",
-                  description: "Learn directly from practitioners, not just faculty.",
-                },
-                {
-                  icon: <Target />,
-                  title: "Hands-On Learning",
-                  description: "Work on real projects, decks, and sponsorship deals.",
-                },
-                {
-                  icon: <Award />,
-                  title: "Network & Community",
-                  description: "Access to mentors, alumni, and industry professionals.",
-                },
-                {
-                  icon: <TrendingUp />,
-                  title: "Career Support",
-                  description: "Guidance for internships, PPOs, and freelance opportunities.",
-                },
-              ].map((item, index) => (
-                <Card key={index} className="shadow-medium border-none text-center">
-                  <CardContent className="p-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4">
-                      {item.icon}
-                    </div>
-                    <h3 className="font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Check Eligibility Form */}
-      <section id="eligibility" className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="mb-6 text-center">Check Your Eligibility Before You Apply</h2>
-            <p className="text-lg text-muted-foreground text-center mb-8">
-              Fill out this quick form and our program advisor will reach out to discuss your fit for the cohort
-            </p>
-
-            <Card className="shadow-strong border-none">
-              <CardContent className="p-8">
-                <form onSubmit={handleEligibilitySubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Name *</label>
-                    <Input
-                      type="text"
-                      placeholder="Your full name"
-                      value={eligibilityForm.name}
-                      onChange={(e) => setEligibilityForm({ ...eligibilityForm, name: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email *</label>
-                    <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={eligibilityForm.email}
-                      onChange={(e) => setEligibilityForm({ ...eligibilityForm, email: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Phone *</label>
-                    <Input
-                      type="tel"
-                      placeholder="+91 XXXXX XXXXX"
-                      value={eligibilityForm.phone}
-                      onChange={(e) => setEligibilityForm({ ...eligibilityForm, phone: e.target.value })}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Current Status *</label>
-                    <Select
-                      value={eligibilityForm.status}
-                      onValueChange={(value) => setEligibilityForm({ ...eligibilityForm, status: value })}
-                      required
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your current status" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="student">Student</SelectItem>
-                        <SelectItem value="fresher">Fresher</SelectItem>
-                        <SelectItem value="working">Working Professional</SelectItem>
-                        <SelectItem value="freelancer">Freelancer</SelectItem>
-                        <SelectItem value="athlete">Athlete</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Why do you want to join this cohort? *</label>
-                    <Textarea
-                      placeholder="Tell us about your interest in sports sponsorship..."
-                      value={eligibilityForm.reason}
-                      onChange={(e) => setEligibilityForm({ ...eligibilityForm, reason: e.target.value })}
-                      className="min-h-[100px]"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">When are you planning to start? *</label>
-                    <Select
-                      value={eligibilityForm.startDate}
-                      onValueChange={(value) => setEligibilityForm({ ...eligibilityForm, startDate: value })}
-                      required
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your preferred start time" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="immediately">Immediately</SelectItem>
-                        <SelectItem value="this-month">This Month</SelectItem>
-                        <SelectItem value="later">Later</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent hover:bg-accent-hover"
-                    data-event="submit_eligibility_form"
-                  >
-                    Submit & Talk to a Program Advisor
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="mb-12 text-center">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  q: "What is the weekly time commitment?",
-                  a: "The live cohort sessions require 2-3 hours per week for 8 weeks, plus self-paced work. The internship phase can be part-time or full-time based on your availability.",
+                  q: "Who is this program for?",
+                  a: "This cohort is for students, early professionals, freelancers, athletes, league staff, and anyone looking to build a career in sports sponsorship - regardless of prior experience.",
                 },
                 {
-                  q: "Are all sessions live? Are recordings available?",
-                  a: "Yes, all sessions are conducted live for better interaction. However, recordings are available for participants who miss sessions or want to review content.",
+                  q: "What is the time commitment?",
+                  a: "8 weeks of live sessions (typically 2-3 hours per week) plus self-paced work, followed by an 8-week full-time or part-time internship. All live sessions are recorded.",
                 },
                 {
-                  q: "Is this program suitable for beginners?",
-                  a: "Absolutely! This cohort is designed for anyone passionate about sports, regardless of prior experience in sponsorship. We cover fundamentals before diving into advanced topics.",
+                  q: "What if I miss a live session?",
+                  a: "All sessions are recorded and available for replay. You can catch up at your convenience.",
                 },
                 {
-                  q: "How does the internship selection work?",
-                  a: "All cohort participants who complete the live sessions successfully get the internship opportunity at KIBI Sports. Performance during the cohort determines project assignments.",
+                  q: "What is the selection process?",
+                  a: "Applications are reviewed on a rolling, first-come basis. We look for genuine interest in sports and commitment to complete the program.",
                 },
                 {
-                  q: "Is placement guaranteed?",
-                  a: "While we don't guarantee placements, we provide comprehensive career support including internship experience, portfolio building, PPO eligibility, and referrals to our hiring network.",
+                  q: "Is there a refund policy?",
+                  a: "Yes, we offer a refund within the first 2 weeks if the program isn't the right fit for you.",
                 },
                 {
-                  q: "What if I miss a session?",
-                  a: "No worries! All sessions are recorded. You can catch up by watching the recording and reach out to mentors during office hours if you have questions.",
+                  q: "Will I get a certificate?",
+                  a: "Yes, participants who complete the program and internship receive a certificate of completion.",
                 },
                 {
-                  q: "How is this different from a regular sports management course?",
-                  a: "This is cohort-based learning from a practitioner (not academic faculty), focused specifically on sponsorship. You work on real projects, get internship experience, and join a professional community—not just lectures and exams.",
-                },
-                {
-                  q: "How will I know the fee and payment options?",
-                  a: "Once you apply, download the brochure, or speak to a program advisor, we'll share detailed fee, payment plans, and scholarship options based on your profile. We do this to ensure you first understand the value, outcomes, and fit before deciding.",
+                  q: "What about job placement?",
+                  a: "While we don't guarantee jobs, we provide PPO pathways, referrals to our hiring network, and comprehensive career support to maximize your chances.",
                 },
               ].map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`} className="border rounded-xl px-6 shadow-soft">
@@ -686,44 +356,25 @@ const SportsSponsorship = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-light to-primary-dark text-primary-foreground">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="mb-6 text-primary-foreground">Ready to Start Your Sports Sponsorship Journey?</h2>
-            <p className="text-xl text-primary-foreground/90 mb-8">
-              Applications for Cohort 01 are open. Limited seats. Eligibility and details shared after you apply.
+            <h2 className="mb-6">Ready to Start Your Sponsorship Career?</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Applications are open. Secure your seat in the next cohort.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent hover:bg-accent-hover text-lg px-8 py-6"
-                data-event="apply_now_bottom_clicked"
-              >
-                <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                data-event="talk_to_advisor_clicked"
-              >
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5" />
-                  Talk to a Program Advisor
-                </a>
-              </Button>
-            </div>
-            <button
-              onClick={handleDownloadBrochure}
-              className="text-primary-foreground/90 hover:text-primary-foreground underline text-sm"
-              data-event="download_brochure_bottom_clicked"
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
             >
-              Download Brochure
-            </button>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
+                Apply Now <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              You'll be redirected to our secure application portal
+            </p>
           </div>
         </div>
       </section>
@@ -731,27 +382,15 @@ const SportsSponsorship = () => {
       {/* Sticky Mobile CTA */}
       {stickyVisible && (
         <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-sm border-t border-border shadow-strong z-40">
-          <div className="flex gap-2">
-            <Button
-              asChild
-              size="lg"
-              className="flex-1 bg-accent hover:bg-accent-hover"
-            >
-              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
-                Apply Now
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="flex-1"
-            >
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
-              </a>
-            </Button>
-          </div>
+          <Button
+            asChild
+            size="lg"
+            className="w-full bg-accent hover:bg-accent-hover"
+          >
+            <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
+              Apply Now
+            </a>
+          </Button>
         </div>
       )}
 

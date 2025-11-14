@@ -43,11 +43,12 @@ const Cohorts = () => {
                     <h3 className="font-bold mb-4 text-lg">Quick Facts</h3>
                     <div className="space-y-3">
                       {[
-                        { label: "Structure", value: "16 weeks (8 live + 8 internship)" },
+                        { label: "Structure", value: "8 weeks live + 8-week paid internship" },
                         { label: "Format", value: "Live online + recordings + masterclasses" },
                         { label: "Mentor", value: "Sagar Rai (Founder & CEO, KIBI Sports)" },
+                        { label: "Fee", value: "₹40,000 (incl. taxes)" },
                         { label: "Seats", value: "50 (first-come basis)" },
-                        { label: "Type", value: "Cohort-based learning" },
+                        { label: "Stipend", value: "₹10,000/month during internship" },
                       ].map((item) => (
                         <div key={item.label} className="flex justify-between">
                           <span className="text-muted-foreground">{item.label}:</span>
@@ -63,7 +64,7 @@ const Cohorts = () => {
                       {[
                         "Live mentorship from industry practitioners",
                         "Build a full sponsorship pitch deck",
-                        "Applied internship opportunity at KIBI Sports",
+                        "Paid internship with live deals at KIBI Sports",
                         "Masterclasses with brand & league executives",
                         "PPO pathways & career support",
                       ].map((item, index) => (
