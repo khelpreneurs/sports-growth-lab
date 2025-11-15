@@ -9,12 +9,62 @@ const Footer = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Success!",
-      description: "Thank you for subscribing to our newsletter.",
-    });
+
+    try {
+      // Send email to Google Spreadsheet
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzHJSioNcKhsbvxhAVcO1zjnzIVQ4B_s9ZD5qKKVc251UQBxRs8byQl0Bnxq9SZf7Ad-w/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          email: email,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing to our newsletter.",
+        });
+
+        // Request notification permission and show browser notification
+        if ('Notification' in window) {
+          if (Notification.permission === 'granted') {
+            new Notification('Khelpreneurs Newsletter', {
+              body: 'Thank you for subscribing! Get the latest updates on new cohorts and events.',
+              icon: '/company-logo.jpg',
+            });
+          } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then((permission) => {
+              if (permission === 'granted') {
+                new Notification('Khelpreneurs Newsletter', {
+                  body: 'Thank you for subscribing! Get the latest updates on new cohorts and events.',
+                  icon: '/company-logo.jpg',
+                });
+              }
+            });
+          }
+        }
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to subscribe. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    }
+
     setEmail("");
   };
 
