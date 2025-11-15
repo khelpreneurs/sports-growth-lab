@@ -6,10 +6,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
-import saurabhImage from "@/assets/mentor-saurabh.jpeg";
-import karanImage from "@/assets/mentor-karan.jpeg";
+import saurabhImage from "@/assets/mentor-saurabh.png";
 import amitImage from "@/assets/mentor-amit.jpeg";
 import hussainImage from "@/assets/mentor-hussain.jpeg";
+import adityaImage from "@/assets/mentor-adity.png";
+import ankitaImage from "@/assets/mentor-ankita.png";
+import anjumImage from "@/assets/mentor-anjum.png";
+import karthikImage from "@/assets/mentor-karthik.png";
+import minalImage from "@/assets/mentor-minal.png";
+
 
 const Home = () => {
   return (
@@ -317,45 +322,6 @@ const Home = () => {
       </div>
     </CardContent>
   </Card>
-
-  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
-    <CardContent className="p-0">
-      <div className="">
-
-        <div className="h-[260px] md:h-full">
-          <img
-            src={karanImage}
-            alt="Sagar Rai - Founder & CEO, KIBI Sports"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="p-6 md:p-8 flex flex-col justify-center">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-2xl font-bold line-clamp-1">Karan Bahadur</h3>
-            <a href="https://www.linkedin.com/in/karanbahadur-dshindia/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-              <Linkedin className="w-6 h-6" />
-            </a>
-          </div>
-          <p className="text-primary font-semibold mb-4">
-            Co-Founder & Head of Operations, Draper Startup House – India
-          </p>
-
-          <p className="text-muted-foreground mb-4">
-            Karan builds and leads one of India’s startup-community hubs, focused on fostering 
-            entrepreneurship, providing space, events and networks for early-stage founders and 
-            innovators in Bengaluru and beyond.
-          </p>
-
-          <Button asChild variant="outline" className="w-fit">
-            <Link to="/mentors">
-              View Bio <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </Button>
-        </div>
-
-      </div>
-    </CardContent>
-  </Card>
   <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
     <CardContent className="p-0">
       <div className="">
@@ -371,7 +337,7 @@ const Home = () => {
         <div className="p-6 md:p-8 flex flex-col justify-center">
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-2xl font-bold line-clamp-1">Amit Kumar Sahu</h3>
-            <a href="https://www.linkedin.com/in/amit-kumar-sahu-1a1b1b1b1/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+            <a href=" https://www.linkedin.com/in/amitsahu90?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
               <Linkedin className="w-6 h-6" />
             </a>
           </div>
@@ -432,7 +398,200 @@ const Home = () => {
             </Link>
           </Button>
         </div>
+      </div>
+    </CardContent>
+  </Card>
 
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={adityaImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold line-clamp-1">Aditya Reddy</h3>
+            <a href="https://www.linkedin.com/in/aditya-reddy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            Co-Founder, Gamepoint India
+          </p>
+          <p className="text-muted-foreground mb-4">
+            The co‑founder and CEO of Gamepoint India (via Netplay Sports Pvt. Ltd.), 
+            a Hyderabad‑based company founded in 2016 that operates multi‑sport centres 
+            offering coaching, book‑and‑play, tournaments and equipment retail. Under his leadership, 
+            Gamepoint has expanded its footprint in Hyderabad and plans national expansion, touting a 
+            vision of making sports accessible to a larger population and converting “game watchers” into “game players”.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+    <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={ankitaImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold line-clamp-1">Ankita Jain</h3>
+            <a href="https://www.linkedin.com/in/ankita-jain-psychologist?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            Sports & Counselling Psychologist
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Works as a sports & counselling psychologist, and has spoken publicly about 
+            the role of psychology in both traditional sports and e‑sports domains. 
+            She holds advanced credentials in psychology and has built a practice oriented 
+            around athlete performance, mental health, and the emerging esports sector.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={anjumImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold line-clamp-1">Anjum Qazi</h3>
+            <a href="https://www.linkedin.com/in/anjum-qazi-542950268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            VP – Precihole Sports Pvt. Ltd.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Serves as Vice President of Precihole Sports Pvt. Ltd., an Indian manufacturer 
+            of air‑rifles / air‑guns and sporting goods, which in 2024 made a notable international
+             debut in collaboration with UK‑based Air Arms at the IWA Outdoor Classics exhibition. 
+             In that release she is quoted regarding the milestone of Precihole entering the global 
+             market and its commitment to “Make in India” manufacturing identity. Her role thus spans
+              marketing/administration in a niche sports‑equipment and manufacturing business, particularly 
+              aligned with the shooting/sports‑goods segment. 
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={karthikImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold line-clamp-1">Karthik Yanamandra</h3>
+            <a href="https://www.linkedin.com/in/hussak/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            Founding Partner, 360D Sports
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Co‑Founder & Head – Business Initiatives of 360D Sports a Hyderabad‑based 
+            firm engaged in sports management, consulting, events, technologies and startup 
+            collaboration. Over 17 years of experience in strategic business operations, 
+            business development, marketing, revenue expansion, event management, consulting 
+            and sports technologies. 360D Sports is a venture/management company working with sports, 
+            wellness & fitness startups to build enterprises. 
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+        <div className="h-[260px] md:h-full">
+          <img
+            src={minalImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold line-clamp-1">Minal Patel</h3>
+            <a href="https://www.linkedin.com/in/saurabh-aggarwal-86426723" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            Co-founder & Head of Investor Relations, StartupLynk
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Director/Designated Partner of StartupLynk (legal entity StartupLynk Sportvot LLP,
+             which is a platform connecting startups with investors; the company’s public profile
+              lists fundraising, curated deals, and goal of supporting startup‑investment ecosystem.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </CardContent>
   </Card>
