@@ -19,7 +19,6 @@ import meddaImage from "@/assets/mentor-medda.png";
 import vashneyImage from "@/assets/mentor-vashney.png";
 import ratnakarImage from "@/assets/mentor-ratnakar.png"
 
-
 const Home = () => {
   return (
     <div className="min-h-screen">
