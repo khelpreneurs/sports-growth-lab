@@ -64,18 +64,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+              {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent-hover shadow-accent"
-            >
+              className="bg-accent hover:bg-accent-hover shadow-accent">
               <a
-                href="https://community.khelaxy.com"
+                href="https://payments.cashfree.com/forms/khelpreneurscohort1"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 Apply Now
               </a>
             </Button>
