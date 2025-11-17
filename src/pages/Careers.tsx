@@ -73,7 +73,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Success Stories */}
+      {/* Success Stories
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -115,7 +115,7 @@ const Careers = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Career Services */}
       <section className="py-16 md:py-24">

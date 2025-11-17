@@ -24,7 +24,7 @@ const Mentors = () => {
       </section>
 
       {/* Featured Mentor */}
-      <section className="py-16 md:py-24">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-full mb-8">
@@ -83,9 +83,11 @@ const Mentors = () => {
                       </div>
                     </div>
 
-                    <Button variant="outline" className="gap-2">
-                      <Linkedin className="w-4 h-4" />
-                      Connect on LinkedIn
+                    <Button asChild variant="outline" className="gap-2">
+                      <a href="https://www.linkedin.com/in/sagar-rai-1252901a5/" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="w-4 h-4" />
+                        Connect on LinkedIn
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -95,74 +97,7 @@ const Mentors = () => {
         </div>
       </section>
 
-      {/* More Mentors Grid */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Our Growing Mentor Network</h2>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {[
-                {
-                  name: "Coming Soon",
-                  role: "Sports Journalism Expert",
-                  expertise: "Media & Content",
-                  description: "Industry veteran with experience in sports broadcasting and digital media",
-                },
-                {
-                  name: "Coming Soon",
-                  role: "Brand Marketing Leader",
-                  expertise: "Brand Partnerships",
-                  description: "Former brand manager at leading sports companies",
-                },
-                {
-                  name: "Coming Soon",
-                  role: "Sports Entrepreneur",
-                  expertise: "Business & Startups",
-                  description: "Founder of successful sports tech venture",
-                },
-                {
-                  name: "Coming Soon",
-                  role: "League Executive",
-                  expertise: "League Operations",
-                  description: "Senior executive from major sports league",
-                },
-                {
-                  name: "Coming Soon",
-                  role: "Athlete Representative",
-                  expertise: "Athlete Management",
-                  description: "Experienced in athlete representation and career planning",
-                },
-                {
-                  name: "Coming Soon",
-                  role: "Digital Sports Expert",
-                  expertise: "OTT & Digital",
-                  description: "Specialist in digital sports platforms and content",
-                },
-              ].map((mentor, index) => (
-                <Card key={index} className="shadow-medium text-center border-none opacity-75">
-                  <CardContent className="p-6">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-muted to-muted-foreground/20 mx-auto mb-4"></div>
-                    <h3 className="font-bold text-lg mb-1">{mentor.name}</h3>
-                    <p className="text-primary font-semibold text-sm mb-1">{mentor.role}</p>
-                    <p className="text-xs text-muted-foreground mb-3">{mentor.expertise}</p>
-                    <p className="text-sm text-muted-foreground">{mentor.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-muted-foreground mb-4">
-                We're expanding our mentor network across different sports domains
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Want to mentor with us? <Link to="/contact" className="text-primary hover:underline font-semibold">Get in touch</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Mentorship Matters */}
       <section className="py-16 md:py-24">

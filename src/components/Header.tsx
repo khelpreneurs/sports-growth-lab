@@ -64,21 +64,6 @@ const Header = () => {
             ))}
           </nav>
 
-              {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="bg-accent hover:bg-accent-hover shadow-accent">
-              <a
-                href="https://payments.cashfree.com/forms/khelpreneurscohort1"
-                target="_blank"
-                rel="noopener noreferrer">
-                Apply Now
-              </a>
-            </Button>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-foreground"
@@ -105,21 +90,6 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4">
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-accent hover:bg-accent-hover"
-              >
-                <a
-                  href="https://community.khelaxy.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apply Now
-                </a>
-              </Button>
-            </div>
           </nav>
         )}
       </div>

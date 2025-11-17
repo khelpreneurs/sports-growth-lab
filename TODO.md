@@ -1,10 +1,4 @@
-# TODO: Add Browser Notification to Footer Newsletter Submission
+# TODO: Remove "Our Growing Mentor Network" Section from Mentors Page
 
-- [x] Modify `src/components/Footer.tsx` to add browser notification logic in `handleNewsletterSubmit` function
-  - Request notification permission if not granted
-  - Show browser notification with success message after toast
-
-# TODO: Integrate Email Storage in Google Spreadsheet
-
-- [x] Set up Google Apps Script in the spreadsheet to append emails
-- [x] Modify `src/components/Footer.tsx` to send email to Google Apps Script URL on submission
+- [x] Edit src/pages/Mentors.tsx to remove the "More Mentors Grid" section, including the heading, grid of "Coming Soon" mentors, and related text.
+- [x] Verify the page renders correctly after removal.
