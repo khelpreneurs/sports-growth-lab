@@ -61,7 +61,7 @@ const Testimonials = () => {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero */}
+      {/* Hero
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -73,7 +73,7 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Testimonials Grid */}
+      Testimonials Grid
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -104,7 +104,7 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Video Testimonials Teaser */}
       <section className="py-16 md:py-24 bg-secondary/50">
@@ -137,7 +137,7 @@ const Testimonials = () => {
                 { value: "8 Weeks", label: "Paid Internship" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold gradient-primary bg-clip-text text-transparent mb-2">
+                  <div  className="text-4xl md:text-3xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md">
                     {stat.value}
                   </div>
                   <div className="text-muted-foreground">{stat.label}</div>
@@ -200,9 +200,8 @@ const Testimonials = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
             >
-              <Link to="/cohorts/sports-sponsorship">
-                Apply to Sports Sponsorship Cohort <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1"target="_blank"rel="noopener noreferrer">
+                 Apply to Sports Sponsorship Cohort<ArrowRight className="ml-2 w-5 h-5" /></a>
             </Button>
           </div>
         </div>

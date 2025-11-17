@@ -169,8 +169,8 @@ const FAQs = () => {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="mailto:hello@khelpreneurs.com">
-                  Email: hello@khelpreneurs.com
+                <a href="mailto:events@khelpreneurs.com">
+                  Email: events@khelpreneurs.com
                 </a>
               </Button>
             </div>
@@ -191,9 +191,8 @@ const FAQs = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
             >
-              <Link to="/cohorts/sports-sponsorship">
-                Apply to Sports Sponsorship Cohort <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1"target="_blank"rel="noopener noreferrer">
+                 Apply to Sports Sponsorship Cohort<ArrowRight className="ml-2 w-5 h-5" /></a>
             </Button>
           </div>
         </div>

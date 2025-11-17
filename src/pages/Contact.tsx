@@ -72,10 +72,10 @@ const Contact = () => {
                         <div>
                           <div className="font-semibold mb-1">Email</div>
                           <a
-                            href="mailto:Events@khelpreneurs.com"
+                            href="mailto:events@khelpreneurs.com"
                             className="text-sm text-muted-foreground hover:text-primary transition-fast"
                           >
-                            Events@khelpreneurs.com
+                            events@khelpreneurs.com
                           </a>
                         </div>
                       </div>
