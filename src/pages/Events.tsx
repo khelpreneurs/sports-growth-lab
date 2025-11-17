@@ -31,10 +31,6 @@ import pic12 from "@/assets/hyderabad_event/pic12.jpeg";
 import pic13 from "@/assets/hyderabad_event/pic13.jpeg";
 import pic14 from "@/assets/hyderabad_event/pic14.jpeg";
 import pic15 from "@/assets/hyderabad_event/pic15.jpeg";
-import video1 from "@/assets/hyderabad_event/video1.mp4";
-import video2 from "@/assets/hyderabad_event/video2.mp4";
-import video3 from "@/assets/hyderabad_event/video3.mp4";
-
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -207,20 +203,20 @@ const Events = () => {
       url: pic15,
     },
     {
-      type: "video",
-      url: video1,
-    },
-    {
-      type: "video",
-      url: video2,
-    },
-    {
-      type: "video",
-      url: video3,
+      type: "youtube",
+      url: "https://www.youtube.com/embed/qQRUSYndOAs?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=qQRUSYndOAs",
     },
     {
       type: "youtube",
-      url: "https://www.youtube.com/embed/fajGjg83cXA?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1",
+      url: "https://www.youtube.com/embed/5iKLbDxaPlA?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=5iKLbDxaPlA",
+    },
+    {
+      type: "youtube",
+      url: "https://www.youtube.com/embed/iFcFssJAU-8?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=iFcFssJAU-8",
+    },
+    {
+      type: "youtube",
+      url: "https://www.youtube.com/embed/fajGjg83cXA?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=fajGjg83cXA",
     },
   ];
 
@@ -439,24 +435,14 @@ const Events = () => {
                   />
                 )}
 
-                {item.type === "video" && (
-                  <video
-                    src={item.url}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    // controls
-                    className="w-full h-[260px] md:h-[320px] object-cover"
-                  />
-                )}
-
                 {item.type === "youtube" && (
                   <iframe
-                    src={`${item.url}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1`}
-                    title={`youtube-${index}`}
+                    src={item.url}
                     className="w-full h-[260px] md:h-[320px] object-cover"
-                    allow="autoplay; encrypted-media; fullscreen"></iframe>
+                    allow="autoplay; encrypted-media"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 )}
               </div>
             ))}
