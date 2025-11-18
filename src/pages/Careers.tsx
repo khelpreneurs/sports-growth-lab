@@ -5,6 +5,35 @@ import { ArrowRight, Briefcase, Award, Users, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Import partner logos
+import logo17 from "@/assets/Career Opportunities/17-removebg-preview.png";
+import logo19 from "@/assets/Career Opportunities/19-removebg-preview.png";
+import logo21 from "@/assets/Career Opportunities/21-removebg-preview.png";
+import logo22 from "@/assets/Career Opportunities/22-removebg-preview.png";
+import logo23 from "@/assets/Career Opportunities/23-removebg-preview.png";
+import logo24 from "@/assets/Career Opportunities/24-removebg-preview.png";
+import logo26 from "@/assets/Career Opportunities/26-removebg-preview.png";
+import logo28 from "@/assets/Career Opportunities/28-removebg-preview.png";
+import logo46 from "@/assets/Career Opportunities/46-removebg-preview.png";
+import logo47 from "@/assets/Career Opportunities/47-removebg-preview.png";
+import logo48 from "@/assets/Career Opportunities/48-removebg-preview.png";
+import logo49 from "@/assets/Career Opportunities/49-removebg-preview.png";
+import logo50 from "@/assets/Career Opportunities/50-removebg-preview.png";
+import logo51 from "@/assets/Career Opportunities/51-removebg-preview.png";
+import logo52 from "@/assets/Career Opportunities/52-removebg-preview.png";
+import aethletiCircle from "@/assets/Career Opportunities/Aethleti_Circle-removebg-preview.png";
+import cornerstone from "@/assets/Career Opportunities/Cornerstone-removebg-preview.png";
+import gamepoint from "@/assets/Career Opportunities/Gamepoint-removebg-preview.png";
+import gosports from "@/assets/Career Opportunities/GoSports-removebg-preview.png";
+import hudle from "@/assets/Career Opportunities/Hudle-removebg-preview.png";
+import khelomore from "@/assets/Career Opportunities/KheloMore-removebg-preview.png";
+import rise from "@/assets/Career Opportunities/RISE-removebg-preview.png";
+import sfl from "@/assets/Career Opportunities/SFL-removebg-preview.png";
+import sportvot from "@/assets/Career Opportunities/Sportvot-removebg-preview.png";
+import sportzInteractive from "@/assets/Career Opportunities/Sportz_Interactive-removebg-preview.png";
+import sportzVillage from "@/assets/Career Opportunities/Sportz_Village-removebg-preview.png";
+import untitledDesign from "@/assets/Career Opportunities/Untitled_design-removebg-preview.png";
+
 const Careers = () => {
   return (
     <div className="min-h-screen">
@@ -170,26 +199,45 @@ const Careers = () => {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="mb-6">Our Hiring Partners</h2>
+            <h2 className="mb-6">Career Opportunities</h2>
             <p className="text-lg text-muted-foreground mb-12">
               We work with leading sports organizations to connect our participants with opportunities
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8">
               {[
-                "KIBI Sports",
-                "GamePoint India",
-                "SFL",
-                "UpUrFit",
-                "The Sports Gurukul",
-                "Hudle",
-                "Khelaxy",
-                "And more...",
-              ].map((partner, index) => (
+                logo17,
+                logo19,
+                logo21,
+                logo22,
+                logo23,
+                logo24,
+                logo26,
+                logo28,
+                logo46,
+                logo47,
+                logo48,
+                logo49,
+                logo50,
+                logo51,
+                logo52,
+                aethletiCircle,
+                cornerstone,
+                gamepoint,
+                gosports,
+                hudle,
+                khelomore,
+                rise,
+                sfl,
+                sportvot,
+                sportzInteractive,
+                sportzVillage,
+                untitledDesign,
+              ].map((logo, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-background rounded-xl shadow-soft flex items-center justify-center text-center font-semibold text-sm"
+                  className="flex items-center justify-center p-2"
                 >
-                  {partner}
+                  <img src={logo} alt="Partner Logo" className="h-24 w-auto object-contain" />
                 </div>
               ))}
             </div>
@@ -280,7 +328,7 @@ const Careers = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover text-lg px-8 py-6"
             >
-              <Link to="/cohorts/sports-sponsorship">
+              <Link to="/cohorts">
                 Apply to Sports Sponsorship Cohort <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>

@@ -404,8 +404,10 @@ const Cohorts = () => {
                     sports media. Master the skills needed for roles in sports
                     publications, broadcast, and digital platforms.
                   </p>
-                  <Button variant="outline" className="w-full">
-                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/contact">
+                      Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -423,8 +425,10 @@ const Cohorts = () => {
                     industry founders. Learn fundraising, product development,
                     and go-to-market strategies.
                   </p>
-                  <Button variant="outline" className="w-full">
-                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/contact">
+                      Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -495,8 +499,8 @@ const Cohorts = () => {
               admissions, and more
             </p>
             <Button asChild size="lg" variant="outline">
-              <Link to="/faqs">
-                View FAQs <ArrowRight className="ml-2 w-4 h-4" />
+              <Link to="/cohorts">
+                Apply to Sports Sponsorship Cohort <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>
