@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -100,6 +101,14 @@ const Contact = () => {
                         className="w-12 h-12 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-fast"
                       >
                         <Instagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://wa.me/919876543210"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-fast"
+                      >
+                        <FaWhatsapp className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
