@@ -24,15 +24,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+    // Optimistically show success and clear form immediately
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
+
+    // Send request in background without blocking UI
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbz9__xRtpzxEnVAu8C5eFw7YF5t3u1vMWxRjA7EiWJIXLHFX37pqEvP4TsFEeITLRWm/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    } catch (error) {
+      // Silently handle errors since user already sees success message
+      console.log('Background submission failed:', error);
+    }
   };
 
   return (
