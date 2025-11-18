@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Users, BookOpen, Award, Briefcase } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CheckCircle2, Users, BookOpen, Award, Briefcase, ArrowRight, Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PrimaryButton from "@/components/PrimaryButton";
@@ -10,6 +13,13 @@ import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
 import sponsorshipHero from "@/assets/sponsorship-hero.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
+
+// Extend Window type for gtag
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 // Types
 type WeekModule = {
