@@ -84,7 +84,9 @@ const Careers = () => {
                   description: "Based on performance",
                 },
               ].map((stat, index) => (
-                <Card key={index} className="shadow-medium text-center border-none">
+                <Card
+                  key={index}
+                  className="shadow-medium text-center border-none">
                   <CardContent className="p-6">
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4">
                       {stat.icon}
@@ -93,7 +95,9 @@ const Careers = () => {
                       {stat.value}
                     </div>
                     <div className="font-semibold mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">{stat.description}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.description}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -156,32 +160,56 @@ const Careers = () => {
               {[
                 {
                   title: "Resume & Portfolio Review",
-                  description: "Get expert feedback on your resume and portfolio to make them industry-ready",
-                  items: ["CV optimization", "Portfolio building", "LinkedIn profile enhancement"],
+                  description:
+                    "Get expert feedback on your resume and portfolio to make them industry-ready",
+                  items: [
+                    "CV optimization",
+                    "Portfolio building",
+                    "LinkedIn profile enhancement",
+                  ],
                 },
                 {
                   title: "Mock Interviews",
-                  description: "Practice with industry professionals to ace your job interviews",
-                  items: ["Technical interviews", "Behavioral questions", "Case study prep"],
+                  description:
+                    "Practice with industry professionals to ace your job interviews",
+                  items: [
+                    "Technical interviews",
+                    "Behavioral questions",
+                    "Case study prep",
+                  ],
                 },
                 {
                   title: "Job Alerts & Referrals",
-                  description: "Access exclusive job openings and referrals through our network",
-                  items: ["Early access to opportunities", "Referrals to hiring partners", "Application support"],
+                  description:
+                    "Access exclusive job openings and referrals through our network",
+                  items: [
+                    "Early access to opportunities",
+                    "Referrals to hiring partners",
+                    "Application support",
+                  ],
                 },
                 {
                   title: "1:1 Mentorship",
-                  description: "Get personalized career guidance from industry mentors",
-                  items: ["Career path planning", "Skill gap analysis", "Growth strategy"],
+                  description:
+                    "Get personalized career guidance from industry mentors",
+                  items: [
+                    "Career path planning",
+                    "Skill gap analysis",
+                    "Growth strategy",
+                  ],
                 },
               ].map((service, index) => (
                 <Card key={index} className="shadow-medium border-none">
                   <CardContent className="p-8">
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    <p className="text-muted-foreground mb-4">
+                      {service.description}
+                    </p>
                     <ul className="space-y-2">
                       {service.items.map((item, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-muted-foreground">
                           <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
                           {item}
                         </li>
@@ -201,7 +229,8 @@ const Careers = () => {
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="mb-6">Career Opportunities</h2>
             <p className="text-lg text-muted-foreground mb-12">
-              We work with leading sports organizations to connect our participants with opportunities
+              We work with leading sports organizations to connect our
+              participants with opportunities
             </p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8">
               {[
@@ -242,7 +271,10 @@ const Careers = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              Want to partner with us for hiring? <Link to="/contact" className="text-primary hover:underline">Get in touch</Link>
+              Want to partner with us for hiring?{" "}
+              <Link to="/contact" className="text-primary hover:underline">
+                Get in touch
+              </Link>
             </p>
           </div>
         </div>
@@ -252,63 +284,45 @@ const Careers = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Sample Job Opportunities</h2>
-            <p className="text-center text-muted-foreground mb-8">
-              Examples of roles our participants have access to
+            {/* Heading */}
+            <h2 className="text-center mb-4">Career Opportunities</h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
+              Example roles our cohort participants can pursue in the sports
+              industry
             </p>
 
-            <div className="space-y-4">
+            {/* Job List */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                {
-                  title: "Sponsorship Associate",
-                  company: "KIBI Sports",
-                  location: "Remote",
-                  type: "Full-time",
-                },
-                {
-                  title: "Sports Marketing Coordinator",
-                  company: "League Partner",
-                  location: "Hybrid",
-                  type: "Full-time",
-                },
-                {
-                  title: "Brand Partnerships Intern",
-                  company: "Sports Franchise",
-                  location: "On-site",
-                  type: "Internship",
-                },
-                {
-                  title: "Content Creator - Sports",
-                  company: "Media Company",
-                  location: "Remote",
-                  type: "Contract",
-                },
-              ].map((job, index) => (
-                <Card key={index} className="shadow-soft hover:shadow-medium transition-smooth border-none">
+                "Sponsorship Executive",
+                "Sponsorship Coordinator",
+                "Sponsorship Activation Executive",
+                "Sponsorship Acquisition Executive",
+                "Brand Partnership Executive",
+                "Athlete Relations Executive",
+                "Athlete Partnership Coordinator",
+                "Sports Marketing Executive",
+                "Sports Communications Executive",
+                "Event Sponsorship Executive",
+                "Event Activation Coordinator",
+              ].map((title, index) => (
+                <Card
+                  key={index}
+                  className="shadow-soft hover:shadow-medium transition-smooth border border-gray-200 rounded-xl">
                   <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div>
-                        <h3 className="font-bold text-lg mb-1">{job.title}</h3>
-                        <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-                          <span>{job.company}</span>
-                          <span>•</span>
-                          <span>{job.location}</span>
-                          <span>•</span>
-                          <span>{job.type}</span>
-                        </div>
-                      </div>
-                      <Button variant="outline" size="sm">
-                        View Details
-                      </Button>
-                    </div>
+                    <h3 className="font-semibold text-[17px] text-gray-800">
+                      {title}
+                    </h3>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
-            <div className="text-center mt-8">
+            {/* Footer Note */}
+            <div className="text-center mt-10">
               <p className="text-sm text-muted-foreground">
-                Exclusive opportunities shared with cohort participants via community platform
+                Opportunities are shared exclusively with cohort participants
+                via the community platform.
               </p>
             </div>
           </div>
@@ -319,9 +333,12 @@ const Careers = () => {
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-light to-primary-dark text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="mb-6 text-primary-foreground">Start Your Sports Career Journey</h2>
+            <h2 className="mb-6 text-primary-foreground">
+              Start Your Sports Career Journey
+            </h2>
             <p className="text-xl text-primary-foreground/90 mb-8">
-              Join the Sports Sponsorship cohort and unlock your career potential
+              Join the Sports Sponsorship cohort and unlock your career
+              potential
             </p>
             <Button
               asChild

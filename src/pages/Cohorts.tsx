@@ -198,7 +198,8 @@ const Cohorts = () => {
                       {[
                         {
                           label: "Structure",
-                          value: "8 weeks live + paid internship (2 months guaranteed + 2 months performance-based extension)",
+                          value:
+                            "8 weeks live + paid internship (2 months guaranteed + 2 months performance-based extension)",
                         },
                         {
                           label: "Format",
@@ -269,8 +270,91 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
+      {/* Featured Mentor */}
+      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="mb-4">Mentors & Coaches</h2>
+            <p className="text-xl text-muted-foreground">
+              Our mentors are practitioners with real-world experience in sports
+              business
+            </p>
+            <Card className="shadow-strong overflow-hidden mt-7">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-5">
+                  <div className="md:col-span-2">
+                    <img
+                      src={mentorImage}
+                      alt="Sagar Rai"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:col-span-3 p-8 md:p-12">
+                    <h2 className="text-3xl font-bold mb-2">Sagar Rai</h2>
+                    <p className="text-primary font-bold text-lg mb-2">
+                      Founder & CEO, KIBI Sports
+                    </p>
+                    <p className="text-muted-foreground mb-6">
+                      Leading the Sports Sponsorship Cohort
+                    </p>
+                    <div className="space-y-4 mb-8">
+                      <div>
+                        <h3 className="font-bold mb-2">Background</h3>
+                        <p className="text-muted-foreground">
+                          Sagar has built KIBI Sports into a recognized name in
+                          the Indian sports sponsorship ecosystem. With
+                          extensive experience across athlete, team, and league
+                          partnerships, he brings deep industry knowledge and a
+                          large network of relationships.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-2">Expertise</h3>
+                        <ul className="space-y-2">
+                          {[
+                            "Sports Sponsorship Strategy & Execution",
+                            "Brand Partnerships & Activations",
+                            "Athlete & Team Representation",
+                            "Sports Business Development",
+                          ].map((skill, index) => (
+                            <li
+                              key={index}
+                              className="flex items-center gap-2 text-muted-foreground text-sm">
+                              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                              {skill}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-bold mb-2">What You'll Learn</h3>
+                        <p className="text-muted-foreground">
+                          In the Sports Sponsorship cohort, Sagar shares
+                          practical insights from his work structuring and
+                          closing sponsorship deals. Participants gain access to
+                          live projects at KIBI Sports and learn the complete
+                          lifecycle of sports sponsorships - from pitching to
+                          execution.
+                        </p>
+                      </div>
+                    </div>
+                    <Button asChild variant="outline" className="gap-2">
+                      <a
+                        href="https://www.linkedin.com/in/sagar-rai-1252901a5/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
       {/* ================== ABOUT THE PROGRAM ================== */}
-      <section className="py-12 md:py-20 bg-secondary/50">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Header */}
           <div className="text-center mb-10 md:mb-14">
@@ -302,13 +386,23 @@ const Cohorts = () => {
                 "Pitching & Proposal Building: Build compelling sponsorship decks and plans.",
                 "Budgeting & ROI: Negotiation strategies, pricing tiers & campaign tracking.",
                 "Brand–Property Fit: Match brands with athletes, teams, or venues for impact.",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="p-4 md:p-6 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
-                  <p className="text-gray-800 leading-relaxed">{item}</p>
-                </div>
-              ))}
+              ].map((item, i) => {
+                const [title, desc] = item.split(":");
+                return (
+                  <div
+                    key={i}
+                    className="p-4 md:p-6 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition">
+                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2">
+                      {title}
+                    </p>
+                    {desc && (
+                      <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                        {desc.trim()}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -336,19 +430,29 @@ const Cohorts = () => {
                 "Brand Objective Deep Dives",
                 "Sponsorship Activation Playbooks",
                 "Final Presentation & Showcase",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="p-4 md:p-5 bg-blue-50 border rounded-xl shadow-sm text-sm md:text-base">
-                  <p className="text-gray-800 leading-relaxed">{item}</p>
-                </div>
-              ))}
+              ].map((item, i) => {
+                const [title, desc] = item.split(":");
+                return (
+                  <div
+                    key={i}
+                    className="p-4 md:p-5 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
+                    <p className="font-semibold text-gray-900 mb-1">{title}</p>
+                    {desc && (
+                      <p className="text-gray-600 leading-relaxed">
+                        {desc.trim()}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Outcomes */}
           <div>
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">Outcomes</h3>
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+              Outcomes
+            </h3>
             <ul className="space-y-4">
               {[
                 "A portfolio of real sponsorship proposals and campaign decks.",
@@ -369,7 +473,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* ================== COURSE CONTENT ================== */}
-      <section className="py-12 md:py-20">
+      <section className="py-12 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="mb-8 md:mb-12 text-center text-2xl md:text-5xl font-bold">
             Course Content
@@ -405,7 +509,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* Upcoming Programs */}
-      <section className="py-16 md:py-20 bg-secondary/50">
+      <section className="py-16 md:py-20 ">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-12 text-center">Upcoming Programs</h2>
@@ -453,7 +557,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* Why Khelpreneurs Cohorts */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-12 text-center">
@@ -504,7 +608,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* FAQ Teaser */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-4">Have Questions?</h2>
@@ -521,7 +625,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* CTA */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-6">Applications Are Open</h2>
