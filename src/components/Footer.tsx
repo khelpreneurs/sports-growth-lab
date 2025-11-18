@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Linkedin, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import logo from "@/assets/Company_Logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -40,14 +41,14 @@ const Footer = () => {
         if (Notification.permission === 'granted') {
           new Notification('Khelpreneurs Newsletter', {
             body: 'Thank you for subscribing! Get the latest updates on new cohorts and events.',
-            icon: '/company-logo.jpg',
+            icon: '/Company_Logo.png',
           });
         } else if (Notification.permission !== 'denied') {
           Notification.requestPermission().then((permission) => {
             if (permission === 'granted') {
               new Notification('Khelpreneurs Newsletter', {
                 body: 'Thank you for subscribing! Get the latest updates on new cohorts and events.',
-                icon: '/company-logo.jpg',
+                icon: '/Company_Logo.png',
               });
             }
           });
@@ -87,7 +88,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <img
-              src="/company-logo.jpg"
+              src={logo}
               alt="Khelpreneurs"
               className="h-8 mb-4"
             />
