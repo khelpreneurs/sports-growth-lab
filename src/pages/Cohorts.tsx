@@ -184,7 +184,7 @@ const Cohorts = () => {
                       {[
                         {
                           label: "Structure",
-                          value: "8 weeks live + 8-week paid internship",
+                          value: "8 weeks live + paid internship (2 months guaranteed + 2 months performance-based extension)",
                         },
                         {
                           label: "Format",
