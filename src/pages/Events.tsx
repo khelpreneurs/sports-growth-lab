@@ -225,7 +225,7 @@ const Events = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={eventsHero}
@@ -247,7 +247,7 @@ const Events = () => {
       </section>
 
       {/* Featured Event */}
-      <section className="py-16 md:py-16">
+      <section className="py-16 md:pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {/* <div className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-bold rounded-full mb-8">
@@ -363,7 +363,7 @@ const Events = () => {
         </div>
       </section>
       {/* Past Panel Speakers */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
           <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
             Past Panel Speakers at Khelpreneurs
@@ -417,7 +417,7 @@ const Events = () => {
         </div>
       </section>
       {/* Photos & Videos Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
             Hyderabad Event
@@ -451,7 +451,7 @@ const Events = () => {
       </section>
 
       {/* Event Types */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-12 text-center">What We Organize</h2>
@@ -495,7 +495,7 @@ const Events = () => {
       </section>
 
       {/* Past Events Teaser */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="mb-6">More Events Coming Soon</h2>

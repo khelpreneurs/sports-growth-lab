@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Users, Award, Briefcase } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Users,
+  Award,
+  Briefcase,
+  Linkedin,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import cohortsSponsorship from "@/assets/sagar-english-horizontal.mp4";
-import poster from "@/assets/poster.png";
+import mentorImage from "@/assets/mentor-sagar.jpeg";
 import {
   Accordion,
   AccordionContent,
@@ -128,27 +134,28 @@ const Cohorts = () => {
   return (
     <div className="min-h-screen">
       <Header />
-
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Cohort Programs</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="mb-3 text-3xl md:text-6xl font-bold">
+              Cohort Programs
+            </h1>
+            <p className="text-base md:text-xl text-muted-foreground">
               Intensive, industry-led training with placement support
             </p>
           </div>
         </div>
       </section>
-
-      {/* Current Cohort - Featured */}
-      <section className="py-16 md:pb-24">
+      {/* Current Cohort */}
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 md:mb-10">
               <Button
                 asChild
-                className="inline-flex items-center justify-center h-[35px] px-4 py-2 bg-[#FF9A42] text-white text-xs font-bold rounded-full mb-4 uppercase">
+                className="inline-flex items-center justify-center h-[32px] md:h-[35px] px-4 py-2 bg-[#FF9A42] text-white text-[10px] md:text-xs font-bold rounded-full mb-3 uppercase">
                 <a
                   href="https://payments.cashfree.com/forms/khelpreneurscohort1"
                   target="_blank"
@@ -156,16 +163,19 @@ const Cohorts = () => {
                   Now Enrolling
                 </a>
               </Button>
-              <h2 className="mb-4">The Art & Science of Sports Sponsorship</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+
+              <h2 className="mb-3 text-2xl md:text-5xl font-bold">
+                The Art & Science of Sports Sponsorship
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
                 Master pitching, negotiating, and executing sponsorship deals
                 with hands-on training and a paid internship
               </p>
             </div>
 
             {/* Video Section */}
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="w-full h-[420px] rounded-xl shadow-xl border border-primary/10 overflow-hidden">
+            <div className="max-w-3xl mx-auto mb-10 md:mb-12">
+              <div className="w-full aspect-video rounded-xl shadow-xl border border-primary/10 overflow-hidden">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/1zg1ObSrsQ8"
@@ -175,11 +185,15 @@ const Cohorts = () => {
               </div>
             </div>
 
+            {/* Quick Facts & Highlights */}
             <Card className="shadow-strong border-primary/20">
-              <CardContent className="p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <CardContent className="p-6 md:p-10">
+                <div className="grid md:grid-cols-2 gap-8 mb-8 text-sm md:text-base">
+                  {/* Quick Facts */}
                   <div>
-                    <h3 className="font-bold mb-4 text-lg">Quick Facts</h3>
+                    <h3 className="font-bold mb-4 text-base md:text-lg">
+                      Quick Facts
+                    </h3>
                     <div className="space-y-3">
                       {[
                         {
@@ -201,7 +215,9 @@ const Cohorts = () => {
                           value: "₹10,000/month during internship",
                         },
                       ].map((item) => (
-                        <div key={item.label} className="flex justify-between">
+                        <div
+                          key={item.label}
+                          className="flex justify-between gap-2">
                           <span className="text-muted-foreground">
                             {item.label}:
                           </span>
@@ -213,8 +229,11 @@ const Cohorts = () => {
                     </div>
                   </div>
 
+                  {/* Highlights */}
                   <div>
-                    <h3 className="font-bold mb-4 text-lg">Key Highlights</h3>
+                    <h3 className="font-bold mb-4 text-base md:text-lg">
+                      Key Highlights
+                    </h3>
                     <ul className="space-y-3">
                       {[
                         "Live mentorship from industry practitioners",
@@ -223,9 +242,11 @@ const Cohorts = () => {
                         "Masterclasses with brand & league executives",
                         "PPO pathways & career support",
                       ].map((item, index) => (
-                        <li key={index} className="flex items-start gap-2">
+                        <li
+                          key={index}
+                          className="flex items-start gap-2 text-muted-foreground text-sm md:text-base">
                           <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></div>
-                          <span className="text-muted-foreground">{item}</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
@@ -235,7 +256,7 @@ const Cohorts = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full md:w-auto bg-accent hover:bg-accent-hover shadow-accent text-lg px-8">
+                  className="w-full md:w-auto bg-accent hover:bg-accent-hover shadow-accent text-base md:text-lg px-6 md:px-8">
                   <a
                     href="https://payments.cashfree.com/forms/khelpreneurscohort1"
                     target="_blank"
@@ -248,24 +269,28 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-
-      <section className="py-20 bg-secondary/50">
+      {/* ================== ABOUT THE PROGRAM ================== */}
+      <section className="py-12 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Header */}
-          <div className="text-center mb-14">
-            <h2 className="text-5xl font-semibold">About the Program</h2>
-            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl md:text-5xl font-bold">
+              About the Program
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm md:text-base">
               A complete, industry-focused learning experience covering
               real-world sponsorships across brands, athletes, leagues, OTT, and
               venues.
             </p>
           </div>
 
-          {/* =================== WHAT YOU'LL LEARN =================== */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6">What You’ll Learn</h3>
+          {/* What You’ll Learn */}
+          <div className="mb-14 md:mb-16">
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+              What You’ll Learn
+            </h3>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {[
                 "Sponsorship Landscape: Understand trends across digital, OTT, and grassroots sports.",
                 "Brand Strategy: How to set objectives, define KPIs, and align sports properties with brand goals.",
@@ -280,20 +305,20 @@ const Cohorts = () => {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-gray-50 border rounded-2xl shadow-sm hover:shadow-md transition">
-                  <p className="text-gray-800">{item}</p>
+                  className="p-4 md:p-6 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
+                  <p className="text-gray-800 leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* =================== STRUCTURE & SCHEDULE =================== */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6">
+          {/* Structure & Schedule */}
+          <div className="mb-14 md:mb-16">
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
               Structure & Schedule (16 Modules Across 16 Weeks)
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
               {[
                 "Sponsorship Landscape: Understand trends across digital, OTT, and grassroots sports.",
                 "Brand Strategy: How to set objectives, define KPIs, and align sports properties with brand goals.",
@@ -314,17 +339,16 @@ const Cohorts = () => {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-5 bg-blue-50 border rounded-xl shadow-sm">
-                  <p className="text-gray-800">{item}</p>
+                  className="p-4 md:p-5 bg-blue-50 border rounded-xl shadow-sm text-sm md:text-base">
+                  <p className="text-gray-800 leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* =================== OUTCOMES =================== */}
+          {/* Outcomes */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Outcomes</h3>
-
+            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">Outcomes</h3>
             <ul className="space-y-4">
               {[
                 "A portfolio of real sponsorship proposals and campaign decks.",
@@ -344,54 +368,47 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
+      {/* ================== COURSE CONTENT ================== */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="mb-8 md:mb-12 text-center text-2xl md:text-5xl font-bold">
+            Course Content
+          </h2>
 
-      {/* Course Content */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12 text-center">Course Content</h2>
+          <Accordion
+            type="single"
+            collapsible
+            className="space-y-3 md:space-y-4">
+            {courseContent.map((item, index) => (
+              <AccordionItem
+                key={index}
+                value={`chapter-${index}`}
+                className="border rounded-2xl overflow-hidden shadow-sm">
+                <AccordionTrigger className="w-full text-left px-4 md:px-6 py-3 md:py-4 bg-gray-100 text-base md:text-lg font-medium">
+                  {item.chapter}
+                </AccordionTrigger>
 
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {courseContent.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`chapter-${index}`}
-                  className="border rounded-2xl overflow-hidden shadow-sm">
-                  {/* HEADER */}
-                  <AccordionTrigger
-                    className="
-                w-full text-left px-6 py-4 
-                bg-gray-100 hover:no-underline
-                text-lg font-medium flex justify-between items-center
-              ">
-                    {item.chapter}
-                  </AccordionTrigger>
-
-                  {/* CONTENT */}
-                  <AccordionContent className="bg-white">
-                    <ul className="divide-y">
-                      {item.lessons.map((lesson, i) => (
-                        <li
-                          key={i}
-                          className="px-6 py-4 text-gray-700 hover:bg-gray-50">
-                          {lesson}
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+                <AccordionContent className="bg-white">
+                  <ul className="divide-y">
+                    {item.lessons.map((lesson, i) => (
+                      <li
+                        key={i}
+                        className="px-4 md:px-6 py-3 md:py-4 text-gray-700 text-sm md:text-base hover:bg-gray-50">
+                        {lesson}
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
-
       {/* Upcoming Programs */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-12 text-center">Upcoming Programs</h2>
-
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="shadow-medium hover:shadow-strong transition-smooth">
                 <CardContent className="p-8">
@@ -409,7 +426,6 @@ const Cohorts = () => {
                   </Button>
                 </CardContent>
               </Card>
-
               <Card className="shadow-medium hover:shadow-strong transition-smooth">
                 <CardContent className="p-8">
                   <div className="inline-block px-4 py-1 bg-muted text-muted-foreground text-sm font-semibold rounded-full mb-4">
@@ -432,7 +448,6 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-
       {/* Why Khelpreneurs Cohorts */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -484,7 +499,6 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-
       {/* FAQ Teaser */}
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
@@ -502,7 +516,6 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
@@ -526,7 +539,6 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
