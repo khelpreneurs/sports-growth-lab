@@ -10,7 +10,6 @@ import SportsSponsorship from "./pages/SportsSponsorship";
 import Events from "./pages/Events";
 import Careers from "./pages/Careers";
 import Mentors from "./pages/Mentors";
-import Testimonials from "./pages/Testimonials";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -31,7 +30,6 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/mentors" element={<Mentors />} />
-          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
