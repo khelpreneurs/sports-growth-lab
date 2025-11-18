@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,15 +24,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+    // Optimistically show success and clear form immediately
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for reaching out. We'll get back to you within 24-48 hours.",
+    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
+
+    // Send request in background without blocking UI
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbz9__xRtpzxEnVAu8C5eFw7YF5t3u1vMWxRjA7EiWJIXLHFX37pqEvP4TsFEeITLRWm/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    } catch (error) {
+      // Silently handle errors since user already sees success message
+      console.log('Background submission failed:', error);
+    }
   };
 
   return (
@@ -100,6 +114,14 @@ const Contact = () => {
                         className="w-12 h-12 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-fast"
                       >
                         <Instagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://wa.me/919876543210"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-fast"
+                      >
+                        <FaWhatsapp className="w-5 h-5" />
                       </a>
                     </div>
                   </div>

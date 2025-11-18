@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Linkedin, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/Company_Logo.png";
@@ -111,6 +112,14 @@ const Footer = () => {
                 className="p-2 bg-background hover:bg-primary hover:text-primary-foreground rounded-lg transition-fast"
               >
                 <Instagram size={20} />
+              </a>
+              <a
+                href="https://wa.me/919942821584"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background hover:bg-primary hover:text-primary-foreground rounded-lg transition-fast"
+              >
+                <FaWhatsapp size={20} />
               </a>
             </div>
           </div>
