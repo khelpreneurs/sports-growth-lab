@@ -17,7 +17,8 @@ import rakeshImage from "@/assets/mentor-rakesh.png";
 import vikramImage from "@/assets/mentor-vikram.png";
 import meddaImage from "@/assets/mentor-medda.png";
 import vashneyImage from "@/assets/mentor-vashney.png";
-import ratnakarImage from "@/assets/mentor-ratnakar.png"
+import ratnakarImage from "@/assets/mentor-ratnakar.png";
+import logo from "@/assets/Company_Logo.png";
 
 const Home = () => {
   return (
@@ -39,7 +40,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <img
-                src="/company-logo.jpg"
+                src={logo}
                 alt="Company Logo"
                 className="h-16 md:h-24 mx-auto mb-6"
               />
@@ -56,15 +57,7 @@ const Home = () => {
                 size="lg"
                 className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
               >
-                <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">Apply Now</a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 border-2"
-              >
-                <Link to="/cohorts">Explore Programs</Link>
+                <Link to="/cohorts">Apply Now</Link>
               </Button>
             </div>
           </div>
