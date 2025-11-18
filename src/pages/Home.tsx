@@ -151,15 +151,10 @@ const Home = () => {
                     </span>
                   </div>
                 </div>
-                <Button
-                  asChild
-                  className="w-full bg-accent hover:bg-accent-hover">
-                  <a
-                    href="https://payments.cashfree.com/forms/khelpreneurscohort1"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                <Button asChild className="w-full bg-accent hover:bg-accent-hover">
+                  <Link to="/cohorts">
                     Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -186,7 +181,7 @@ const Home = () => {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/cohorts">
+                  <Link to="/contact">
                     Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>
@@ -217,7 +212,7 @@ const Home = () => {
                   </div>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/cohorts">
+                  <Link to="/contact">
                     Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>

@@ -76,7 +76,6 @@ const Footer = () => {
     ],
     Company: [
       { to: "/about", label: "About Us" },
-      { to: "/testimonials", label: "Testimonials" },
       { to: "/faqs", label: "FAQs" },
       { to: "/contact", label: "Contact" },
     ],
