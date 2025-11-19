@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StickyQuickNav from "./components/StickyQuickNav";
 import BackToTop from "./components/BackToTop";
-import KeyboardShortcutsHint from "./components/KeyboardShortcutsHint";
 import PageTransition from "./components/PageTransition";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -43,7 +42,6 @@ const App = () => (
         </PageTransition>
         <StickyQuickNav />
         <BackToTop />
-        <KeyboardShortcutsHint />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
