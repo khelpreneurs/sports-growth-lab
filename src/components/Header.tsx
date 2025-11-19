@@ -1,14 +1,56 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search, Keyboard } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
+import SearchDialog from "./SearchDialog";
+import KeyboardShortcutsDialog from "./KeyboardShortcutsDialog";
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import logo from "@/assets/Company_Logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   const location = useLocation();
+
+  // Keyboard shortcuts
+  useKeyboardShortcuts([
+    {
+      key: 'k',
+      ctrl: true,
+      action: () => setIsSearchOpen(true),
+      description: 'Open quick navigation',
+    },
+    {
+      key: '/',
+      ctrl: true,
+      action: () => setIsShortcutsOpen(true),
+      description: 'Show keyboard shortcuts',
+    },
+    {
+      key: 'd',
+      ctrl: true,
+      action: () => {
+        const theme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+      },
+      description: 'Toggle dark mode',
+    },
+    {
+      key: 'm',
+      ctrl: true,
+      action: () => setIsMobileMenuOpen((prev) => !prev),
+      description: 'Toggle mobile menu',
+    },
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,11 +110,40 @@ const Header = () => {
                 </Link>
               );
             })}
-            <DarkModeToggle />
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsSearchOpen(true)}
+                className="w-9 h-9 rounded-full hover:bg-secondary/80"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsShortcutsOpen(true)}
+                className="w-9 h-9 rounded-full hover:bg-secondary/80"
+                aria-label="Keyboard shortcuts"
+              >
+                <Keyboard className="w-4 h-4" />
+              </Button>
+              <DarkModeToggle />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsSearchOpen(true)}
+              className="w-9 h-9 rounded-full hover:bg-secondary/80"
+              aria-label="Search"
+            >
+              <Search className="w-4 h-4" />
+            </Button>
             <DarkModeToggle />
             <button
               className="p-3 -mr-3 text-foreground hover:text-primary transition-fast"
@@ -111,6 +182,12 @@ const Header = () => {
           </nav>
         )}
       </div>
+
+      {/* Search Dialog */}
+      <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
+      
+      {/* Keyboard Shortcuts Dialog */}
+      <KeyboardShortcutsDialog open={isShortcutsOpen} onOpenChange={setIsShortcutsOpen} />
     </header>
   );
 };
