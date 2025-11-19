@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import ThemeSwitcher from "./ThemeSwitcher";
+import DarkModeToggle from "./DarkModeToggle";
 import logo from "@/assets/Company_Logo.png";
 
 const Header = () => {
@@ -64,7 +64,7 @@ const Header = () => {
               </Link>
             ))}
             <div className="flex items-center gap-3">
-              <ThemeSwitcher />
+              <DarkModeToggle />
               <Button
                 asChild
                 size="sm"
@@ -79,7 +79,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
-            <ThemeSwitcher />
+            <DarkModeToggle />
             <button
               className="p-3 -mr-3 text-foreground hover:text-primary transition-fast"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

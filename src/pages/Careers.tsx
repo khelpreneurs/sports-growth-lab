@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Award, Users, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 // Import partner logos
 import logo17 from "@/assets/Career Opportunities/17-removebg-preview.png";
@@ -38,6 +40,7 @@ const Careers = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ScrollProgressBar />
 
       {/* Hero */}
       <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -55,7 +58,9 @@ const Careers = () => {
       <section className="section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-8 text-center">Our Impact</h2>
+            <AnimatedSection animation="fade-up">
+              <h2 className="mb-8 text-center">Our Impact</h2>
+            </AnimatedSection>
 
             <div className="grid md:grid-cols-4 gap-8 mb-16">
               {[
@@ -84,6 +89,7 @@ const Careers = () => {
                   description: "Based on performance",
                 },
               ].map((stat, index) => (
+                <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
                 <Card
                   key={index}
                   className="shadow-medium text-center border-none">
@@ -100,6 +106,7 @@ const Careers = () => {
                     </div>
                   </CardContent>
                 </Card>
+              </AnimatedSection>
               ))}
             </div>
           </div>

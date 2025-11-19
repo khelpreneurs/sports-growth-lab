@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Users, BookOpen, Award, Briefcase, ArrowRight, Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import StatCard from "@/components/StatCard";
@@ -155,6 +156,7 @@ const SportsSponsorship = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ScrollProgressBar />
 
       {/* Anchor Navigation */}
       <nav className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm border-b border-border hidden md:block">
