@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -114,11 +114,15 @@ const FAQs = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Frequently Asked Questions</h1>
-            <p className="text-xl text-muted-foreground">
+      <section className="relative pt-28 pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
+              <HelpCircle className="w-8 h-8" />
+            </div>
+            <h1 className="mb-4 leading-[1.1]">Frequently Asked Questions</h1>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Everything you need to know about Khelpreneurs programs
             </p>
           </div>
@@ -126,23 +130,23 @@ const FAQs = () => {
       </section>
 
       {/* FAQs by Category */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-16">
+      <section className="section-spacing">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto space-y-12 md:space-y-16">
             {faqCategories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h2 className="mb-8">{category.category}</h2>
-                <Accordion type="single" collapsible className="space-y-4">
+                <h2 className="mb-6 md:mb-8 text-primary">{category.category}</h2>
+                <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
                   {category.faqs.map((faq, faqIndex) => (
                     <AccordionItem
                       key={faqIndex}
                       value={`${categoryIndex}-${faqIndex}`}
-                      className="border rounded-xl px-6 shadow-soft"
+                      className="card-modern border-border/50"
                     >
-                      <AccordionTrigger className="hover:no-underline font-semibold text-left">
+                      <AccordionTrigger className="hover:no-underline font-semibold text-left px-6 py-4 text-base">
                         {faq.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pt-2 pb-2">
+                      <AccordionContent className="text-muted-foreground px-6 pb-4 pt-0 text-sm leading-relaxed">
                         {faq.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -155,22 +159,22 @@ const FAQs = () => {
       </section>
 
       {/* Still Have Questions */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="mb-6">Still Have Questions?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Can't find the answer you're looking for? Reach out to our team and we'll get back to you promptly.
+      <section className="section-spacing bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="mb-4">Still Have Questions?</h2>
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
+              Can't find the answer you're looking for? Reach out to our team.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary-dark">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button asChild className="btn-primary h-11 md:h-12">
                 <Link to="/contact">
-                  Contact Us <ArrowRight className="ml-2 w-4 h-4" />
+                  Contact Us <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild variant="outline" className="h-11 md:h-12 rounded-xl border-2">
                 <a href="mailto:events@khelpreneurs.com">
-                  Email: events@khelpreneurs.com
+                  Email Us
                 </a>
               </Button>
             </div>
@@ -179,20 +183,20 @@ const FAQs = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="mb-6">Ready to Apply?</h2>
-            <p className="text-xl text-muted-foreground mb-8">
+      <section className="section-spacing">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="mb-4">Ready to Apply?</h2>
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
               Join the Sports Sponsorship cohort and kickstart your sports career
             </p>
             <Button
               asChild
-              size="lg"
-              className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8 py-6"
+              className="btn-primary h-12 md:h-14 text-base md:text-lg"
             >
-              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1"target="_blank"rel="noopener noreferrer">
-                 Apply to Sports Sponsorship Cohort<ArrowRight className="ml-2 w-5 h-5" /></a>
+              <a href="https://payments.cashfree.com/forms/khelpreneurscohort1" target="_blank" rel="noopener noreferrer">
+                Apply to Sports Sponsorship Cohort <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
           </div>
         </div>
