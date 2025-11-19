@@ -24,7 +24,6 @@ const Header = () => {
     { to: "/cohorts", label: "Cohorts" },
     { to: "/events", label: "Events" },
     { to: "/careers", label: "Careers" },
-    { to: "/mentors", label: "Mentors" },
     { to: "/faqs", label: "FAQs" },
     { to: "/contact", label: "Contact" },
   ];
