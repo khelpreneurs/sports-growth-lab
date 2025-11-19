@@ -34,7 +34,7 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={heroImage}
@@ -46,25 +46,14 @@ const Home = () => {
 
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <img
-                src={logo}
-                alt="Company Logo"
-                className="h-16 md:h-24 mx-auto mb-6"
-              />
-            </div>
-            <h1 className="mb-6 leading-tight">
+            <h1 className="mb-4 leading-tight">
               Launch Your Sports Industry Career
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Industry-led cohorts with real internships & job pathways in
-              sports
+            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+              Industry-led cohorts with real internships & job pathways in sports
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button asChild size="lg" className="text-lg px-8 bg-accent hover:bg-accent-hover shadow-accent">
                 <Link to="/cohorts">Apply Now</Link>
               </Button>
             </div>
@@ -74,8 +63,8 @@ const Home = () => {
 
       {/* Value Proposition */}
       <section className="section-spacing bg-secondary/30">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {[
               {
                 icon: <BookOpen className="w-8 h-8" />,

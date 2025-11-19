@@ -12,11 +12,11 @@ const Mentors = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-secondary/50 via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Mentors & Coaches</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="mb-3">Mentors & Coaches</h1>
+            <p className="text-lg text-muted-foreground">
               Learn from industry leaders with real-world experience
             </p>
           </div>
@@ -24,7 +24,7 @@ const Mentors = () => {
       </section>
 
       {/* Featured Mentor */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24">
+      <section className="section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-full mb-8">
