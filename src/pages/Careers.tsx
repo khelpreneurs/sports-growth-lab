@@ -40,22 +40,22 @@ const Careers = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-secondary/50 via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Career Outcomes</h1>
-            <p className="text-xl text-muted-foreground">
-              Your path into the sports industry starts
+            <h1 className="mb-3">Career Outcomes</h1>
+            <p className="text-lg text-muted-foreground">
+              Your path into the sports industry starts here
             </p>
           </div>
         </div>
       </section>
 
       {/* Placement Stats */}
-      <section className="py-16 md:py-24">
+      <section className="section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="mb-12 text-center">Our Impact</h2>
+            <h2 className="mb-8 text-center">Our Impact</h2>
 
             <div className="grid md:grid-cols-4 gap-8 mb-16">
               {[

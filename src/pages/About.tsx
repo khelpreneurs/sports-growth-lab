@@ -12,11 +12,11 @@ const About = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">About Khelpreneurs</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="mb-3">About Khelpreneurs</h1>
+            <p className="text-lg text-muted-foreground">
               Khelpreneurs designs outcome‑driven, cohort‑based programs that turn passion for sport into real careers.
               In collaboration with KIBI Sports and the Khelaxy community platform, learners build practical skills through
               live sessions, hands‑on projects, and a paid internship—then convert that into portfolios, PPOs, and freelance
@@ -27,11 +27,11 @@ const About = () => {
       </section>
 
       {/* Mission & Story */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="section-spacing bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="mb-6 text-center">Our Mission</h2>
-            <p className="text-lg text-muted-foreground text-center mb-12">
+            <h2 className="mb-3 text-center">Our Mission</h2>
+            <p className="text-muted-foreground text-center mb-8">
               We bridge the gap between passion and career with hands-on training, mentorship, and a powerful network
             </p>
 
