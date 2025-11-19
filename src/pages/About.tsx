@@ -2,13 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Target, Users, TrendingUp, Heart } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {
+  const { toast } = useToast();
+
+  const handleExploreClick = () => {
+    toast({
+      title: "Exploring Programs",
+      description: "Check out our cohort offerings and apply today!",
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -149,20 +160,30 @@ const About = () => {
               Building pathways from learning to careers in the sports industry
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-              { value: "50+", label: "Cohort Seats" },
-              { value: "16", label: "Week Program" },
-              { value: "₹10K", label: "Monthly Stipend" },
-              ].map((stat, index) => (
-              <div key={index}>
-               <div
-             className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md"
-            >
-          {stat.value}
-          </div>
-          <div className="text-muted-foreground">{stat.label}</div>
-          </div>
-          ))}
+              <div>
+                <AnimatedCounter
+                  end={50}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
+                />
+                <div className="text-muted-foreground">Cohort Seats</div>
+              </div>
+              <div>
+                <AnimatedCounter
+                  end={16}
+                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
+                />
+                <div className="text-muted-foreground">Week Program</div>
+              </div>
+              <div>
+                <AnimatedCounter
+                  end={10}
+                  prefix="₹"
+                  suffix="K"
+                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
+                />
+                <div className="text-muted-foreground">Monthly Stipend</div>
+              </div>
           </div>
           </div>
         </div>
@@ -181,6 +202,7 @@ const About = () => {
               asChild
               size="lg"
               className="bg-accent hover:bg-accent-hover text-lg px-8 py-6"
+              onClick={handleExploreClick}
             >
               <Link to="/cohorts">Explore Programs</Link>
             </Button>

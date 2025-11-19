@@ -10,9 +10,11 @@ import {
   TrendingUp,
   Linkedin,
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
@@ -32,6 +34,21 @@ import logo from "@/assets/Company_Logo.png";
 
 const Home = () => {
   const parallaxOffset = useParallax(0.3);
+  const { toast } = useToast();
+
+  const handleApplyClick = () => {
+    toast({
+      title: "Redirecting to Application",
+      description: "You'll be directed to the cohort application page.",
+    });
+  };
+
+  const handleWaitlistClick = () => {
+    toast({
+      title: "Joining Waitlist",
+      description: "We'll notify you when new cohorts are announced!",
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -59,9 +76,19 @@ const Home = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
               Industry-led cohorts with real internships & job pathways in sports
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" className="text-lg px-8 bg-accent hover:bg-accent-hover shadow-accent">
-                <Link to="/cohorts">Apply Now</Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8"
+                onClick={handleApplyClick}
+              >
+                <Link to="/cohorts">
+                  Apply Now <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link to="/about">Learn More</Link>
               </Button>
             </div>
           </div>
@@ -174,7 +201,12 @@ const Home = () => {
                     <span className="font-semibold">Live Online</span>
                   </div>
                 </div>
-                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2">
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="w-full h-11 rounded-xl border-2"
+                  onClick={handleWaitlistClick}
+                >
                   <Link to="/contact">
                     Join Waitlist <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -204,7 +236,7 @@ const Home = () => {
                     <span className="font-semibold">Live Online</span>
                   </div>
                 </div>
-                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2">
+                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2" onClick={handleWaitlistClick}>
                   <Link to="/contact">
                     Join Waitlist <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -229,29 +261,35 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              { icon: <Award />, value: "50+", label: "Cohort Seats" },
-              {
-                icon: <Briefcase />,
-                value: "₹10,000",
-                label: "Monthly Internship Stipend",
-              },
-              {
-                icon: <TrendingUp />,
-                value: "PPO",
-                label: "Pathways Available",
-              },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
-                  <div className="text-primary-foreground w-8 h-8">
-                    {stat.icon}
-                  </div>
-                </div>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-primary-foreground/80">{stat.label}</div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
+                <Award className="text-primary-foreground w-8 h-8" />
               </div>
-            ))}
+              <AnimatedCounter
+                end={50}
+                suffix="+"
+                className="text-4xl font-bold mb-2 block"
+              />
+              <div className="text-primary-foreground/80">Cohort Seats</div>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
+                <Briefcase className="text-primary-foreground w-8 h-8" />
+              </div>
+              <AnimatedCounter
+                end={10000}
+                prefix="₹"
+                className="text-4xl font-bold mb-2 block"
+              />
+              <div className="text-primary-foreground/80">Monthly Internship Stipend</div>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
+                <TrendingUp className="text-primary-foreground w-8 h-8" />
+              </div>
+              <div className="text-4xl font-bold mb-2">PPO</div>
+              <div className="text-primary-foreground/80">Pathways Available</div>
+            </div>
           </div>
         </div>
       </section>
@@ -986,7 +1024,14 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent">
+              className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
+              onClick={() => {
+                toast({
+                  title: "Opening Application Form",
+                  description: "You'll be redirected to the secure payment portal.",
+                });
+              }}
+            >
               <a
                 href="https://payments.cashfree.com/forms/khelpreneurscohort1"
                 target="_blank"
