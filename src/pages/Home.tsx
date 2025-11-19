@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import adityaImage from "@/assets/mentor-adity.png";
@@ -82,15 +83,17 @@ const Home = () => {
                 description: "Join a thriving ecosystem of sports professionals",
               },
             ].map((item, index) => (
-              <Card key={index} className="card-modern border-none text-center">
-                <CardContent className="card-padding">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-5">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                </CardContent>
-              </Card>
+              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+                <Card className="card-modern border-none text-center h-full">
+                  <CardContent className="card-padding">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-5">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -99,50 +102,55 @@ const Home = () => {
       {/* Featured Cohorts */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="mb-4">Our Cohort Programs</h2>
-            <p className="text-lg text-muted-foreground">
-              Intensive, industry-led programs designed to launch your sports
-              career
-            </p>
-          </div>
+          <AnimatedSection animation="fade-up">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="mb-4">Our Cohort Programs</h2>
+              <p className="text-lg text-muted-foreground">
+                Intensive, industry-led programs designed to launch your sports
+                career
+              </p>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Sports Sponsorship - Current */}
-            <Card className="card-interactive border-primary/20">
-              <CardContent className="card-padding">
-                <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full mb-4">
-                  NOW OPEN
-                </div>
-                <h3 className="text-xl font-bold mb-3">Sports Sponsorship</h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                  Master pitching, negotiating, and executing sponsorship deals
-                </p>
-                <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Duration:</span>
-                    <span className="font-semibold">16 weeks</span>
+            <AnimatedSection animation="fade-up" delay={100}>
+              <Card className="card-interactive border-primary/20 h-full">
+                <CardContent className="card-padding">
+                  <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full mb-4">
+                    NOW OPEN
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Format:</span>
-                    <span className="font-semibold">Live + Internship</span>
+                  <h3 className="text-xl font-bold mb-3">Sports Sponsorship</h3>
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    Master pitching, negotiating, and executing sponsorship deals
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Duration:</span>
+                      <span className="font-semibold">16 weeks</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Format:</span>
+                      <span className="font-semibold">Live + Internship</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Mentor:</span>
+                      <span className="font-semibold text-right">Sagar Rai</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Mentor:</span>
-                    <span className="font-semibold text-right">Sagar Rai</span>
-                  </div>
-                </div>
-                <Button asChild className="w-full btn-primary h-11">
-                  <Link to="/cohorts">
-                    Apply Now <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button asChild className="w-full btn-primary h-11">
+                    <Link to="/cohorts">
+                      Apply Now <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
 
             {/* Sports Journalism - Coming Soon */}
-            <Card className="card-modern opacity-75">
-              <CardContent className="card-padding">
+            <AnimatedSection animation="fade-up" delay={200}>
+              <Card className="card-modern opacity-75 h-full">
+                <CardContent className="card-padding">
                 <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
                   COMING SOON
                 </div>
@@ -167,9 +175,11 @@ const Home = () => {
                 </Button>
               </CardContent>
             </Card>
+          </AnimatedSection>
 
             {/* Sports Entrepreneurship - Coming Soon */}
-            <Card className="card-modern opacity-75">
+            <AnimatedSection animation="fade-up" delay={300}>
+              <Card className="card-modern opacity-75 h-full">
               <CardContent className="card-padding">
                 <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
                   COMING SOON
@@ -195,6 +205,7 @@ const Home = () => {
                 </Button>
               </CardContent>
             </Card>
+          </AnimatedSection>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeSwitcher from "./ThemeSwitcher";
 import logo from "@/assets/Company_Logo.png";
 
 const Header = () => {
@@ -62,25 +63,31 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button
-              asChild
-              size="sm"
-              className="btn-primary h-10 text-sm px-5"
-            >
-              <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
-                Apply Now
-              </a>
-            </Button>
+            <div className="flex items-center gap-3">
+              <ThemeSwitcher />
+              <Button
+                asChild
+                size="sm"
+                className="btn-primary h-10 text-sm px-5"
+              >
+                <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
+                  Apply Now
+                </a>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-3 -mr-3 text-foreground hover:text-primary transition-fast"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeSwitcher />
+            <button
+              className="p-3 -mr-3 text-foreground hover:text-primary transition-fast"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
