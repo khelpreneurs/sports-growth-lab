@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { useParallax } from "@/hooks/use-parallax";
 
 // Import partner logos
 import logo17 from "@/assets/Career Opportunities/17-removebg-preview.png";

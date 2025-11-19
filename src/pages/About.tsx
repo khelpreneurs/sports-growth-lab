@@ -5,6 +5,7 @@ import { Target, Users, TrendingUp, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useParallax } from "@/hooks/use-parallax";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {

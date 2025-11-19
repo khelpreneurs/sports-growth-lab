@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { useParallax } from "@/hooks/use-parallax";
 import eventsHero from "@/assets/events-hero.jpg";
 import adityaImage from "@/assets/mentor-adity.png";
 import anjumImage from "@/assets/mentor-anjum.png";
@@ -229,7 +230,10 @@ const Events = () => {
 
       {/* Hero */}
       <section className="relative pt-24 pb-8 md:pt-32 md:pb-12 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{ transform: `translateY(${useParallax(0.3)}px)` }}
+        >
           <img
             src={eventsHero}
             alt="Khelpreneurs Events & Workshops"

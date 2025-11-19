@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { useParallax } from "@/hooks/use-parallax";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import {
   Accordion,

@@ -13,6 +13,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useParallax } from "@/hooks/use-parallax";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import adityaImage from "@/assets/mentor-adity.png";
@@ -30,13 +31,18 @@ import ratnakarImage from "@/assets/mentor-ratnakar.png";
 import logo from "@/assets/Company_Logo.png";
 
 const Home = () => {
+  const parallaxOffset = useParallax(0.3);
+
   return (
     <div className="min-h-screen">
       <Header />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{ transform: `translateY(${parallaxOffset}px)` }}
+        >
           <img
             src={heroImage}
             alt="Khelpreneurs - Launch Your Sports Industry Career"

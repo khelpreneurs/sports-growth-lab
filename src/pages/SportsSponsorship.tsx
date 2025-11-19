@@ -7,6 +7,7 @@ import { CheckCircle2, Users, BookOpen, Award, Briefcase, ArrowRight, Download }
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
+import { useParallax } from "@/hooks/use-parallax";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import StatCard from "@/components/StatCard";
@@ -184,7 +185,10 @@ const SportsSponsorship = () => {
 
       {/* Hero */}
       <section id="hero" className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{ transform: `translateY(${useParallax(0.3)}px)` }}
+        >
           <img
             src={sponsorshipHero}
             alt="The Art & Science of Sports Sponsorship"
