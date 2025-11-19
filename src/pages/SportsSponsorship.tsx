@@ -181,14 +181,14 @@ const SportsSponsorship = () => {
       </nav>
 
       {/* Hero */}
-      <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section id="hero" className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={sponsorshipHero}
             alt="The Art & Science of Sports Sponsorship"
             className="w-full h-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
         </div>
 
         <div className="container mx-auto px-4">
