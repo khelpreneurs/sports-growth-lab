@@ -41,7 +41,7 @@ const StickyQuickNav = () => {
                   key={index}
                   asChild
                   size="sm"
-                  className="bg-accent hover:bg-accent-hover shadow-accent text-white font-semibold px-4 h-9"
+                  className="bg-accent hover:bg-accent-hover shadow-accent text-accent-foreground font-semibold px-4 h-9"
                 >
                   <Link to={link.href}>
                     <Icon className="w-4 h-4 mr-1.5" />
@@ -58,7 +58,7 @@ const StickyQuickNav = () => {
                 variant="ghost"
                 size="sm"
                 className={`h-9 px-3 ${
-                  isActive ? 'bg-primary/10 text-primary' : 'hover:bg-secondary/80'
+                  isActive ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-secondary/80'
                 }`}
               >
                 <Link to={link.href}>

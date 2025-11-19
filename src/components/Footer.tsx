@@ -166,13 +166,8 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex justify-center items-center text-sm text-muted-foreground">
             <p>© 2025 Khelpreneurs. All rights reserved.</p>
-            <p className="text-center">
-              In partnership with{" "}
-              <span className="font-semibold text-foreground">KIBI Sports</span> and{" "}
-              <span className="font-semibold text-foreground">Khelaxy</span>
-            </p>
           </div>
         </div>
       </div>
