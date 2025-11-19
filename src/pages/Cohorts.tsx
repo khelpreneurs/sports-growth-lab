@@ -134,6 +134,49 @@ const Cohorts = () => {
       ],
     },
   ];
+  const mentors = [
+    {
+      name: "Sagar Rai",
+      role: "Founder & CEO, KIBI Sports",
+      image: mentorImage,
+      highlight: "Leading the Sports Sponsorship Cohort",
+      background:
+        "Sagar has built KIBI Sports into a recognized name in the Indian sports sponsorship ecosystem. With extensive experience across athlete, team, and league partnerships, he brings deep industry knowledge and a large network of relationships",
+      expertise: [
+        "Sports Sponsorship Strategy & Execution",
+        "Brand Partnerships & Activations",
+        "Athlete & Team Representation",
+        "Sports Business Development",
+      ],
+      learn:
+        "In the Sports Sponsorship cohort, Sagar shares practical insights from his work structuring and closing sponsorship deals. Participants gain access to live projects at KIBI Sports and learn the complete lifecycle of sports sponsorships - from pitching to execution",
+      linkedin: "https://www.linkedin.com/in/sagar-rai-1252901a5/",
+    },
+    {
+      name: "Another Mentor",
+      role: "Sports Performance Strategist",
+      image: mentorImage,
+      highlight: "Leading High Performance Cohort",
+      background: "Short description only, no expertise list for this mentor.",
+      linkedin: "https://linkedin.com/",
+    },
+    {
+      name: "Another Mentor",
+      role: "Sports Performance Strategist",
+      image: mentorImage,
+      highlight: "Leading High Performance Cohort",
+      background: "Short description only, no expertise list for this mentor.",
+      linkedin: "https://linkedin.com/",
+    },
+    {
+      name: "Another Mentor",
+      role: "Sports Performance Strategist",
+      image: mentorImage,
+      highlight: "Leading High Performance Cohort",
+      background: "Short description only, no expertise list for this mentor.",
+      linkedin: "https://linkedin.com/",
+    },
+  ];
   return (
     <div className="min-h-screen">
       <Header />
@@ -142,9 +185,7 @@ const Cohorts = () => {
       <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-3">
-              Cohort Programs
-            </h1>
+            <h1 className="mb-3">Cohort Programs</h1>
             <p className="text-lg text-muted-foreground">
               Intensive, industry-led training with placement support
             </p>
@@ -274,7 +315,7 @@ const Cohorts = () => {
         </div>
       </section>
       {/* Featured Mentor */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
+      {/* <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="mb-4">Mentors & Coaches</h2>
@@ -353,6 +394,106 @@ const Cohorts = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section> */}
+      {/* Featured Mentor */}
+      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <div className=" mx-auto text-center">
+            <h2 className="mb-4">Mentors & Coaches</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Our mentors are practitioners with real-world experience in sports
+              business
+            </p>
+
+            {/* Horizontal Scroll Wrapper */}
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar">
+              {mentors.map((mentor, index) => (
+                <Card
+                  key={index}
+                  className="shadow-strong overflow-hidden min-w-[90%] md:min-w-[75%] lg:min-w-[65%] snap-center">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-5 h-full min-h-[850px]">
+                      {/* Image Section (full height) */}
+                      <div className="md:col-span-2 h-full">
+                        <img
+                          src={mentor.image}
+                          alt={mentor.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="md:col-span-3 p-8 md:p-12 text-left flex flex-col justify-between">
+                        <div>
+                          <h2 className="text-3xl font-bold mb-2">
+                            {mentor.name}
+                          </h2>
+                          <p className="text-primary font-bold text-lg mb-2">
+                            {mentor.role}
+                          </p>
+
+                          {mentor.highlight && (
+                            <p className="text-muted-foreground mb-6">
+                              {mentor.highlight}
+                            </p>
+                          )}
+
+                          {mentor.background && (
+                            <div className="mb-6">
+                              <h3 className="font-bold mb-2">Background</h3>
+                              <p className="text-muted-foreground">
+                                {mentor.background}
+                              </p>
+                            </div>
+                          )}
+
+                          {mentor.expertise?.length > 0 && (
+                            <div className="mb-6">
+                              <h3 className="font-bold mb-2">Expertise</h3>
+                              <ul className="space-y-2">
+                                {mentor.expertise.map((skill, i) => (
+                                  <li
+                                    key={i}
+                                    className="flex items-center gap-2 text-muted-foreground text-sm">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                    {skill}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {mentor.learn && (
+                            <div className="mb-6">
+                              <h3 className="font-bold mb-2">
+                                What You'll Learn
+                              </h3>
+                              <p className="text-muted-foreground">
+                                {mentor.learn}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="gap-2 mt-6 md:mt-8">
+                          <a
+                            href={mentor.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -621,7 +762,8 @@ const Cohorts = () => {
             </p>
             <Button asChild size="lg" variant="outline">
               <Link to="/cohorts">
-                Apply to Sports Sponsorship Cohort <ArrowRight className="ml-2 w-4 h-4" />
+                Apply to Sports Sponsorship Cohort{" "}
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>
