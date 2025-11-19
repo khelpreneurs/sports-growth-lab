@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import {
   Accordion,
@@ -134,6 +136,7 @@ const Cohorts = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ScrollProgressBar />
       {/* Hero Section */}
       <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">

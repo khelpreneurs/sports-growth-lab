@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Users, ArrowRight, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import eventsHero from "@/assets/events-hero.jpg";
 import adityaImage from "@/assets/mentor-adity.png";
 import anjumImage from "@/assets/mentor-anjum.png";
@@ -223,6 +225,7 @@ const Events = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ScrollProgressBar />
 
       {/* Hero */}
       <section className="relative pt-24 pb-8 md:pt-32 md:pb-12 overflow-hidden">
@@ -249,11 +252,8 @@ const Events = () => {
       <section className="py-16 md:pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* <div className="inline-block px-4 py-2 bg-accent text-accent-foreground text-sm font-bold rounded-full mb-8">
-              UPCOMING EVENT
-            </div> */}
-
-            <Card className="shadow-strong overflow-hidden">
+            <AnimatedSection animation="fade-up">
+              <Card className="shadow-strong overflow-hidden">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2 bg-gradient-to-br from-primary via-primary-light to-primary-dark p-8 md:p-12 text-primary-foreground flex flex-col justify-center">
@@ -358,20 +358,22 @@ const Events = () => {
                 </div>
               </CardContent>
             </Card>
+          </AnimatedSection>
           </div>
         </div>
       </section>
       {/* Past Panel Speakers */}
       <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
-            Past Panel Speakers at Khelpreneurs
-          </h2>
+          <AnimatedSection animation="fade-up">
+            <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
+              Past Panel Speakers at Khelpreneurs
+            </h2>
+          </AnimatedSection>
           <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
             {mentors.map((mentor, index) => (
-              <Card
-                key={index}
-                className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+              <AnimatedSection key={index} animation="slide-left" delay={index * 100}>
+                <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
                 <CardContent className="p-0">
                   <div>
                     <div className="h-[260px] md:h-full">
@@ -411,6 +413,7 @@ const Events = () => {
                   </div>
                 </CardContent>
               </Card>
+            </AnimatedSection>
             ))}
           </div>
         </div>
@@ -418,9 +421,11 @@ const Events = () => {
       {/* Photos & Videos Section */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
-            Hyderabad Event
-          </h2>
+          <AnimatedSection animation="fade-up">
+            <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
+              Hyderabad Event
+            </h2>
+          </AnimatedSection>
 
           <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
             {mediaGallery.map((item, index) => (

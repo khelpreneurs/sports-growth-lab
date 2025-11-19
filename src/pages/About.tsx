@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Target, Users, TrendingUp, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {
@@ -30,10 +31,12 @@ const About = () => {
       <section className="section-spacing bg-gradient-to-b from-secondary/20 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="mb-3 text-center">Our Mission</h2>
-            <p className="text-muted-foreground text-center mb-8">
-              We bridge the gap between passion and career with hands-on training, mentorship, and a powerful network
-            </p>
+            <AnimatedSection animation="fade-up">
+              <h2 className="mb-3 text-center">Our Mission</h2>
+              <p className="text-muted-foreground text-center mb-8">
+                We bridge the gap between passion and career with hands-on training, mentorship, and a powerful network
+              </p>
+            </AnimatedSection>
 
             <div className="grid md:grid-cols-2 gap-8">
               {[
@@ -58,6 +61,7 @@ const About = () => {
                   description: "Transform your love for sports into a sustainable and rewarding career",
                 },
               ].map((item, index) => (
+                <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
                 <Card key={index} className="shadow-medium border-none">
                   <CardContent className="p-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
@@ -67,6 +71,7 @@ const About = () => {
                     <p className="text-muted-foreground">{item.description}</p>
                   </CardContent>
                 </Card>
+              </AnimatedSection>
               ))}
             </div>
           </div>
