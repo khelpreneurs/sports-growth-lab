@@ -63,18 +63,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center gap-3">
-              <DarkModeToggle />
-              <Button
-                asChild
-                size="sm"
-                className="btn-primary h-10 text-sm px-5"
-              >
-                <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
-              </Button>
-            </div>
+            <DarkModeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -108,17 +97,6 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-            </div>
-            <div className="pt-6 mt-6 border-t border-border">
-              <Button
-                asChild
-                size="lg"
-                className="w-full btn-primary h-12"
-              >
-                <a href="https://community.khelaxy.com" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
-              </Button>
             </div>
           </nav>
         )}
