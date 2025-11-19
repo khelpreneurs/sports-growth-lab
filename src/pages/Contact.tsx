@@ -53,7 +53,7 @@ const Contact = () => {
       <Header />
 
       {/* Hero */}
-      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-secondary/50 via-background to-primary/5">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-3">Get in Touch</h1>

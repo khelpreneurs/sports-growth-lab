@@ -114,15 +114,14 @@ const FAQs = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-12 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
-              <HelpCircle className="w-8 h-8" />
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-3">
+              <HelpCircle className="w-6 h-6" />
             </div>
-            <h1 className="mb-4 leading-[1.1]">Frequently Asked Questions</h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <h1 className="mb-2">Frequently Asked Questions</h1>
+            <p className="text-muted-foreground">
               Everything you need to know about Khelpreneurs programs
             </p>
           </div>

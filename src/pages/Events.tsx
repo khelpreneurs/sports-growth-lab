@@ -225,22 +225,21 @@ const Events = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-16 overflow-hidden">
+      <section className="relative pt-24 pb-8 md:pt-32 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={eventsHero}
             alt="Khelpreneurs Events & Workshops"
             className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
         </div>
 
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Events & Workshops</h1>
-            <p className="text-xl text-muted-foreground">
-              Connect, learn, and grow through our offline meetups, webinars,
-              and networking events
+            <h1 className="mb-2">Events & Workshops</h1>
+            <p className="text-muted-foreground">
+              Connect, learn, and grow through our offline meetups and networking events
             </p>
           </div>
         </div>

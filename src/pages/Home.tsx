@@ -41,7 +41,7 @@ const Home = () => {
             alt="Khelpreneurs - Launch Your Sports Industry Career"
             className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
         </div>
 
         <div className="container mx-auto px-4">
@@ -62,7 +62,7 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="section-spacing bg-secondary/30">
+      <section className="section-spacing bg-gradient-to-b from-secondary/20 to-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {[

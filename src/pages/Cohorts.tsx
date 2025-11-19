@@ -134,22 +134,21 @@ const Cohorts = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      {/* Hero */}
       {/* Hero Section */}
-      <section className="pt-24 pb-12 md:pt-40 md:pb-24 bg-gradient-to-br from-secondary via-background to-primary/5">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-3 text-3xl md:text-6xl font-bold">
+            <h1 className="mb-3">
               Cohort Programs
             </h1>
-            <p className="text-base md:text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Intensive, industry-led training with placement support
             </p>
           </div>
         </div>
       </section>
       {/* Current Cohort */}
-      <section className="py-12 md:py-20">
+      <section className="section-spacing">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-6 md:mb-10">
