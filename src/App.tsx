@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import StickyQuickNav from "./components/StickyQuickNav";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Cohorts from "./pages/Cohorts";
@@ -35,6 +36,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <StickyQuickNav />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
