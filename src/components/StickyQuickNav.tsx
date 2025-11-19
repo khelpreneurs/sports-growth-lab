@@ -29,7 +29,7 @@ const StickyQuickNav = () => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
       }`}
     >
-      <div className="card-glass backdrop-blur-lg px-3 py-2.5 shadow-strong rounded-full border border-border/50">
+      <div className="bg-background/95 backdrop-blur-lg px-3 py-2.5 shadow-strong rounded-full border border-border">
         <div className="flex items-center gap-2">
           {quickLinks.map((link, index) => {
             const Icon = link.icon;
@@ -57,8 +57,8 @@ const StickyQuickNav = () => {
                 asChild
                 variant="ghost"
                 size="sm"
-                className={`h-9 px-3 ${
-                  isActive ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-secondary/80'
+                className={`h-9 px-3 text-foreground ${
+                  isActive ? 'bg-primary/10 text-primary hover:bg-primary/20' : 'hover:bg-secondary/80 hover:text-primary'
                 }`}
               >
                 <Link to={link.href}>
