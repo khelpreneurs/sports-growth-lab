@@ -264,7 +264,7 @@ const Home = () => {
               Our mentors are practitioners with real-world experience in sports
               business
             </p>
-            <Card className="shadow-strong overflow-hidden mt-7">
+            <Card className="shadow-strong overflow-hidden mt-7 hover-lift">
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-5">
                   <div className="md:col-span-2">
@@ -391,7 +391,7 @@ const Home = () => {
     </CardContent>
   </Card> */}
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -438,7 +438,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -483,7 +483,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -533,7 +533,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -581,7 +581,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -625,7 +625,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -671,7 +671,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -723,7 +723,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -772,7 +772,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -822,7 +822,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -872,7 +872,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">
@@ -919,7 +919,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
               <CardContent className="p-0">
                 <div className="">
                   <div className="h-[260px] md:h-full">

@@ -63,7 +63,7 @@ const About = () => {
                 },
               ].map((item, index) => (
                 <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-                <Card key={index} className="shadow-medium border-none">
+                <Card key={index} className="shadow-medium border-none hover-lift">
                   <CardContent className="p-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
                       {item.icon}
@@ -85,7 +85,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="mb-12 text-center">Our Partners</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="shadow-strong">
+              <Card className="shadow-strong hover-lift">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">KIBI Sports</h3>
                   <p className="text-muted-foreground">
@@ -93,7 +93,7 @@ const About = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="shadow-strong">
+              <Card className="shadow-strong hover-lift">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-4">Khelaxy</h3>
                   <p className="text-muted-foreground">
