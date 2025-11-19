@@ -82,8 +82,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary border-t border-border">
-      <div className="container mx-auto px-4 py-12 md:py-16">
+    <footer className="bg-secondary/30 border-t border-border">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
@@ -126,13 +126,13 @@ const Footer = () => {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-semibold mb-4">{category}</h4>
-              <ul className="space-y-3">
+              <h4 className="font-semibold text-sm mb-4">{category}</h4>
+              <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="text-sm text-muted-foreground hover:text-primary transition-fast"
+                      className="text-sm text-muted-foreground hover:text-primary transition-fast inline-block"
                     >
                       {link.label}
                     </Link>
@@ -144,20 +144,20 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-semibold mb-4">Stay Updated</h4>
-            <p className="text-sm text-muted-foreground mb-4">
+            <h4 className="font-semibold text-sm mb-4">Stay Updated</h4>
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
               Get the latest updates on new cohorts and events.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+            <form onSubmit={handleNewsletterSubmit} className="space-y-2.5">
               <Input
                 type="email"
-                placeholder="Your email"
+                placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-background"
+                className="bg-background border-border h-11 rounded-xl"
               />
-              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark h-11 rounded-xl font-medium">
                 Subscribe
               </Button>
             </form>

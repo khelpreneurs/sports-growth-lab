@@ -73,38 +73,33 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="section-spacing bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
               {
-                icon: <BookOpen className="w-10 h-10" />,
+                icon: <BookOpen className="w-8 h-8" />,
                 title: "Industry-Led Training",
-                description:
-                  "Learn from sports business leaders & mentors with real-world experience",
+                description: "Learn from sports business leaders with real-world experience",
               },
               {
-                icon: <Briefcase className="w-10 h-10" />,
+                icon: <Briefcase className="w-8 h-8" />,
                 title: "Placement-Driven",
-                description:
-                  "Internships, PPO pathways, and access to our hiring network",
+                description: "Internships, PPO pathways, and access to our hiring network",
               },
               {
-                icon: <Users className="w-10 h-10" />,
+                icon: <Users className="w-8 h-8" />,
                 title: "Community & Network",
-                description:
-                  "Join a thriving, supportive ecosystem of sports professionals",
+                description: "Join a thriving ecosystem of sports professionals",
               },
             ].map((item, index) => (
-              <Card
-                key={index}
-                className="shadow-medium hover:shadow-strong transition-smooth border-none">
-                <CardContent className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
+              <Card key={index} className="card-modern border-none text-center">
+                <CardContent className="card-padding">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-5">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -123,97 +118,90 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Sports Sponsorship - Current */}
-            <Card className="shadow-strong hover:shadow-primary transition-smooth border-primary/20">
-              <CardContent className="p-8">
-                <div className="inline-block px-4 py-1 bg-accent text-accent-foreground text-sm font-semibold rounded-full mb-4">
-                  Now Open
+            <Card className="card-interactive border-primary/20">
+              <CardContent className="card-padding">
+                <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full mb-4">
+                  NOW OPEN
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Sports Sponsorship</h3>
-                <p className="text-muted-foreground mb-6">
-                  Master the art of pitching, negotiating, and executing sports
-                  sponsorship deals
+                <h3 className="text-xl font-bold mb-3">Sports Sponsorship</h3>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                  Master pitching, negotiating, and executing sponsorship deals
                 </p>
                 <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Duration:</span>
                     <span className="font-semibold">16 weeks</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Format:</span>
                     <span className="font-semibold">Live + Internship</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Mentor:</span>
-                    <span className="font-semibold">
-                      Sagar Rai, KIBI Sports
-                    </span>
+                    <span className="font-semibold text-right">Sagar Rai</span>
                   </div>
                 </div>
-                <Button asChild className="w-full bg-accent hover:bg-accent-hover">
+                <Button asChild className="w-full btn-primary h-11">
                   <Link to="/cohorts">
-                    Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                    Apply Now <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
 
             {/* Sports Journalism - Coming Soon */}
-            <Card className="shadow-medium hover:shadow-strong transition-smooth opacity-90">
-              <CardContent className="p-8">
-                <div className="inline-block px-4 py-1 bg-muted text-muted-foreground text-sm font-semibold rounded-full mb-4">
-                  Coming Soon
+            <Card className="card-modern opacity-75">
+              <CardContent className="card-padding">
+                <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
+                  COMING SOON
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Sports Journalism</h3>
-                <p className="text-muted-foreground mb-6">
-                  Learn storytelling, reporting, and content creation for sports
-                  media
+                <h3 className="text-xl font-bold mb-3">Sports Journalism</h3>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                  Learn storytelling, reporting, and content creation
                 </p>
                 <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Duration:</span>
                     <span className="font-semibold">TBA</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Format:</span>
                     <span className="font-semibold">Live Online</span>
                   </div>
                 </div>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2">
                   <Link to="/contact">
-                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                    Join Waitlist <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
 
             {/* Sports Entrepreneurship - Coming Soon */}
-            <Card className="shadow-medium hover:shadow-strong transition-smooth opacity-90">
-              <CardContent className="p-8">
-                <div className="inline-block px-4 py-1 bg-muted text-muted-foreground text-sm font-semibold rounded-full mb-4">
-                  Coming Soon
+            <Card className="card-modern opacity-75">
+              <CardContent className="card-padding">
+                <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
+                  COMING SOON
                 </div>
-                <h3 className="text-2xl font-bold mb-3">
-                  Sports Entrepreneurship
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Build and scale sports businesses with guidance from industry
-                  founders
+                <h3 className="text-xl font-bold mb-3">Sports Entrepreneurship</h3>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                  Build and scale sports businesses with industry founders
                 </p>
                 <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Duration:</span>
                     <span className="font-semibold">TBA</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Format:</span>
                     <span className="font-semibold">Live Online</span>
                   </div>
                 </div>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2">
                   <Link to="/contact">
-                    Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
+                    Join Waitlist <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </CardContent>
