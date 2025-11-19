@@ -33,6 +33,88 @@ import ratnakarImage from "@/assets/mentor-ratnakar.png";
 import logo from "@/assets/Company_Logo.png";
 
 const Home = () => {
+  const mentors = [
+    {
+      name: "Sagar Rai",
+      role: "Founder & CEO, KIBI Sports",
+      image: mentorImage,
+      linkedin: "https://www.linkedin.com/in/sagar-rai-1252901a5/",
+      bio: `Leading the Sports Sponsorship cohort with years of experience in
+            building and executing sponsorship deals across athletes, teams,
+            and leagues. KIBI Sports has a proven track record in the Indian
+            sports ecosystem`,
+    },
+    {
+      name: "Anjum Qazi",
+      role: "VP – Precihole Sports Pvt. Ltd.",
+      image: anjumImage,
+      linkedin:
+        "https://www.linkedin.com/in/anjum-qazi-542950268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Serves as Vice President of Precihole Sports Pvt. Ltd., an Indian manufacturer 
+            of air‑rifles / air‑guns and sporting goods, which in 2024 made a notable international
+             debut in collaboration with UK‑based Air Arms at the IWA Outdoor Classics exhibition. 
+             In that release she is quoted regarding the milestone of Precihole entering the global 
+             market and its commitment to “Make in India” manufacturing identity. Her role thus spans
+              marketing/administration in a niche sports‑equipment and manufacturing business, particularly 
+              aligned with the shooting/sports‑goods segment`,
+    },
+    {
+      name: "Ankita Jain",
+      role: "Sports & Counselling Psychologist",
+      image: ankitaImage,
+      linkedin:
+        "https://www.linkedin.com/in/ankita-jain-psychologist?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Works as a sports & counselling psychologist, and has spoken publicly about the role of psychology in both traditional sports and e‑sports domains. She holds advanced credentials in psychology and has built a practice oriented around athlete performance, mental health, and the emerging esports sector`,
+    },
+    {
+      name: "Karthik Yanamandra",
+      role: "Founding Partner, 360D Sports",
+      image: karthikImage,
+      linkedin:
+        "https://www.linkedin.com/in/karthiky?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Co‑Founder & Head – Business Initiatives of 360D Sports a Hyderabad‑based firm engaged in sports management, consulting, events, technologies and startup collaboration. Over 17 years of experience in strategic business operations, business development, marketing, revenue expansion, event management, consulting and sports technologies. 360D Sports is a venture/management company working with sports, wellness & fitness startups to build enterprises`,
+    },
+    {
+      name: "Minal Patel",
+      role: "Co-founder & Head of Investor Relations, StartupLynk",
+      image: minalImage,
+      linkedin:
+        "https://www.linkedin.com/in/patel-minal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Director/Designated Partner of StartupLynk (legal entity StartupLynk Sportvot LLP, which is a platform connecting startups with investors; the company’s public profile lists fundraising, curated deals, and goal of supporting startup‑investment ecosystem`,
+    },
+    {
+      name: "Paresh Kothari",
+      role: "Co-founder, The Sports Gurukul",
+      image: pareshImage,
+      linkedin:
+        "https://www.linkedin.com/in/paresh-kothari-8707921?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Co‑founding managing director of The Sports Gurukul (TSG), which focuses on sports and fitness training in schools and youth programs.TSG’s mission emphasizes grassroots development of sporting talent and establishing structured sports education programmes in schools across India. His role thus spans crossover between finance/business and sports training/education`,
+    },
+    {
+      name: "Puru Modani",
+      role: "Founder of The Marwari Angels & Co-founder at BM Capital Family Office",
+      image: puruImage,
+      linkedin:
+        "https://www.linkedin.com/in/puru-modani-1034375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Angel investor and startup ecosystem enabler, currently associated with The Marwari Angels as a Director and Principal Advisor. He also serves as the Co-Founder of BM Capital Family Office, where he focuses on early-stage investment strategies. With more than 20 investments across technology, SaaS, consumer, and enterprise sectors—including companies like Exotel, Hotelogix, Nobero, and Param.ai—Puru brings a strong portfolio and deep market insight. An alumnus of CDAC (Advanced Computing) and IIM Kozhikode, he is widely recognized in the Hyderabad entrepreneurial circle for mentoring founders and supporting scalable innovation`,
+    },
+    {
+      name: "Rakesh Bhatia",
+      role: "Founder & CEO, TheCapitalNet",
+      image: rakeshImage,
+      linkedin:
+        "https://www.linkedin.com/in/rbhatia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Founder and CEO of TheCapitalNet, a global platform designed to transform the alternative investment and innovation ecosystem. With over 25 years of corporate leadership experience, he previously served as Senior Vice President at RealPage Inc. and Head of Quality & PMO at NextBrick Solutions. Rakesh blends extensive operational expertise with a strong understanding of technology-driven business models. An alumnus of IIM Kozhikode, he is known for driving thought leadership in private markets, entrepreneurship development, and investor enablement`,
+    },
+    {
+      name: "Vikram Gunjal",
+      role: "Co-founder, UpUrFit",
+      image: vikramImage,
+      linkedin:
+        "https://www.linkedin.com/in/vikramgunjal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
+      bio: `Co‑founded UpUrFit, a Mumbai‑based sports‑wellness brand that makes topical recovery products (warm‑up/cool‑down gels, pain‑relief sprays) and on‑the‑go hygiene items tailored for athletes and everyday fitness enthusiasts. The company describes itself as a physiotherapist‑recommended, science‑backed range built around activation, recovery and hygiene needs. In Indian football, UpUrFit has been building credibility through club tie‑ups—most notably a multi‑year partnership with Mumbai City FC as the club’s Official Pain Relief & Recovery Partner for the 2024–25 ISL season`,
+    },
+  ];
   const parallaxOffset = useParallax(0.3);
   const { toast } = useToast();
 
@@ -56,10 +138,9 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 -z-10"
-          style={{ transform: `translateY(${parallaxOffset}px)` }}
-        >
+          style={{ transform: `translateY(${parallaxOffset}px)` }}>
           <img
             src={heroImage}
             alt="Khelpreneurs - Launch Your Sports Industry Career"
@@ -74,20 +155,24 @@ const Home = () => {
               Launch Your Sports Industry Career
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-              Industry-led cohorts with real internships & job pathways in sports
+              Industry-led cohorts with real internships & job pathways in
+              sports
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
                 className="bg-accent hover:bg-accent-hover shadow-accent text-lg px-8"
-                onClick={handleApplyClick}
-              >
+                onClick={handleApplyClick}>
                 <Link to="/cohorts">
                   Apply Now <ArrowRight className="ml-2" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="text-lg px-8">
                 <Link to="/about">Learn More</Link>
               </Button>
             </div>
@@ -103,27 +188,35 @@ const Home = () => {
               {
                 icon: <BookOpen className="w-8 h-8" />,
                 title: "Industry-Led Training",
-                description: "Learn from sports business leaders with real-world experience",
+                description:
+                  "Learn from sports business leaders with real-world experience",
               },
               {
                 icon: <Briefcase className="w-8 h-8" />,
                 title: "Placement-Driven",
-                description: "Internships, PPO pathways, and access to our hiring network",
+                description:
+                  "Internships, PPO pathways, and access to our hiring network",
               },
               {
                 icon: <Users className="w-8 h-8" />,
                 title: "Community & Network",
-                description: "Join a thriving ecosystem of sports professionals",
+                description:
+                  "Join a thriving ecosystem of sports professionals",
               },
             ].map((item, index) => (
-              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+              <AnimatedSection
+                key={index}
+                animation="fade-up"
+                delay={index * 100}>
                 <Card className="card-modern border-none text-center h-full">
                   <CardContent className="card-padding">
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-5">
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </CardContent>
                 </Card>
               </AnimatedSection>
@@ -155,7 +248,8 @@ const Home = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Sports Sponsorship</h3>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    Master pitching, negotiating, and executing sponsorship deals
+                    Master pitching, negotiating, and executing sponsorship
+                    deals
                   </p>
                   <div className="space-y-2 mb-6 text-sm">
                     <div className="flex justify-between items-center">
@@ -168,7 +262,9 @@ const Home = () => {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Mentor:</span>
-                      <span className="font-semibold text-right">Sagar Rai</span>
+                      <span className="font-semibold text-right">
+                        Sagar Rai
+                      </span>
                     </div>
                   </div>
                   <Button asChild className="w-full btn-primary h-11">
@@ -184,66 +280,71 @@ const Home = () => {
             <AnimatedSection animation="fade-up" delay={200}>
               <Card className="card-modern opacity-75 h-full">
                 <CardContent className="card-padding">
-                <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
-                  COMING SOON
-                </div>
-                <h3 className="text-xl font-bold mb-3">Sports Journalism</h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                  Learn storytelling, reporting, and content creation
-                </p>
-                <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Duration:</span>
-                    <span className="font-semibold">TBA</span>
+                  <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
+                    COMING SOON
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Format:</span>
-                    <span className="font-semibold">Live Online</span>
+                  <h3 className="text-xl font-bold mb-3">Sports Journalism</h3>
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    Learn storytelling, reporting, and content creation
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Duration:</span>
+                      <span className="font-semibold">TBA</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Format:</span>
+                      <span className="font-semibold">Live Online</span>
+                    </div>
                   </div>
-                </div>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full h-11 rounded-xl border-2"
-                  onClick={handleWaitlistClick}
-                >
-                  <Link to="/contact">
-                    Join Waitlist <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full h-11 rounded-xl border-2"
+                    onClick={handleWaitlistClick}>
+                    <Link to="/contact">
+                      Join Waitlist <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
 
             {/* Sports Entrepreneurship - Coming Soon */}
             <AnimatedSection animation="fade-up" delay={300}>
               <Card className="card-modern opacity-75 h-full">
-              <CardContent className="card-padding">
-                <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
-                  COMING SOON
-                </div>
-                <h3 className="text-xl font-bold mb-3">Sports Entrepreneurship</h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                  Build and scale sports businesses with industry founders
-                </p>
-                <div className="space-y-2 mb-6 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Duration:</span>
-                    <span className="font-semibold">TBA</span>
+                <CardContent className="card-padding">
+                  <div className="inline-block px-3 py-1 bg-muted text-muted-foreground text-xs font-bold rounded-full mb-4">
+                    COMING SOON
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Format:</span>
-                    <span className="font-semibold">Live Online</span>
+                  <h3 className="text-xl font-bold mb-3">
+                    Sports Entrepreneurship
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    Build and scale sports businesses with industry founders
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Duration:</span>
+                      <span className="font-semibold">TBA</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Format:</span>
+                      <span className="font-semibold">Live Online</span>
+                    </div>
                   </div>
-                </div>
-                <Button asChild variant="outline" className="w-full h-11 rounded-xl border-2" onClick={handleWaitlistClick}>
-                  <Link to="/contact">
-                    Join Waitlist <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full h-11 rounded-xl border-2"
+                    onClick={handleWaitlistClick}>
+                    <Link to="/contact">
+                      Join Waitlist <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -281,98 +382,77 @@ const Home = () => {
                 prefix="₹"
                 className="text-4xl font-bold mb-2 block"
               />
-              <div className="text-primary-foreground/80">Monthly Internship Stipend</div>
+              <div className="text-primary-foreground/80">
+                Monthly Internship Stipend
+              </div>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
                 <TrendingUp className="text-primary-foreground w-8 h-8" />
               </div>
               <div className="text-4xl font-bold mb-2">PPO</div>
-              <div className="text-primary-foreground/80">Pathways Available</div>
+              <div className="text-primary-foreground/80">
+                Pathways Available
+              </div>
             </div>
           </div>
         </div>
       </section>
       {/* Featured Mentor */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
+      <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="mb-4">Mentors & Coaches</h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Our mentors are practitioners with real-world experience in sports
               business
             </p>
-            <Card className="shadow-strong overflow-hidden mt-7 hover-lift">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-5">
-                  <div className="md:col-span-2">
-                    <img
-                      src={mentorImage}
-                      alt="Sagar Rai"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:col-span-3 p-8 md:p-12">
-                    <h2 className="text-3xl font-bold mb-2">Sagar Rai</h2>
-                    <p className="text-primary font-bold text-lg mb-2">
-                      Founder & CEO, KIBI Sports
-                    </p>
-                    <p className="text-muted-foreground mb-6">
-                      Leading the Sports Sponsorship Cohort
-                    </p>
-                    <div className="space-y-4 mb-8">
-                      <div>
-                        <h3 className="font-bold mb-2">Background</h3>
-                        <p className="text-muted-foreground">
-                          Sagar has built KIBI Sports into a recognized name in
-                          the Indian sports sponsorship ecosystem. With
-                          extensive experience across athlete, team, and league
-                          partnerships, he brings deep industry knowledge and a
-                          large network of relationships.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-bold mb-2">Expertise</h3>
-                        <ul className="space-y-2">
-                          {[
-                            "Sports Sponsorship Strategy & Execution",
-                            "Brand Partnerships & Activations",
-                            "Athlete & Team Representation",
-                            "Sports Business Development",
-                          ].map((skill, index) => (
-                            <li
-                              key={index}
-                              className="flex items-center gap-2 text-muted-foreground text-sm">
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                              {skill}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="font-bold mb-2">What You'll Learn</h3>
-                        <p className="text-muted-foreground">
-                          In the Sports Sponsorship cohort, Sagar shares
-                          practical insights from his work structuring and
-                          closing sponsorship deals. Participants gain access to
-                          live projects at KIBI Sports and learn the complete
-                          lifecycle of sports sponsorships - from pitching to
-                          execution.
-                        </p>
-                      </div>
+          </div>
+          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+            {mentors.map((mentor, index) => (
+              <Card
+                key={index}
+                className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+                <CardContent className="p-0">
+                  <div>
+                    <div className="h-[260px] md:h-full">
+                      <img
+                        src={mentor.image}
+                        alt={mentor.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <Button asChild variant="outline" className="gap-2">
-                      <a
-                        href="https://www.linkedin.com/in/sagar-rai-1252901a5/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <Linkedin className="w-4 h-4" /> Connect on LinkedIn
-                      </a>
-                    </Button>
+
+                    <div className="p-6 md:p-8 flex flex-col justify-center">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-2xl font-bold line-clamp-1">
+                          {mentor.name}
+                        </h3>
+                        <a
+                          href={mentor.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary/80">
+                          <Linkedin className="w-6 h-6" />
+                        </a>
+                      </div>
+
+                      <p className="text-primary font-semibold mb-4">
+                        {mentor.role}
+                      </p>
+
+                      <p className="text-muted-foreground mb-4">{mentor.bio}</p>
+
+                      <Button asChild variant="outline" className="w-fit">
+                        <Link to="/mentors">
+                          View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -1028,10 +1108,10 @@ const Home = () => {
               onClick={() => {
                 toast({
                   title: "Opening Application Form",
-                  description: "You'll be redirected to the secure payment portal.",
+                  description:
+                    "You'll be redirected to the secure payment portal.",
                 });
-              }}
-            >
+              }}>
               <a
                 href="https://payments.cashfree.com/forms/khelpreneurscohort1"
                 target="_blank"
