@@ -194,11 +194,11 @@ const PastSpeakersGallery = () => {
           <Card key={index} className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift flex-shrink-0">
             <CardContent className="p-0">
               <div>
-                <div className="h-[260px]">
+                <div className="h-[200px] bg-muted">
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col justify-center">
@@ -548,11 +548,11 @@ const Home = () => {
                 className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
                 <CardContent className="p-0">
                   <div>
-                    <div className="h-[260px]">
+                    <div className="h-[200px] bg-muted">
                       <img
                         src={mentor.image}
                         alt={mentor.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
 
