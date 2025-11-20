@@ -8,6 +8,21 @@ import {
   Award,
   Briefcase,
   Linkedin,
+  Target,
+  TrendingUp,
+  UserCheck,
+  Trophy,
+  Building2,
+  Heart,
+  Globe,
+  PresentationIcon,
+  Calculator,
+  Sparkles,
+  CheckCircle2,
+  GraduationCap,
+  Handshake,
+  Briefcase as BriefcaseAlt,
+  Lightbulb,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -518,33 +533,40 @@ const Cohorts = () => {
               What You’ll Learn
             </h3>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
               {[
-                "Sponsorship Landscape: Understand trends across digital, OTT, and grassroots sports.",
-                "Brand Strategy: How to set objectives, define KPIs, and align sports properties with brand goals.",
-                "Athlete Sponsorships: Talent scouting, rights management, contracts, and deliverables.",
-                "Team & League Deals: Evaluating audience reach and building partnership structures.",
-                "Venue Branding: Naming rights, signage, hospitality, and revenue models.",
-                "Community & CSR Activations: Designing fan engagement events and grassroots programs.",
-                "Digital & OTT Partnerships: Case studies on streaming rights and branded content.",
-                "Pitching & Proposal Building: Build compelling sponsorship decks and plans.",
-                "Budgeting & ROI: Negotiation strategies, pricing tiers & campaign tracking.",
-                "Brand–Property Fit: Match brands with athletes, teams, or venues for impact.",
+                { icon: TrendingUp, title: "Sponsorship Landscape", desc: "Understand trends across digital, OTT, and grassroots sports." },
+                { icon: Target, title: "Brand Strategy", desc: "How to set objectives, define KPIs, and align sports properties with brand goals." },
+                { icon: UserCheck, title: "Athlete Sponsorships", desc: "Talent scouting, rights management, contracts, and deliverables." },
+                { icon: Trophy, title: "Team & League Deals", desc: "Evaluating audience reach and building partnership structures." },
+                { icon: Building2, title: "Venue Branding", desc: "Naming rights, signage, hospitality, and revenue models." },
+                { icon: Heart, title: "Community & CSR Activations", desc: "Designing fan engagement events and grassroots programs." },
+                { icon: Globe, title: "Digital & OTT Partnerships", desc: "Case studies on streaming rights and branded content." },
+                { icon: PresentationIcon, title: "Pitching & Proposal Building", desc: "Build compelling sponsorship decks and plans." },
+                { icon: Calculator, title: "Budgeting & ROI", desc: "Negotiation strategies, pricing tiers & campaign tracking." },
+                { icon: Sparkles, title: "Brand–Property Fit", desc: "Match brands with athletes, teams, or venues for impact." },
               ].map((item, i) => {
-                const [title, desc] = item.split(":");
+                const Icon = item.icon;
                 return (
-                  <div
-                    key={i}
-                    className="p-4 md:p-6 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition">
-                    <p className="font-semibold text-gray-900 text-sm md:text-base mb-2">
-                      {title}
-                    </p>
-                    {desc && (
-                      <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                        {desc.trim()}
-                      </p>
-                    )}
-                  </div>
+                  <AnimatedSection key={i} animation="fade-up" delay={i * 50}>
+                    <Card className="h-full group hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-strong border-border/50">
+                      <CardContent className="p-5 md:p-6">
+                        <div className="flex items-start gap-4 mb-3">
+                          <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-bold text-foreground text-sm md:text-base mb-2 group-hover:text-primary transition-colors">
+                              {item.title}
+                            </h4>
+                            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </AnimatedSection>
                 );
               })}
             </div>
@@ -552,41 +574,60 @@ const Cohorts = () => {
 
           {/* Structure & Schedule */}
           <div className="mb-14 md:mb-16">
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
-              Structure & Schedule (16 Modules Across 16 Weeks)
-            </h3>
-
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-              {[
-                "Sponsorship Landscape: Understand trends across digital, OTT, and grassroots sports.",
-                "Brand Strategy: How to set objectives, define KPIs, and align sports properties with brand goals.",
-                "Athlete Sponsorships: Talent scouting, rights management, contracts, digital activations.",
-                "Team & League Deals: Audience evaluation, package negotiation, partnership structures.",
-                "Venue Branding: Naming rights, signage, hospitality, and shared monetization.",
-                "Community & CSR Activations: Fan engagement, grassroots events, corporate tie-ups.",
-                "Digital & OTT Partnerships: Case studies from streaming & digital ecosystems.",
-                "Pitching & Proposal Building: Creating impactful sponsorship proposals.",
-                "Budgeting & ROI: Pricing strategies, negotiation models, and performance tracking.",
-                "Brand–Property Fit: Connecting brands with the right athletes, teams, or venues.",
-                "Hands-on Project Workshops",
-                "Campaign Execution Frameworks",
-                "Rights Holder Negotiation Labs",
-                "Brand Objective Deep Dives",
-                "Sponsorship Activation Playbooks",
-                "Final Presentation & Showcase",
-              ].map((item, i) => {
-                const [title, desc] = item.split(":");
-                return (
-                <div
-                  key={i}
-                  className="p-4 md:p-5 bg-secondary/50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
-                  <p className="font-semibold text-foreground mb-1">{title}</p>
-                  {desc && (
-                    <p className="text-muted-foreground leading-relaxed">
-                      {desc.trim()}
-                    </p>
-                  )}
+            <AnimatedSection animation="fade-up">
+              <div className="text-center mb-8 md:mb-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                  <BookOpen className="w-4 h-4" />
+                  <span>16-Week Curriculum</span>
                 </div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+                  Structure & Schedule
+                </h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  16 comprehensive modules designed to transform you into a sponsorship expert
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+              {[
+                { week: 1, title: "Sponsorship Landscape", desc: "Understand trends across digital, OTT, and grassroots sports." },
+                { week: 2, title: "Brand Strategy", desc: "How to set objectives, define KPIs, and align sports properties with brand goals." },
+                { week: 3, title: "Athlete Sponsorships", desc: "Talent scouting, rights management, contracts, digital activations." },
+                { week: 4, title: "Team & League Deals", desc: "Audience evaluation, package negotiation, partnership structures." },
+                { week: 5, title: "Venue Branding", desc: "Naming rights, signage, hospitality, and shared monetization." },
+                { week: 6, title: "Community & CSR Activations", desc: "Fan engagement, grassroots events, corporate tie-ups." },
+                { week: 7, title: "Digital & OTT Partnerships", desc: "Case studies from streaming & digital ecosystems." },
+                { week: 8, title: "Pitching & Proposal Building", desc: "Creating impactful sponsorship proposals." },
+                { week: 9, title: "Budgeting & ROI", desc: "Pricing strategies, negotiation models, and performance tracking." },
+                { week: 10, title: "Brand–Property Fit", desc: "Connecting brands with the right athletes, teams, or venues." },
+                { week: 11, title: "Hands-on Project Workshops", desc: "" },
+                { week: 12, title: "Campaign Execution Frameworks", desc: "" },
+                { week: 13, title: "Rights Holder Negotiation Labs", desc: "" },
+                { week: 14, title: "Brand Objective Deep Dives", desc: "" },
+                { week: 15, title: "Sponsorship Activation Playbooks", desc: "" },
+                { week: 16, title: "Final Presentation & Showcase", desc: "" },
+              ].map((item, i) => {
+                return (
+                  <AnimatedSection key={i} animation="fade-up" delay={i * 30}>
+                    <div className="group relative p-5 md:p-6 bg-gradient-to-br from-secondary/30 to-secondary/50 border border-border/50 rounded-xl hover:border-primary/40 hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center font-bold text-primary text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                          W{item.week}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-bold text-foreground text-sm md:text-base mb-1 group-hover:text-primary transition-colors">
+                            {item.title}
+                          </h4>
+                          {item.desc && (
+                            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
+                              {item.desc}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </AnimatedSection>
                 );
               })}
             </div>
@@ -594,60 +635,110 @@ const Cohorts = () => {
 
           {/* Outcomes */}
           <div>
-            <h3 className="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
-              Outcomes
-            </h3>
-            <ul className="space-y-4">
+            <AnimatedSection animation="fade-up">
+              <div className="text-center mb-8 md:mb-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                  <Award className="w-4 h-4" />
+                  <span>Program Benefits</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
+                  What You'll Achieve
+                </h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Transform your career with tangible skills and opportunities
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
               {[
-                "A portfolio of real sponsorship proposals and campaign decks.",
-                "Hands-on experience managing sponsorship deals from pitch to activation.",
-                "Networking connections with brand managers, leagues, and athletes.",
-                "Eligibility for Pre-Placement Offers (PPOs) and freelance opportunities.",
-                "Deep understanding of how sponsorship drives sports business for brands and rights-holders.",
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="text-primary text-2xl leading-none">
-                    ✔
-                  </span>
-                  <p className="text-foreground">{item}</p>
-                </li>
-              ))}
-            </ul>
+                { icon: GraduationCap, title: "Professional Portfolio", desc: "A portfolio of real sponsorship proposals and campaign decks." },
+                { icon: Briefcase, title: "Hands-on Experience", desc: "Hands-on experience managing sponsorship deals from pitch to activation." },
+                { icon: Handshake, title: "Industry Network", desc: "Networking connections with brand managers, leagues, and athletes." },
+                { icon: BriefcaseAlt, title: "Career Opportunities", desc: "Eligibility for Pre-Placement Offers (PPOs) and freelance opportunities." },
+                { icon: Lightbulb, title: "Deep Expertise", desc: "Deep understanding of how sponsorship drives sports business for brands and rights-holders." },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <AnimatedSection key={i} animation="fade-up" delay={i * 80}>
+                    <Card className="h-full group border-border/50 hover:border-primary/40 hover:shadow-strong transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-background to-secondary/20">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
+                            <Icon className="w-6 h-6" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-bold text-foreground text-base md:text-lg mb-2 group-hover:text-primary transition-colors">
+                              {item.title}
+                            </h4>
+                            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </AnimatedSection>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
       {/* ================== COURSE CONTENT ================== */}
-      <section className="py-12 md:py-20 bg-secondary/50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="mb-8 md:mb-12 text-center text-2xl md:text-5xl font-bold">
-            Course Content
-          </h2>
+      <section className="py-12 md:py-20 bg-gradient-to-b from-secondary/30 to-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <AnimatedSection animation="fade-up">
+            <div className="text-center mb-10 md:mb-14">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                <BookOpen className="w-4 h-4" />
+                <span>Detailed Curriculum</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Course Content
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Explore every chapter and lesson in our comprehensive curriculum
+              </p>
+            </div>
+          </AnimatedSection>
 
           <Accordion
             type="single"
             collapsible
-            className="space-y-3 md:space-y-4">
+            className="space-y-4 md:space-y-5">
             {courseContent.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`chapter-${index}`}
-                className="border rounded-2xl overflow-hidden shadow-sm">
-                <AccordionTrigger className="w-full text-left px-4 md:px-6 py-3 md:py-4 bg-secondary/50 text-base md:text-lg font-medium">
-                  {item.chapter}
-                </AccordionTrigger>
+              <AnimatedSection key={index} animation="fade-up" delay={index * 50}>
+                <AccordionItem
+                  value={`chapter-${index}`}
+                  className="border-border/50 rounded-2xl overflow-hidden shadow-medium hover:shadow-strong transition-all duration-300 bg-background">
+                  <AccordionTrigger className="w-full text-left px-5 md:px-7 py-4 md:py-5 bg-gradient-to-r from-secondary/30 to-secondary/10 hover:from-secondary/50 hover:to-secondary/30 text-base md:text-lg font-semibold group transition-all [&[data-state=open]]:bg-primary/5">
+                    <div className="flex items-center gap-3 flex-1 pr-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center font-bold text-primary text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                      <span className="group-hover:text-primary transition-colors">
+                        {item.chapter}
+                      </span>
+                    </div>
+                  </AccordionTrigger>
 
-                <AccordionContent className="bg-background">
-                  <ul className="divide-y divide-border">
-                    {item.lessons.map((lesson, i) => (
-                      <li
-                        key={i}
-                        className="px-4 md:px-6 py-3 md:py-4 text-muted-foreground text-sm md:text-base hover:bg-secondary/30">
-                        {lesson}
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionContent className="bg-background">
+                    <ul className="divide-y divide-border/30">
+                      {item.lessons.map((lesson, i) => (
+                        <li
+                          key={i}
+                          className="px-5 md:px-7 py-3 md:py-4 text-muted-foreground text-sm md:text-base hover:bg-secondary/20 transition-colors flex items-start gap-3 group">
+                          <CheckCircle2 className="w-4 h-4 mt-1 flex-shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
+                          <span className="group-hover:text-foreground transition-colors">
+                            {lesson}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </AnimatedSection>
             ))}
           </Accordion>
         </div>
