@@ -61,43 +61,39 @@ const HyderabadGallery = ({ mediaGallery }: { mediaGallery: Array<{ type: string
         left: newScrollLeft,
         behavior: 'smooth'
       });
+      
+      setTimeout(checkScroll, 100);
     }
   };
 
   return (
-    <div className="relative">
-      {canScrollLeft && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background hover:border-primary/30 hover:text-primary shadow-lg"
-          onClick={() => scroll('left')}
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </Button>
-      )}
-      
-      {canScrollRight && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background hover:border-primary/30 hover:text-primary shadow-lg"
-          onClick={() => scroll('right')}
-        >
-          <ChevronRight className="h-6 w-6" />
-        </Button>
-      )}
+    <div className="relative flex items-center gap-4">
+      <Button
+        variant="outline"
+        size="icon"
+        className="h-12 w-12 rounded-full bg-background border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-md disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+        onClick={() => scroll('left')}
+        disabled={!canScrollLeft}
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </Button>
 
       <div 
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        onLoad={checkScroll}
+        className="flex gap-6 overflow-x-auto pb-4 flex-1"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
       >
+        <style>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
         {mediaGallery.map((item, index) => (
           <div
             key={index}
-            className="shadow-strong rounded-xl overflow-hidden min-w-[300px] md:min-w-[420px] flex-shrink-0">
+            className="shadow-strong rounded-xl overflow-hidden min-w-[300px] md:min-w-[420px] flex-shrink-0 scrollbar-hide">
             {item.type === "image" && (
               <img
                 src={item.url}
@@ -119,6 +115,16 @@ const HyderabadGallery = ({ mediaGallery }: { mediaGallery: Array<{ type: string
           </div>
         ))}
       </div>
+
+      <Button
+        variant="outline"
+        size="icon"
+        className="h-12 w-12 rounded-full bg-background border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-md disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+        onClick={() => scroll('right')}
+        disabled={!canScrollRight}
+      >
+        <ChevronRight className="h-6 w-6" />
+      </Button>
     </div>
   );
 };
