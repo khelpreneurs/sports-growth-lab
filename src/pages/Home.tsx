@@ -9,8 +9,6 @@ import {
   Award,
   TrendingUp,
   Linkedin,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
@@ -18,8 +16,6 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
-import { useState, useRef, useEffect } from "react";
-import { Button as ButtonUI } from "@/components/ui/button";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import adityaImage from "@/assets/mentor-adity.png";
@@ -35,187 +31,6 @@ import meddaImage from "@/assets/mentor-medda.png";
 import vashneyImage from "@/assets/mentor-vashney.png";
 import ratnakarImage from "@/assets/mentor-ratnakar.png";
 import logo from "@/assets/Company_Logo.png";
-
-// Panel Speakers Gallery Component
-const MentorGallery = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const panelSpeakers = [
-    {
-      name: "Aditya Reddy",
-      role: "Co-Founder, Gamepoint India",
-      image: adityaImage,
-      linkedin: "https://www.linkedin.com/in/aditya-reddy/",
-    },
-    {
-      name: "Anjum Qazi",
-      role: "VP – Precihole Sports Pvt. Ltd.",
-      image: anjumImage,
-      linkedin: "https://www.linkedin.com/in/anjum-qazi-542950268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Ankita Jain",
-      role: "Sports & Counselling Psychologist",
-      image: ankitaImage,
-      linkedin: "https://www.linkedin.com/in/ankita-jain-psychologist?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Karthik Yanamandra",
-      role: "Founding Partner, 360D Sports",
-      image: karthikImage,
-      linkedin: "https://www.linkedin.com/in/karthiky?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Minal Patel",
-      role: "Co-founder & Head of Investor Relations, StartupLynk",
-      image: minalImage,
-      linkedin: "https://www.linkedin.com/in/patel-minal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    },
-    {
-      name: "Paresh Kothari",
-      role: "Co-founder, The Sports Gurukul",
-      image: pareshImage,
-      linkedin: "https://www.linkedin.com/in/paresh-kothari-8707921?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Puru Modani",
-      role: "Founder of The Marwari Angels & Co-founder at BM Capital Family Office",
-      image: puruImage,
-      linkedin: "https://www.linkedin.com/in/puru-modani-b4b6b01a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Rakesh Shah",
-      role: "Founder, IVG Fund & Sr Director - Franchise Operations, Delhi Capitals",
-      image: rakeshImage,
-      linkedin: "https://www.linkedin.com/in/rakeshshahivg?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Vikram Medda",
-      role: "Founding Member of the All India Gaming Federation (AIGF)",
-      image: meddaImage,
-      linkedin: "https://www.linkedin.com/in/vikrammedda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Vikram Khanna",
-      role: "Business Development & Sports | Helping Sports Businesses Thrive",
-      image: vikramImage,
-      linkedin: "https://www.linkedin.com/in/vikram-khanna-782b2925?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Vashney Kapoor",
-      role: "Co-Founder, Fanatic Sports",
-      image: vashneyImage,
-      linkedin: "https://www.linkedin.com/in/vashneykapoor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-    {
-      name: "Ratnakar Shetty",
-      role: "Advisor: Khelraha India, Former Director (BCCI)",
-      image: ratnakarImage,
-      linkedin: "https://www.linkedin.com/in/ratnakar-shetty-41a5b418?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/",
-    },
-  ];
-
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener('scroll', checkScroll);
-      return () => container.removeEventListener('scroll', checkScroll);
-    }
-  }, []);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 450;
-      const newScrollLeft = direction === 'left'
-        ? scrollContainerRef.current.scrollLeft - scrollAmount
-        : scrollContainerRef.current.scrollLeft + scrollAmount;
-      
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-      
-      setTimeout(checkScroll, 300);
-    }
-  };
-
-  return (
-    <div className="relative flex items-center gap-4">
-      <ButtonUI
-        variant="outline"
-        size="icon"
-        className="flex-shrink-0 h-10 w-10 rounded-full"
-        onClick={() => scroll('left')}
-        disabled={!canScrollLeft}
-      >
-        <ChevronLeft className="h-4 w-4" />
-      </ButtonUI>
-
-      <div
-        ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto flex-1 no-scrollbar"
-      >
-        {panelSpeakers.map((speaker, index) => (
-          <Card
-            key={index}
-            className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift flex-shrink-0"
-          >
-            <CardContent className="p-0">
-              <div>
-                <div className="h-[260px] md:h-full">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6 md:p-8 flex flex-col justify-center">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-2xl font-bold line-clamp-1">
-                      {speaker.name}
-                    </h3>
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80"
-                    >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                  </div>
-                  <p className="text-primary font-semibold">
-                    {speaker.role}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <ButtonUI
-        variant="outline"
-        size="icon"
-        className="flex-shrink-0 h-10 w-10 rounded-full"
-        onClick={() => scroll('right')}
-        disabled={!canScrollRight}
-      >
-        <ChevronRight className="h-4 w-4" />
-      </ButtonUI>
-    </div>
-  );
-};
 
 const Home = () => {
   const mentors = [
@@ -622,9 +437,17 @@ const Home = () => {
                         </a>
                       </div>
 
-                      <p className="text-primary font-semibold">
+                      <p className="text-primary font-semibold mb-4">
                         {mentor.role}
                       </p>
+
+                      <p className="text-muted-foreground mb-4">{mentor.bio}</p>
+
+                      <Button asChild variant="outline" className="w-fit">
+                        <Link to="/mentors">
+                          View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -644,7 +467,627 @@ const Home = () => {
             </p>
           </div>
 
-          <MentorGallery />
+          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+            {/* <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+    <CardContent className="p-0">
+      <div className="">
+
+        <div className="h-[260px] md:h-full">
+          <img
+            src={mentorImage}
+            alt="Sagar Rai - Founder & CEO, KIBI Sports"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-2xl font-bold">Sagar Rai</h3>
+            <a href="https://www.linkedin.com/in/sagar-rai-1252901a5/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div>
+          <p className="text-primary font-semibold mb-4">
+            Founder & CEO, KIBI Sports
+          </p>
+
+          <p className="text-muted-foreground mb-4">
+            Leading the Sports Sponsorship cohort with years of experience in
+            building and executing sponsorship deals across athletes, teams,
+            and leagues. KIBI Sports has a proven track record in the Indian
+            sports ecosystem.
+          </p>
+
+          <Button asChild variant="outline" className="w-fit">
+            <Link to="/mentors">
+              View Bio <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </div>
+
+      </div>
+    </CardContent>
+  </Card> */}
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={adityaImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Aditya Reddy
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/aditya-reddy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Co-Founder, Gamepoint India
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      The co‑founder and CEO of Gamepoint India (via Netplay
+                      Sports Pvt. Ltd.), a Hyderabad‑based company founded in
+                      2016 that operates multi‑sport centres offering coaching,
+                      book‑and‑play, tournaments and equipment retail. Under his
+                      leadership, Gamepoint has expanded its footprint in
+                      Hyderabad and plans national expansion, touting a vision
+                      of making sports accessible to a larger population and
+                      converting “game watchers” into “game players”.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={ankitaImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Ankita Jain
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/ankita-jain-psychologist?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Sports & Counselling Psychologist
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Works as a sports & counselling psychologist, and has
+                      spoken publicly about the role of psychology in both
+                      traditional sports and e‑sports domains. She holds
+                      advanced credentials in psychology and has built a
+                      practice oriented around athlete performance, mental
+                      health, and the emerging esports sector.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={anjumImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Anjum Qazi
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/anjum-qazi-542950268?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      VP – Precihole Sports Pvt. Ltd.
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Serves as Vice President of Precihole Sports Pvt. Ltd., an
+                      Indian manufacturer of air‑rifles / air‑guns and sporting
+                      goods, which in 2024 made a notable international debut in
+                      collaboration with UK‑based Air Arms at the IWA Outdoor
+                      Classics exhibition. In that release she is quoted
+                      regarding the milestone of Precihole entering the global
+                      market and its commitment to “Make in India” manufacturing
+                      identity. Her role thus spans marketing/administration in
+                      a niche sports‑equipment and manufacturing business,
+                      particularly aligned with the shooting/sports‑goods
+                      segment.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={karthikImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Karthik Yanamandra
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/karthiky?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Founding Partner, 360D Sports
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Co‑Founder & Head – Business Initiatives of 360D Sports a
+                      Hyderabad‑based firm engaged in sports management,
+                      consulting, events, technologies and startup
+                      collaboration. Over 17 years of experience in strategic
+                      business operations, business development, marketing,
+                      revenue expansion, event management, consulting and sports
+                      technologies. 360D Sports is a venture/management company
+                      working with sports, wellness & fitness startups to build
+                      enterprises.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={minalImage}
+                      alt="Sagar Rai - Founder & CEO, KIBI Sports"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Minal Patel
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/patel-minal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Co-founder & Head of Investor Relations, StartupLynk
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Director/Designated Partner of StartupLynk (legal entity
+                      StartupLynk Sportvot LLP, which is a platform connecting
+                      startups with investors; the company’s public profile
+                      lists fundraising, curated deals, and goal of supporting
+                      startup‑investment ecosystem.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={pareshImage}
+                      alt="Paresh Kothari - Co-founder, The Sports Gurukul"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Paresh Kothari
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/paresh-kothari-8707921?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Co-founder, The Sports Gurukul
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Co‑founding managing director of The Sports Gurukul (TSG),
+                      which focuses on sports and fitness training in schools
+                      and youth programs.TSG’s mission emphasizes grassroots
+                      development of sporting talent and establishing structured
+                      sports education programmes in schools across India. His
+                      role thus spans crossover between finance/business and
+                      sports training/education.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={puruImage}
+                      alt="Puru Modani - Co-founder, The Sports Gurukul"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Puru Modani
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/puru-modani-1034375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Founder of The Marwari Angels & Co-founder at BM Capital
+                      Family Office
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Angel investor and startup ecosystem enabler, currently
+                      associated with The Marwari Angels as a Director and
+                      Principal Advisor. He also serves as the Co-Founder of BM
+                      Capital Family Office, where he focuses on early-stage
+                      investment strategies. With more than 20 investments
+                      across technology, SaaS, consumer, and enterprise
+                      sectors—including companies like Exotel, Hotelogix,
+                      Nobero, and Param.ai—Puru brings a strong portfolio and
+                      deep market insight. An alumnus of CDAC (Advanced
+                      Computing) and IIM Kozhikode, he is widely recognized in
+                      the Hyderabad entrepreneurial circle for mentoring
+                      founders and supporting scalable innovation.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={rakeshImage}
+                      alt="Rakesh Bhatia - Founder & CEO, TheCapitalNet"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Rakesh Bhatia
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/rbhatia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Founder & CEO, TheCapitalNet
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Founder and CEO of TheCapitalNet, a global platform
+                      designed to transform the alternative investment and
+                      innovation ecosystem. With over 25 years of corporate
+                      leadership experience, he previously served as Senior Vice
+                      President at RealPage Inc. and Head of Quality & PMO at
+                      NextBrick Solutions. Rakesh blends extensive operational
+                      expertise with a strong understanding of technology-driven
+                      business models. An alumnus of IIM Kozhikode, he is known
+                      for driving thought leadership in private markets,
+                      entrepreneurship development, and investor enablement.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={vikramImage}
+                      alt="Vikram Gunjal - Co-founder, UpUrFit"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Vikram Gunjal
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/vikramgunjal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Co-founder, UpUrFit
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Co‑founded UpUrFit, a Mumbai‑based sports‑wellness brand
+                      that makes topical recovery products (warm‑up/cool‑down
+                      gels, pain‑relief sprays) and on‑the‑go hygiene items
+                      tailored for athletes and everyday fitness enthusiasts.
+                      The company describes itself as a
+                      physiotherapist‑recommended, science‑backed range built
+                      around activation, recovery and hygiene needs. In Indian
+                      football, UpUrFit has been building credibility through
+                      club tie‑ups—most notably a multi‑year partnership with
+                      Mumbai City FC as the club’s Official Pain Relief &
+                      Recovery Partner for the 2024–25 ISL season.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={meddaImage}
+                      alt="Sourjyendu Medda - Founder, SFL - Sports For Life"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Sourjyendu Medda
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/sourjyendumedda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Founder, SFL - Sports For Life
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Founder of Sports For Life (SFL), a new-age sportstech
+                      platform focused on strengthening India’s grassroots
+                      sports ecosystem and academies. He is also the Co-Founder
+                      of DealShare, one of India’s fastest-growing social
+                      commerce startups. Through SFL, Sourjyendu is building
+                      infrastructure, technology, and programs to support
+                      athlete development and sports training across the
+                      country. His entrepreneurial journey spans consumer
+                      commerce, operations, and sportstech, backed by successful
+                      fundraising efforts and active participation as an angel
+                      investor in emerging startups.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={vashneyImage}
+                      alt="Vikrant Varshney - Managing Partner, SucSeed Ventures"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Vikrant Varshney
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/vikrantvarshney-indovation?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Managing Partner, SucSeed Ventures
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Co‑founder and Managing Partner of SucSEED Indovation
+                      Ventures, a Hyderabad‑based early‑stage venture capital
+                      and seed‑fund firm (AIF Cat 1), focused on deep‑tech,
+                      fintech, gaming, e‑sports, SaaS, and related startup
+                      sectors. At SucSEED he has helped build a portfolio of
+                      over 75 start‑ups and has had multiple exits. His focus is
+                      more on investment/mentorship in the startup ecosystem
+                      than on running sports operations per se.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift">
+              <CardContent className="p-0">
+                <div className="">
+                  <div className="h-[260px] md:h-full">
+                    <img
+                      src={ratnakarImage}
+                      alt="Rathnakar Samavedam - Investment Director & CEO, Hyderabad Angels"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-2xl font-bold line-clamp-1">
+                        Rathnakar Samavedam
+                      </h3>
+                      <a
+                        href="https://www.linkedin.com/in/rathnakar-samavedam-816085a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
+                    <p className="text-primary font-semibold mb-4">
+                      Investment Director & CEO, Hyderabad Angels
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      Investment Director and CEO of Hyderabad Angels, one of
+                      India’s most active angel investment networks. With more
+                      than two decades of experience in finance, corporate
+                      strategy, and venture investing, he plays a pivotal role
+                      in nurturing early-stage startups and facilitating
+                      high-potential investments. Rathnakar has previously
+                      worked as VP Finance at MapRecruit.ai and as a Partner at
+                      S. Ramesh Babu & Co., bringing strong financial and
+                      operational insight to the investor community. Under his
+                      leadership, Hyderabad Angels has expanded its portfolio
+                      activities and launched a ₹100-crore fund to accelerate
+                      the growth of promising Indian startups.
+                    </p>
+
+                    <Button asChild variant="outline" className="w-fit">
+                      <Link to="/mentors">
+                        View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
