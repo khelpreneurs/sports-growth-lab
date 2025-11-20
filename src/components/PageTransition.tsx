@@ -21,6 +21,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       const timeout = setTimeout(() => {
         setDisplayLocation(location);
         setTransitionStage('fade-in');
+        window.scrollTo(0, 0);
       }, 200);
       return () => clearTimeout(timeout);
     }
