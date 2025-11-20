@@ -370,54 +370,57 @@ const Events = () => {
       <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
           <AnimatedSection animation="fade-up">
-            <h2 className="text-center mb-10 text-2xl md:text-5xl font-bold">
+            <h2 className="text-center mb-12 text-3xl md:text-4xl lg:text-5xl font-bold">
               Past Panel Speakers at Khelpreneurs
             </h2>
           </AnimatedSection>
-          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {mentors.map((mentor, index) => (
-              <AnimatedSection key={index} animation="slide-left" delay={index * 100}>
-                <Card className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
-                <CardContent className="p-0">
-                  <div>
-                    <div className="h-[260px] md:h-full">
+              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+                <Card className="h-full overflow-hidden border-border/50 hover:border-primary/30 hover:shadow-strong transition-all duration-300 hover:-translate-y-1 group">
+                  <CardContent className="p-0 h-full flex flex-col">
+                    <div className="relative h-64 overflow-hidden">
                       <img
                         src={mentor.image}
                         alt={mentor.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
-                    <div className="p-6 md:p-8 flex flex-col justify-center">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold line-clamp-1">
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                           {mentor.name}
                         </h3>
                         <a
                           href={mentor.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary/80">
-                          <Linkedin className="w-6 h-6" />
+                          className="flex-shrink-0 text-primary hover:text-primary-light transition-colors p-1 hover:bg-primary/10 rounded-md"
+                          aria-label={`Visit ${mentor.name}'s LinkedIn profile`}
+                        >
+                          <Linkedin className="w-5 h-5" />
                         </a>
                       </div>
 
-                      <p className="text-primary font-semibold mb-4">
+                      <p className="text-sm font-semibold text-primary mb-3">
                         {mentor.role}
                       </p>
 
-                      <p className="text-muted-foreground mb-4">{mentor.bio}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-4 mb-4 flex-grow">
+                        {mentor.bio}
+                      </p>
 
-                      <Button asChild variant="outline" className="w-fit">
+                      <Button asChild variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors">
                         <Link to="/mentors">
-                          View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                          View Bio <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
