@@ -36,47 +36,6 @@ import ratnakarImage from "@/assets/mentor-ratnakar.png";
 import logo from "@/assets/Company_Logo.png";
 
 const PastSpeakersGallery = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
-
-  const checkScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const ref = scrollRef.current;
-    if (ref) {
-      ref.addEventListener('scroll', checkScroll);
-      window.addEventListener('resize', checkScroll);
-      return () => {
-        ref.removeEventListener('scroll', checkScroll);
-        window.removeEventListener('resize', checkScroll);
-      };
-    }
-  }, []);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 450;
-      const newPosition = direction === 'left' 
-        ? scrollRef.current.scrollLeft - scrollAmount 
-        : scrollRef.current.scrollLeft + scrollAmount;
-      
-      scrollRef.current.scrollTo({
-        left: newPosition,
-        behavior: 'smooth'
-      });
-      
-      setTimeout(checkScroll, 100);
-    }
-  };
-
   const pastSpeakers = [
     {
       name: "Aditya Reddy",
@@ -165,80 +124,53 @@ const PastSpeakersGallery = () => {
   ];
 
   return (
-    <div className="relative flex items-center gap-4">
-      <Button
-        variant="outline"
-        size="icon"
-        className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg disabled:opacity-20 disabled:cursor-not-allowed flex-shrink-0 transition-all"
-        onClick={() => scroll('left')}
-        disabled={!canScrollLeft}
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </Button>
-
-      <div 
-        ref={scrollRef}
-        onScroll={checkScroll}
-        onLoad={checkScroll}
-        className="flex gap-6 overflow-x-auto pb-6 flex-1"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-      >
-        <style>
-          {`
-            .flex-1::-webkit-scrollbar {
-              display: none;
-            }
-          `}
-        </style>
-        {pastSpeakers.map((speaker, index) => (
-          <Card key={index} className="border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden min-w-[320px] hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex-shrink-0 group">
-            <CardContent className="p-6">
-              <div className="flex flex-col items-center text-center">
-                <div className="relative mb-5">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
-                  <div className="relative w-28 h-28 rounded-full overflow-hidden border-3 border-primary/20 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="w-full h-full object-cover"
-                    />
+    <div className="max-w-5xl mx-auto space-y-8">
+      {pastSpeakers.map((speaker, index) => (
+        <AnimatedSection key={index} animation="fade-up" delay={index * 50}>
+          <Card className="border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+            <CardContent className="p-0">
+              <div className="grid md:grid-cols-5 gap-0">
+                <div className="md:col-span-2 relative bg-gradient-to-br from-accent/5 to-primary/5 p-6 md:p-8 flex items-center justify-center">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl"></div>
+                    <div className="relative w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-accent/20 shadow-xl">
+                      <img
+                        src={speaker.image}
+                        alt={speaker.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-                
-                <h3 className="text-xl font-bold mb-2 line-clamp-2 min-h-[3.5rem]">
-                  {speaker.name}
-                </h3>
-                
-                <p className="text-sm text-primary font-semibold mb-3 line-clamp-2 min-h-[2.5rem]">
-                  {speaker.role}
-                </p>
-                
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 mb-4 min-h-[5.5rem]">
-                  {speaker.bio}
-                </p>
 
-                <a
-                  href={speaker.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 mt-auto">
-                  <Linkedin className="w-5 h-5" />
-                </a>
+                <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                        {speaker.name}
+                      </h3>
+                      <p className="text-primary font-semibold text-base">
+                        {speaker.role}
+                      </p>
+                    </div>
+                    <a
+                      href={speaker.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {speaker.bio}
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
-        ))}
-      </div>
-
-      <Button
-        variant="outline"
-        size="icon"
-        className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg disabled:opacity-20 disabled:cursor-not-allowed flex-shrink-0 transition-all"
-        onClick={() => scroll('right')}
-        disabled={!canScrollRight}
-      >
-        <ChevronRight className="h-5 w-5" />
-      </Button>
+        </AnimatedSection>
+      ))}
     </div>
   );
 };
