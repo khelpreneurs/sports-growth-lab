@@ -1,6 +1,7 @@
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, MapPin, Users, ArrowRight, Linkedin } from "lucide-react";
+import { Calendar, MapPin, Users, ArrowRight, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -35,6 +36,92 @@ import pic13 from "@/assets/hyderabad_event/pic13.jpeg";
 import pic14 from "@/assets/hyderabad_event/pic14.jpeg";
 import pic15 from "@/assets/hyderabad_event/pic15.jpeg";
 import { Link } from "react-router-dom";
+
+const HyderabadGallery = ({ mediaGallery }: { mediaGallery: Array<{ type: string; url: string }> }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 450;
+      const newScrollLeft = direction === 'left' 
+        ? scrollRef.current.scrollLeft - scrollAmount 
+        : scrollRef.current.scrollLeft + scrollAmount;
+      
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <div className="relative">
+      {canScrollLeft && (
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background hover:border-primary/30 hover:text-primary shadow-lg"
+          onClick={() => scroll('left')}
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+      )}
+      
+      {canScrollRight && (
+        <Button
+          variant="outline"
+          size="icon"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-border/50 hover:bg-background hover:border-primary/30 hover:text-primary shadow-lg"
+          onClick={() => scroll('right')}
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
+      )}
+
+      <div 
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {mediaGallery.map((item, index) => (
+          <div
+            key={index}
+            className="shadow-strong rounded-xl overflow-hidden min-w-[300px] md:min-w-[420px] flex-shrink-0">
+            {item.type === "image" && (
+              <img
+                src={item.url}
+                className="w-full h-[260px] md:h-[320px] object-cover"
+                alt={`Hyderabad event photo ${index + 1}`}
+              />
+            )}
+
+            {item.type === "youtube" && (
+              <iframe
+                src={item.url}
+                className="w-full h-[260px] md:h-[320px] object-cover"
+                allow="autoplay; encrypted-media"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Hyderabad event video ${index + 1}`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Events = () => {
   const mentors = [
@@ -434,30 +521,7 @@ const Events = () => {
             </h2>
           </AnimatedSection>
 
-          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
-            {mediaGallery.map((item, index) => (
-              <div
-                key={index}
-                className="shadow-strong rounded-xl overflow-hidden min-w-[300px] md:min-w-[420px]">
-                {item.type === "image" && (
-                  <img
-                    src={item.url}
-                    className="w-full h-[260px] md:h-[320px] object-cover"
-                  />
-                )}
-
-                {item.type === "youtube" && (
-                  <iframe
-                    src={item.url}
-                    className="w-full h-[260px] md:h-[320px] object-cover"
-                    allow="autoplay; encrypted-media"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
+          <HyderabadGallery mediaGallery={mediaGallery} />
         </div>
       </section>
 
