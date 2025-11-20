@@ -19,7 +19,7 @@ const BackToTop = () => {
     });
   };
   if (!isVisible) return null;
-  return <Button onClick={scrollToTop} size="icon" aria-label="Back to top" className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg transition-opacity duration-300 text-right">
+  return <Button onClick={scrollToTop} size="icon" aria-label="Back to top" className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg transition-opacity duration-300 text-right mx-[10px]">
       <ArrowUp className="h-5 w-5" />
     </Button>;
 };
