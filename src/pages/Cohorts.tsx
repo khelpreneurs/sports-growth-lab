@@ -577,16 +577,16 @@ const Cohorts = () => {
               ].map((item, i) => {
                 const [title, desc] = item.split(":");
                 return (
-                  <div
-                    key={i}
-                    className="p-4 md:p-5 bg-gray-50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
-                    <p className="font-semibold text-gray-900 mb-1">{title}</p>
-                    {desc && (
-                      <p className="text-gray-600 leading-relaxed">
-                        {desc.trim()}
-                      </p>
-                    )}
-                  </div>
+                <div
+                  key={i}
+                  className="p-4 md:p-5 bg-secondary/50 border rounded-xl shadow-sm hover:shadow-md transition text-sm md:text-base">
+                  <p className="font-semibold text-foreground mb-1">{title}</p>
+                  {desc && (
+                    <p className="text-muted-foreground leading-relaxed">
+                      {desc.trim()}
+                    </p>
+                  )}
+                </div>
                 );
               })}
             </div>
@@ -606,10 +606,10 @@ const Cohorts = () => {
                 "Deep understanding of how sponsorship drives sports business for brands and rights-holders.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3 items-start">
-                  <span className="text-green-600 text-2xl leading-none">
+                  <span className="text-primary text-2xl leading-none">
                     ✔
                   </span>
-                  <p className="text-gray-800">{item}</p>
+                  <p className="text-foreground">{item}</p>
                 </li>
               ))}
             </ul>
@@ -632,16 +632,16 @@ const Cohorts = () => {
                 key={index}
                 value={`chapter-${index}`}
                 className="border rounded-2xl overflow-hidden shadow-sm">
-                <AccordionTrigger className="w-full text-left px-4 md:px-6 py-3 md:py-4 bg-gray-100 text-base md:text-lg font-medium">
+                <AccordionTrigger className="w-full text-left px-4 md:px-6 py-3 md:py-4 bg-secondary/50 text-base md:text-lg font-medium">
                   {item.chapter}
                 </AccordionTrigger>
 
-                <AccordionContent className="bg-white">
-                  <ul className="divide-y">
+                <AccordionContent className="bg-background">
+                  <ul className="divide-y divide-border">
                     {item.lessons.map((lesson, i) => (
                       <li
                         key={i}
-                        className="px-4 md:px-6 py-3 md:py-4 text-gray-700 text-sm md:text-base hover:bg-gray-50">
+                        className="px-4 md:px-6 py-3 md:py-4 text-muted-foreground text-sm md:text-base hover:bg-secondary/30">
                         {lesson}
                       </li>
                     ))}

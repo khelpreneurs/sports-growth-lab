@@ -316,9 +316,9 @@ const Careers = () => {
               ].map((title, index) => (
                 <Card
                   key={index}
-                  className="shadow-soft hover:shadow-medium transition-smooth border border-gray-200 rounded-xl">
+                  className="shadow-soft hover:shadow-medium transition-smooth border rounded-xl">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[17px] text-gray-800">
+                    <h3 className="font-semibold text-[17px] text-foreground">
                       {title}
                     </h3>
                   </CardContent>
