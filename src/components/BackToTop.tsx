@@ -18,18 +18,9 @@ const BackToTop = () => {
       behavior: 'smooth'
     });
   };
-  
   if (!isVisible) return null;
-  
-  return (
-    <Button
-      onClick={scrollToTop}
-      size="icon"
-      className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg transition-opacity duration-300"
-      aria-label="Back to top"
-    >
+  return <Button onClick={scrollToTop} size="icon" aria-label="Back to top" className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg transition-opacity duration-300 text-center">
       <ArrowUp className="h-5 w-5" />
-    </Button>
-  );
+    </Button>;
 };
 export default BackToTop;
