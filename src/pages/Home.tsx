@@ -169,18 +169,18 @@ const PastSpeakersGallery = () => {
       <Button
         variant="outline"
         size="icon"
-        className="h-12 w-12 rounded-full bg-background border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-md disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+        className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg disabled:opacity-20 disabled:cursor-not-allowed flex-shrink-0 transition-all"
         onClick={() => scroll('left')}
         disabled={!canScrollLeft}
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-5 w-5" />
       </Button>
 
       <div 
         ref={scrollRef}
         onScroll={checkScroll}
         onLoad={checkScroll}
-        className="flex gap-6 overflow-x-auto pb-4 flex-1"
+        className="flex gap-6 overflow-x-auto pb-6 flex-1"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
       >
         <style>
@@ -191,34 +191,39 @@ const PastSpeakersGallery = () => {
           `}
         </style>
         {pastSpeakers.map((speaker, index) => (
-          <Card key={index} className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px] hover-lift flex-shrink-0">
-            <CardContent className="p-0">
-              <div>
-                <div className="h-[200px] bg-muted">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="p-6 md:p-8 flex flex-col justify-center">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-2xl font-bold line-clamp-1">
-                      {speaker.name}
-                    </h3>
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80">
-                      <Linkedin className="w-6 h-6" />
-                    </a>
+          <Card key={index} className="border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden min-w-[320px] hover:border-primary/30 hover:shadow-xl transition-all duration-300 flex-shrink-0 group">
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-5">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl group-hover:blur-2xl transition-all"></div>
+                  <div className="relative w-28 h-28 rounded-full overflow-hidden border-3 border-primary/20 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-primary font-semibold mb-4">
-                    {speaker.role}
-                  </p>
-                  <p className="text-muted-foreground mb-4">{speaker.bio}</p>
                 </div>
+                
+                <h3 className="text-xl font-bold mb-2 line-clamp-2 min-h-[3.5rem]">
+                  {speaker.name}
+                </h3>
+                
+                <p className="text-sm text-primary font-semibold mb-3 line-clamp-2 min-h-[2.5rem]">
+                  {speaker.role}
+                </p>
+                
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 mb-4 min-h-[5.5rem]">
+                  {speaker.bio}
+                </p>
+
+                <a
+                  href={speaker.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 mt-auto">
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             </CardContent>
           </Card>
@@ -228,11 +233,11 @@ const PastSpeakersGallery = () => {
       <Button
         variant="outline"
         size="icon"
-        className="h-12 w-12 rounded-full bg-background border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-md disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+        className="h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg disabled:opacity-20 disabled:cursor-not-allowed flex-shrink-0 transition-all"
         onClick={() => scroll('right')}
         disabled={!canScrollRight}
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-5 w-5" />
       </Button>
     </div>
   );
@@ -532,53 +537,64 @@ const Home = () => {
         </div>
       </section>
       {/* Featured Mentor */}
-      <section className="py-16 md:py-20 bg-secondary/50">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="mb-4">Mentors & Coaches</h2>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-4">
+              Meet Your Mentor
+            </div>
+            <h2 className="mb-4">Expert Guidance from Industry Leaders</h2>
             <p className="text-lg text-muted-foreground">
-              Our mentors are practitioners with real-world experience in sports
-              business
+              Learn directly from practitioners shaping India's sports business landscape
             </p>
           </div>
-          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+          <div className="max-w-4xl mx-auto">
             {mentors.map((mentor, index) => (
               <Card
                 key={index}
-                className="shadow-strong overflow-hidden min-w-[350px] md:min-w-[420px]">
+                className="border-2 border-primary/20 bg-card/50 backdrop-blur-sm overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-2xl">
                 <CardContent className="p-0">
-                  <div>
-                    <div className="h-[200px] bg-muted">
-                      <img
-                        src={mentor.image}
-                        alt={mentor.name}
-                        className="w-full h-full object-contain"
-                      />
+                  <div className="grid md:grid-cols-5 gap-0">
+                    <div className="md:col-span-2 relative bg-gradient-to-br from-primary/5 to-accent/5 p-8 flex items-center justify-center">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
+                        <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-xl">
+                          <img
+                            src={mentor.image}
+                            alt={mentor.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="p-6 md:p-8 flex flex-col justify-center">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold line-clamp-1">
-                          {mentor.name}
-                        </h3>
+                    <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                            {mentor.name}
+                          </h3>
+                          <p className="text-primary font-semibold text-lg">
+                            {mentor.role}
+                          </p>
+                        </div>
                         <a
                           href={mentor.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary/80">
-                          <Linkedin className="w-6 h-6" />
+                          className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
+                          <Linkedin className="w-5 h-5" />
                         </a>
                       </div>
 
-                      <p className="text-primary font-semibold mb-4">
-                        {mentor.role}
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        {mentor.bio}
                       </p>
 
-                      <p className="text-muted-foreground mb-4">{mentor.bio}</p>
-
-                      <Button asChild variant="outline" className="w-fit">
+                      <Button asChild className="w-fit group">
                         <Link to="/mentors">
-                          View Bio <ArrowRight className="ml-2 w-4 h-4" />
+                          View Full Profile 
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
                     </div>
@@ -591,12 +607,15 @@ const Home = () => {
       </section>
 
       {/* Past Panel Speakers and Mentors */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-4">
+              Industry Voices
+            </div>
             <h2 className="mb-4">Past Panel Speakers</h2>
             <p className="text-lg text-muted-foreground">
-              Practitioners with real-world experience in sports business
+              Learn from professionals who've shaped the Indian sports ecosystem
             </p>
           </div>
 
