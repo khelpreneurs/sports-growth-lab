@@ -413,102 +413,111 @@ const Cohorts = () => {
         </div>
       </section> */}
       {/* Featured Mentor */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className=" mx-auto text-center">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-gradient-to-b from-background via-secondary/30 to-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <AnimatedSection className="text-center mb-12">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              Expert Guidance from Industry Leaders
+            </div>
             <h2 className="mb-4">Mentors & Coaches</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Our mentors are practitioners with real-world experience in sports
-              business
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Learn directly from practitioners shaping India's sports business landscape
             </p>
+          </AnimatedSection>
 
-            {/* Horizontal Scroll Wrapper */}
-            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 hide-scrollbar">
-              {mentors.map((mentor, index) => (
-                <Card
-                  key={index}
-                  className="shadow-strong overflow-hidden min-w-[90%] md:min-w-[75%] lg:min-w-[65%] snap-center">
+          <div className="grid gap-8">
+            {mentors.map((mentor, index) => (
+              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+                <Card className="overflow-hidden border-2 hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
                   <CardContent className="p-0">
-                    <div className="grid md:grid-cols-5 h-full min-h-[850px]">
-                      {/* Image Section (full height) */}
-                      <div className="md:col-span-2 h-full">
-                        <img
-                          src={mentor.image}
-                          alt={mentor.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-
-                      {/* Content Section */}
-                      <div className="md:col-span-3 p-8 md:p-12 text-left flex flex-col justify-between">
-                        <div>
-                          <h2 className="text-3xl font-bold mb-2">
-                            {mentor.name}
-                          </h2>
-                          <p className="text-primary font-bold text-lg mb-2">
-                            {mentor.role}
-                          </p>
-
-                          {mentor.highlight && (
-                            <p className="text-muted-foreground mb-6">
-                              {mentor.highlight}
-                            </p>
-                          )}
-
-                          {mentor.background && (
-                            <div className="mb-6">
-                              <h3 className="font-bold mb-2">Background</h3>
-                              <p className="text-muted-foreground">
-                                {mentor.background}
-                              </p>
-                            </div>
-                          )}
-
-                          {mentor.expertise?.length > 0 && (
-                            <div className="mb-6">
-                              <h3 className="font-bold mb-2">Expertise</h3>
-                              <ul className="space-y-2">
-                                {mentor.expertise.map((skill, i) => (
-                                  <li
-                                    key={i}
-                                    className="flex items-center gap-2 text-muted-foreground text-sm">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                                    {skill}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-
-                          {mentor.learn && (
-                            <div className="mb-6">
-                              <h3 className="font-bold mb-2">
-                                What You'll Learn
-                              </h3>
-                              <p className="text-muted-foreground">
-                                {mentor.learn}
-                              </p>
-                            </div>
-                          )}
+                    <div className="grid md:grid-cols-3 gap-8 p-8 md:p-12">
+                      {/* Left: Profile Image */}
+                      <div className="flex flex-col items-center md:items-start">
+                        <div className="relative w-48 h-48 mb-6">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse"></div>
+                          <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                            <img
+                              src={mentor.image}
+                              alt={mentor.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                         </div>
-
                         <Button
                           asChild
                           variant="outline"
-                          className="gap-2 mt-6 md:mt-8">
+                          className="w-full gap-2 hover:bg-primary hover:text-primary-foreground">
                           <a
                             href={mentor.linkedin}
                             target="_blank"
                             rel="noopener noreferrer">
-                            <Linkedin className="w-4 h-4" /> Connect on LinkedIn
+                            <Linkedin className="w-4 h-4" /> Connect
                           </a>
                         </Button>
+                      </div>
+
+                      {/* Right: Content */}
+                      <div className="md:col-span-2 space-y-6">
+                        <div>
+                          <h3 className="text-3xl font-bold mb-2">{mentor.name}</h3>
+                          <p className="text-primary font-semibold text-lg mb-3">
+                            {mentor.role}
+                          </p>
+                          {mentor.highlight && (
+                            <p className="text-muted-foreground italic border-l-4 border-primary/30 pl-4">
+                              {mentor.highlight}
+                            </p>
+                          )}
+                        </div>
+
+                        {mentor.background && (
+                          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg p-6">
+                            <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                              <Award className="w-5 h-5 text-primary" />
+                              Background
+                            </h4>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {mentor.background}
+                            </p>
+                          </div>
+                        )}
+
+                        {mentor.expertise && mentor.expertise.length > 0 && (
+                          <div>
+                            <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                              <Sparkles className="w-5 h-5 text-primary" />
+                              Expertise
+                            </h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                              {mentor.expertise.map((skill, i) => (
+                                <div
+                                  key={i}
+                                  className="flex items-center gap-2 text-muted-foreground bg-secondary/50 rounded-md px-3 py-2">
+                                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                                  <span className="text-sm">{skill}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {mentor.learn && (
+                          <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-lg p-6 border border-primary/10">
+                            <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                              <GraduationCap className="w-5 h-5 text-primary" />
+                              What You'll Learn
+                            </h4>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {mentor.learn}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
