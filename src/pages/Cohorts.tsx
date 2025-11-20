@@ -167,30 +167,6 @@ const Cohorts = () => {
         "In the Sports Sponsorship cohort, Sagar shares practical insights from his work structuring and closing sponsorship deals. Participants gain access to live projects at KIBI Sports and learn the complete lifecycle of sports sponsorships - from pitching to execution",
       linkedin: "https://www.linkedin.com/in/sagar-rai-1252901a5/",
     },
-    {
-      name: "Another Mentor",
-      role: "Sports Performance Strategist",
-      image: mentorImage,
-      highlight: "Leading High Performance Cohort",
-      background: "Short description only, no expertise list for this mentor.",
-      linkedin: "https://linkedin.com/",
-    },
-    {
-      name: "Another Mentor",
-      role: "Sports Performance Strategist",
-      image: mentorImage,
-      highlight: "Leading High Performance Cohort",
-      background: "Short description only, no expertise list for this mentor.",
-      linkedin: "https://linkedin.com/",
-    },
-    {
-      name: "Another Mentor",
-      role: "Sports Performance Strategist",
-      image: mentorImage,
-      highlight: "Leading High Performance Cohort",
-      background: "Short description only, no expertise list for this mentor.",
-      linkedin: "https://linkedin.com/",
-    },
   ];
   return (
     <div className="min-h-screen">
