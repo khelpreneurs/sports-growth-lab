@@ -460,56 +460,60 @@ const Events = () => {
         </div>
       </section>
       {/* Past Panel Speakers */}
-      <section className="py-16 md:py-20 bg-secondary/50">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
         <div className="container mx-auto px-4">
-          <AnimatedSection animation="fade-up">
-            <h2 className="text-center mb-12 text-3xl md:text-4xl lg:text-5xl font-bold">
-              Past Panel Speakers at Khelpreneurs
-            </h2>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {mentors.map((mentor, index) => (
-              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-                <Card className="h-full overflow-hidden border-border/50 hover:border-primary/30 hover:shadow-strong transition-all duration-300 hover:-translate-y-1 group">
-                  <CardContent className="p-0 h-full flex flex-col">
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={mentor.image}
-                        alt={mentor.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded-full mb-4">
+              Industry Voices
+            </div>
+            <h2 className="mb-4">Past Panel Speakers</h2>
+            <p className="text-lg text-muted-foreground">
+              Learn from professionals who've shaped the Indian sports ecosystem
+            </p>
+          </div>
 
-                    <div className="p-6 flex flex-col flex-grow">
-                      <div className="flex items-start justify-between gap-3 mb-3">
-                        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                          {mentor.name}
-                        </h3>
-                        <a
-                          href={mentor.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-shrink-0 text-primary hover:text-primary-light transition-colors p-1 hover:bg-primary/10 rounded-md"
-                          aria-label={`Visit ${mentor.name}'s LinkedIn profile`}
-                        >
-                          <Linkedin className="w-5 h-5" />
-                        </a>
+          <div className="max-w-5xl mx-auto space-y-8">
+            {mentors.map((mentor, index) => (
+              <AnimatedSection key={index} animation="fade-up" delay={index * 50}>
+                <Card className="border border-border/50 bg-card/80 backdrop-blur-sm overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-5 gap-0">
+                      <div className="md:col-span-2 relative bg-gradient-to-br from-accent/5 to-primary/5 p-6 md:p-8 flex items-center justify-center">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl"></div>
+                          <div className="relative w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-accent/20 shadow-xl">
+                            <img
+                              src={mentor.image}
+                              alt={mentor.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
                       </div>
 
-                      <p className="text-sm font-semibold text-primary mb-3">
-                        {mentor.role}
-                      </p>
+                      <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                              {mentor.name}
+                            </h3>
+                            <p className="text-primary font-semibold text-base">
+                              {mentor.role}
+                            </p>
+                          </div>
+                          <a
+                            href={mentor.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
+                            <Linkedin className="w-5 h-5" />
+                          </a>
+                        </div>
 
-                      <p className="text-sm text-muted-foreground line-clamp-4 mb-4 flex-grow">
-                        {mentor.bio}
-                      </p>
-
-                      <Button asChild variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors">
-                        <Link to="/mentors">
-                          View Bio <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {mentor.bio}
+                        </p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
