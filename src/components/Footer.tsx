@@ -72,7 +72,6 @@ const Footer = () => {
       { to: "/cohorts", label: "Cohorts" },
       { to: "/events", label: "Events" },
       { to: "/careers", label: "Careers" },
-      { to: "/mentors", label: "Mentors" },
     ],
     Company: [
       { to: "/about", label: "About Us" },
