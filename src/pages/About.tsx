@@ -90,32 +90,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12 text-center">Our Partners</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="shadow-strong hover-lift">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">KIBI Sports</h3>
-                  <p className="text-muted-foreground">
-                    Co-creating the Sports Sponsorship cohort and providing live project opportunities. KIBI Sports brings a large network of athletes and institutions with proven sponsorship expertise in the Indian sports ecosystem.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="shadow-strong hover-lift">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">Khelaxy</h3>
-                  <p className="text-muted-foreground">
-                    Powering our community platform and enabling seamless connections between learners, mentors, and the broader sports industry network.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Founder/Team */}
       {/* <section className="py-16 md:py-24 bg-secondary/50">

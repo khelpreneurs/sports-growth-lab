@@ -25,7 +25,10 @@ const Header = () => {
     { to: "/events", label: "Events" },
     { to: "/careers", label: "Careers" },
     { to: "/faqs", label: "FAQs" },
-    { to: "/contact", label: "Contact" },
+    {
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform?usp=sharing&ouid=116225979965456336365",
+      label: "Join Our Free Webinar",
+    },
   ];
 
   return (
@@ -50,22 +53,40 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
-              const isContact = link.to === '/contact';
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`text-sm font-medium transition-fast relative ${
-                    isContact
-                      ? "px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent-hover shadow-sm"
-                      : location.pathname === link.to
+              const isContact = link.to === "/contact" || link.href?.includes("docs.google.com/forms");
+              if (link.href) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm font-medium transition-fast relative ${
+                      isContact
+                        ? "px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent-hover shadow-sm"
+                        : "text-foreground/70 hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`text-sm font-medium transition-fast relative ${
+                      isContact
+                        ? "px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent-hover shadow-sm"
+                        : location.pathname === link.to
                         ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-0.5 after:bg-primary hover:text-primary"
                         : "text-foreground/70 hover:text-primary"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
             })}
             <DarkModeToggle />
           </nav>
@@ -87,8 +108,28 @@ const Header = () => {
         {isMobileMenuOpen && (
           <nav className="lg:hidden py-6 border-t border-border">
             <div className="space-y-1">
-              {navLinks.map((link) => {
-                const isContact = link.to === '/contact';
+            {navLinks.map((link) => {
+              const isContact = link.to === '/contact' || link.href?.includes("docs.google.com/forms");
+              if (link.href) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block py-3 px-2 text-base font-medium rounded-lg transition-fast ${
+                      isContact
+                        ? "bg-accent text-accent-foreground hover:bg-accent-hover"
+                        : location.pathname === link.to
+                        ? "text-primary bg-primary/5"
+                        : "text-foreground hover:bg-secondary"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                );
+              } else {
                 return (
                   <Link
                     key={link.to}
@@ -97,15 +138,16 @@ const Header = () => {
                       isContact
                         ? "bg-accent text-accent-foreground hover:bg-accent-hover"
                         : location.pathname === link.to
-                          ? "text-primary bg-primary/5"
-                          : "text-foreground hover:bg-secondary"
+                        ? "text-primary bg-primary/5"
+                        : "text-foreground hover:bg-secondary"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
                 );
-              })}
+              }
+            })}
             </div>
           </nav>
         )}

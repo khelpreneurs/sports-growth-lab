@@ -189,10 +189,7 @@ const Home = () => {
   const { toast } = useToast();
 
   const handleApplyClick = () => {
-    toast({
-      title: "Redirecting to Application",
-      description: "You'll be directed to the cohort application page.",
-    });
+    // Removed toast notification for redirecting to cohorts page
   };
 
   const handleWaitlistClick = () => {
@@ -571,16 +568,16 @@ const Home = () => {
               className="text-lg px-8 py-6 bg-accent hover:bg-accent-hover shadow-accent"
               onClick={() => {
                 toast({
-                  title: "Opening Application Form",
+                  title: "Contacting Expert",
                   description:
-                    "You'll be redirected to the secure payment portal.",
+                    "Redirecting you to speak with our expert.",
                 });
               }}>
               <a
-                href="https://payments.cashfree.com/forms/khelpreneurscohort1"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform?usp=sharing&ouid=116225979965456336365"
                 target="_blank"
                 rel="noopener noreferrer">
-                Apply Now
+                Talk to Our Expert
               </a>
             </Button>
           </div>

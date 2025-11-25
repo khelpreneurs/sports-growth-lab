@@ -234,7 +234,7 @@ const Cohorts = () => {
                         {
                           label: "Structure",
                           value:
-                            "8 weeks live + paid internship (2 months guaranteed + 2 months performance-based extension)",
+                            "8 weeks live sessions + 8-week paid internship (₹10,000/month stipend)",
                         },
                         {
                           label: "Format",
@@ -244,7 +244,7 @@ const Cohorts = () => {
                           label: "Mentor",
                           value: "Sagar Rai (Founder & CEO, KIBI Sports)",
                         },
-                        { label: "Fee", value: "₹40,000 (incl. taxes)" },
+                        //{ label: "Fee", value: "₹40,000 (incl. taxes)" },
                         { label: "Seats", value: "50 (first-come basis)" },
                         {
                           label: "Stipend",
@@ -293,12 +293,12 @@ const Cohorts = () => {
                   asChild
                   size="lg"
                   className="w-full md:w-auto bg-accent hover:bg-accent-hover shadow-accent text-base md:text-lg px-6 md:px-8">
-                  <a
-                    href="https://payments.cashfree.com/forms/khelpreneurscohort1"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Apply Now <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer">
+                Apply Now <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
                 </Button>
               </CardContent>
             </Card>
@@ -827,26 +827,9 @@ const Cohorts = () => {
           </div>
         </div>
       </section>
-      {/* FAQ Teaser */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="mb-4">Have Questions?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Check out our comprehensive FAQ section for program details,
-              admissions, and more
-            </p>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/cohorts">
-                Apply to Sports Sponsorship Cohort{" "}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-8 md:py-12 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-6">Applications Are Open</h2>
@@ -859,7 +842,7 @@ const Cohorts = () => {
               size="lg"
               className="bg-accent hover:bg-accent-hover text-lg px-8 py-6 shadow-accent">
               <a
-                href="https://payments.cashfree.com/forms/khelpreneurscohort1"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer">
                 Apply Now
