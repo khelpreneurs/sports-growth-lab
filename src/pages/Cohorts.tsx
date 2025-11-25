@@ -192,7 +192,7 @@ const Cohorts = () => {
                 asChild
                 className="inline-flex items-center justify-center h-[32px] md:h-[35px] px-4 py-2 bg-[#FF9A42] text-white text-[10px] md:text-xs font-bold rounded-full mb-3 uppercase">
                 <a
-                  href="https://payments.cashfree.com/forms/khelpreneurscohort1"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform"
                   target="_blank"
                   rel="noopener noreferrer">
                   Now Enrolling
