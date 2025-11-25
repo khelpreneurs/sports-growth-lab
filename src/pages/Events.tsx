@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { useParallax } from "@/hooks/use-parallax";
+import SEO from "@/components/SEO";
 import eventsHero from "@/assets/events-hero.jpg";
 import adityaImage from "@/assets/mentor-adity.png";
 import anjumImage from "@/assets/mentor-anjum.png";
@@ -318,6 +319,30 @@ const Events = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Events & Workshops - Sports Industry Networking"
+        description="Join Khelpreneurs offline meetups, networking events, and sports industry workshops. Connect with sports professionals, entrepreneurs, and industry leaders across India."
+        keywords="sports industry events, sports networking India, sports workshops, sports career events, sports entrepreneurship meetups"
+        canonicalUrl="https://khelpreneurs.com/events"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "Khelpreneurs Sports Industry Events",
+          "description": "Offline meetups and networking events for sports professionals",
+          "organizer": {
+            "@type": "Organization",
+            "name": "Khelpreneurs",
+            "url": "https://khelpreneurs.com"
+          },
+          "location": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IN"
+            }
+          }
+        }}
+      />
       <Header />
       <ScrollProgressBar />
 
