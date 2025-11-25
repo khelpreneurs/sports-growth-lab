@@ -29,6 +29,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { useParallax } from "@/hooks/use-parallax";
+import SEO from "@/components/SEO";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import {
   Accordion,
@@ -170,6 +171,35 @@ const Cohorts = () => {
   ];
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Programs & Cohorts - Sports Career Training"
+        description="Join industry-led sports cohorts with paid internships. Learn sports sponsorship, journalism, and entrepreneurship with hands-on training and mentorship from experts."
+        keywords="sports sponsorship cohort, sports training program, sports internship program, KIBI Sports internship, sports career training India"
+        canonicalUrl="https://khelpreneurs.com/cohorts"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Sports Sponsorship Cohort",
+          "description": "16-week intensive program with live training and paid internship at KIBI Sports",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Khelpreneurs",
+            "url": "https://khelpreneurs.com"
+          },
+          "educationalLevel": "Professional Development",
+          "coursePrerequisites": "No prior experience required",
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "duration": "P16W",
+            "instructor": {
+              "@type": "Person",
+              "name": "Sagar Rai",
+              "jobTitle": "Founder & CEO, KIBI Sports"
+            }
+          }
+        }}
+      />
       <Header />
       <ScrollProgressBar />
       {/* Hero Section */}

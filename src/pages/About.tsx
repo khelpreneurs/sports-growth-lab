@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
+import SEO from "@/components/SEO";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 
 const About = () => {
@@ -22,6 +23,25 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About Khelpreneurs - Transforming Sports Careers"
+        description="Khelpreneurs bridges the gap between sports passion and professional careers through industry-led cohorts, internships, and career pathways. Learn about our mission to democratize sports career access."
+        keywords="about Khelpreneurs, sports career training, sports education India, sports industry programs, career development sports"
+        canonicalUrl="https://khelpreneurs.com/about"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Khelpreneurs",
+          "url": "https://khelpreneurs.com",
+          "logo": "https://khelpreneurs.com/company-logo.jpg",
+          "description": "Industry-led cohorts with real internships and job pathways in sports",
+          "foundingDate": "2024",
+          "sameAs": [
+            "https://www.linkedin.com/company/khelpreneurs",
+            "https://www.instagram.com/khelpreneurs"
+          ]
+        }}
+      />
       <Header />
 
       {/* Hero */}
