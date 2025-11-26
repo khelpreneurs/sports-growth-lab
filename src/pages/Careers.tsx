@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { useParallax } from "@/hooks/use-parallax";
-import SEO from "@/components/SEO";
 
 // Import partner logos
 import logo17 from "@/assets/Career Opportunities/17-removebg-preview.png";
@@ -41,31 +40,6 @@ import untitledDesign from "@/assets/Career Opportunities/Untitled_design-remove
 const Careers = () => {
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Career Opportunities - Sports Industry Jobs"
-        description="Explore career pathways in sports sponsorship, marketing, and business. Learn about placement statistics, hiring partners, and career support services from Khelpreneurs programs."
-        keywords="sports industry jobs, sports career opportunities, sports sponsorship jobs India, sports marketing careers, sports business jobs, KIBI Sports careers"
-        canonicalUrl="https://khelpreneurs.com/careers"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "JobPosting",
-          "title": "Sports Industry Career Opportunities",
-          "description": "Career pathways in sports sponsorship, marketing, and business development",
-          "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Khelpreneurs",
-            "sameAs": "https://khelpreneurs.com"
-          },
-          "jobLocation": {
-            "@type": "Place",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "IN"
-            }
-          },
-          "employmentType": "INTERN"
-        }}
-      />
       <Header />
       <ScrollProgressBar />
 

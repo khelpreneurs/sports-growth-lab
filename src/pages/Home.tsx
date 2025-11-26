@@ -19,7 +19,6 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
-import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 import adityaImage from "@/assets/mentor-adity.png";
@@ -202,29 +201,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Khelpreneurs - Launch Your Sports Industry Career"
-        description="Industry-led cohorts with real internships and job pathways in sports. Master sports sponsorship, journalism, and entrepreneurship with expert mentors and hands-on training."
-        keywords="sports sponsorship training, sports career programs, sports internships India, sports industry jobs, sports marketing courses, sports business education, KIBI Sports"
-        canonicalUrl="https://khelpreneurs.com/"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          "name": "Khelpreneurs",
-          "description": "Industry-led cohorts with real internships and job pathways in sports",
-          "url": "https://khelpreneurs.com",
-          "logo": "https://khelpreneurs.com/company-logo.jpg",
-          "sameAs": [
-            "https://www.linkedin.com/company/khelpreneurs",
-            "https://www.instagram.com/khelpreneurs"
-          ],
-          "offers": {
-            "@type": "Offer",
-            "category": "Sports Education",
-            "description": "Sports Sponsorship Cohort Program"
-          }
-        }}
-      />
       <Header />
 
       {/* Hero Section */}

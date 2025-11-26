@@ -13,7 +13,6 @@ import SecondaryButton from "@/components/SecondaryButton";
 import StatCard from "@/components/StatCard";
 import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
-import SEO from "@/components/SEO";
 import sponsorshipHero from "@/assets/sponsorship-hero.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
 
@@ -157,36 +156,6 @@ const SportsSponsorship = () => {
 
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Sports Sponsorship Cohort - 16-Week Training Program"
-        description="Become a sports sponsorship professional in 16 weeks. Live cohort training with KIBI Sports, paid internship at ₹10,000/month, and PPO opportunities. Learn to pitch, price, and close real sponsorship deals."
-        keywords="sports sponsorship course, sports marketing training, sports internship India, KIBI Sports program, sports career pathway, sponsorship training India"
-        canonicalUrl="https://khelpreneurs.com/cohorts/sports-sponsorship"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Course",
-          "name": "Sports Sponsorship Cohort",
-          "description": "16-week intensive program combining live training and paid internship at KIBI Sports",
-          "provider": {
-            "@type": "EducationalOrganization",
-            "name": "Khelpreneurs",
-            "sameAs": "https://khelpreneurs.com"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "40000",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfiqnKeJOsnlE8-MHjepFUCjOYN_sQLgpNJm_d9pS-cK_b4EQ/viewform"
-          },
-          "hasCourseInstance": {
-            "@type": "CourseInstance",
-            "courseMode": "blended",
-            "duration": "P16W",
-            "courseWorkload": "PT2H"
-          }
-        }}
-      />
       <Header />
       <ScrollProgressBar />
 
