@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
 
 const FAQs = () => {
   const faqCategories = [
@@ -112,26 +111,6 @@ const FAQs = () => {
 
   return (
     <div className="min-h-screen">
-      <SEO
-        title="FAQs - Frequently Asked Questions"
-        description="Get answers to common questions about Khelpreneurs programs, admissions, fees, career outcomes, and sports industry training. Learn about our cohorts, internships, and placement support."
-        keywords="sports training FAQ, sports cohort questions, sports internship FAQ, sports career program questions, Khelpreneurs admissions"
-        canonicalUrl="https://khelpreneurs.com/faqs"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqCategories.flatMap(category => 
-            category.faqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          )
-        }}
-      />
       <Header />
 
       {/* Hero */}

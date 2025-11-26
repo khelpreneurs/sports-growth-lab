@@ -9,7 +9,6 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -51,25 +50,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Contact Us - Get in Touch"
-        description="Have questions about Khelpreneurs programs? Contact us for information about sports cohorts, admissions, career support, and internship opportunities. We're here to help launch your sports career."
-        keywords="contact Khelpreneurs, sports program inquiry, cohort questions, sports career help, Khelpreneurs support"
-        canonicalUrl="https://khelpreneurs.com/contact"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Contact Khelpreneurs",
-          "description": "Get in touch with Khelpreneurs for program inquiries",
-          "url": "https://khelpreneurs.com/contact",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Service",
-            "email": "events@khelpreneurs.com",
-            "availableLanguage": ["English", "Hindi"]
-          }
-        }}
-      />
       <Header />
 
       {/* Hero */}
