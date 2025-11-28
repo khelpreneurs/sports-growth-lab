@@ -532,16 +532,9 @@ const Home = () => {
                         </a>
                       </div>
 
-                      <p className="text-muted-foreground leading-relaxed mb-6">
+                      <p className="text-muted-foreground leading-relaxed">
                         {mentor.bio}
                       </p>
-
-                      <Button asChild className="w-fit group">
-                        <Link to="/mentors">
-                          View Full Profile 
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
                     </div>
                   </div>
                 </CardContent>
