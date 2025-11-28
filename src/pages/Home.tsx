@@ -493,7 +493,7 @@ const Home = () => {
               Learn directly from practitioners shaping India's sports business landscape
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-8">
             {mentors.map((mentor, index) => (
               <Card
                 key={index}
