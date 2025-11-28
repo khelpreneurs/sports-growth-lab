@@ -30,6 +30,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { useParallax } from "@/hooks/use-parallax";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
+import mentorAbhinav from "@/assets/mentor-abhinav.jpg";
+import mentorDrishti from "@/assets/mentor-drishti.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -166,6 +168,40 @@ const Cohorts = () => {
       learn:
         "In the Sports Sponsorship cohort, Sagar shares practical insights from his work structuring and closing sponsorship deals. Participants gain access to live projects at KIBI Sports and learn the complete lifecycle of sports sponsorships - from pitching to execution",
       linkedin: "https://www.linkedin.com/in/sagar-rai-1252901a5/",
+    },
+    {
+      name: "Abhinav Das",
+      role: "Co-Founder & CEO, Superjoin.ai",
+      image: mentorAbhinav,
+      highlight: "Product and Technology Leadership",
+      background:
+        "Abhinav Das is a product and technology leader with extensive experience across fintech, mobility, and SaaS platforms. Over the years, he has built and scaled digital products including subscription ecosystems, credit-card portfolios, and backend systems for high-growth consumer businesses",
+      expertise: [
+        "Product Management & Strategy",
+        "Engineering & Technology Leadership",
+        "Business Strategy & Growth",
+        "Full-Stack Development & AI Solutions",
+      ],
+      learn:
+        "At Superjoin.ai, he leads product strategy, technology, and growth building AI-powered solutions for creators, operators, and emerging digital businesses. His expertise spans product management, engineering, business strategy, and full-stack development",
+      linkedin: "https://www.linkedin.com/in/abhinavdas-in",
+    },
+    {
+      name: "Drishti Bagla",
+      role: "Sports Media & Communications Specialist",
+      image: mentorDrishti,
+      highlight: "Sports Media & Digital Storytelling",
+      background:
+        "Drishti Bagla is a sports media and communications professional with strong experience in journalism, content strategy, and digital storytelling. She has created and managed high-impact sports content across multiple platforms, working extensively on research-driven stories, brand messaging, and audience-focused communication",
+      expertise: [
+        "Sports Journalism & Content Strategy",
+        "Digital Storytelling & Media Production",
+        "PR Coordination & Brand Messaging",
+        "Social Media Strategy & Engagement",
+      ],
+      learn:
+        "With a background in journalism and hands-on media experience, she brings expertise in content writing, PR coordination, social-media strategy, and sports-centric narrative building. Drishti plays a key role in shaping communication frameworks and strengthening the media presence of sports-driven initiatives and organizations",
+      linkedin: "https://www.linkedin.com/in/drishtibagla009",
     },
   ];
   return (
