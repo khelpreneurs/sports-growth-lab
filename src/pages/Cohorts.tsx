@@ -735,7 +735,7 @@ const Cohorts = () => {
                   className="border-border/50 rounded-2xl overflow-hidden shadow-medium hover:shadow-strong transition-all duration-300 bg-background">
                   <AccordionTrigger className="w-full text-left px-5 md:px-7 py-4 md:py-5 bg-gradient-to-r from-secondary/30 to-secondary/10 hover:from-secondary/50 hover:to-secondary/30 text-base md:text-lg font-semibold group transition-all [&[data-state=open]]:bg-primary/5">
                     <div className="flex items-center gap-3 flex-1 pr-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center font-bold text-primary text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors no-underline">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center font-bold text-primary text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </div>
                       <span className="group-hover:text-primary transition-colors">
