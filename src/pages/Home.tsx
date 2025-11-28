@@ -21,6 +21,8 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
 import heroImage from "@/assets/hero-main.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
+import mentorAbhinav from "@/assets/mentor-abhinav.jpg";
+import mentorDrishti from "@/assets/mentor-drishti.jpg";
 import adityaImage from "@/assets/mentor-adity.png";
 import ankitaImage from "@/assets/mentor-ankita.png";
 import anjumImage from "@/assets/mentor-anjum.png";
@@ -183,6 +185,20 @@ const Home = () => {
       image: mentorImage,
       linkedin: "https://www.linkedin.com/in/sagar-rai-1252901a5/",
       bio: `Leading the Sports Sponsorship cohort with years of experience in building and executing sponsorship deals across athletes, teams, and leagues. KIBI Sports has a proven track record in the Indian sports ecosystem`,
+    },
+    {
+      name: "Abhinav Das",
+      role: "Co-Founder & CEO, Superjoin.ai",
+      image: mentorAbhinav,
+      linkedin: "https://www.linkedin.com/in/abhinavdas-in",
+      bio: "Product and technology leader with extensive experience across fintech, mobility, and SaaS platforms. At Superjoin.ai, he leads product strategy, technology, and growth building AI-powered solutions for creators, operators, and emerging digital businesses",
+    },
+    {
+      name: "Drishti Bagla",
+      role: "Sports Media & Communications Specialist",
+      image: mentorDrishti,
+      linkedin: "https://www.linkedin.com/in/drishtibagla009",
+      bio: "Sports media and communications professional with strong experience in journalism, content strategy, and digital storytelling. She plays a key role in shaping communication frameworks and strengthening the media presence of sports-driven initiatives",
     },
   ];
   const parallaxOffset = useParallax(0.3);
