@@ -36,10 +36,15 @@ import sportvot from "@/assets/Career Opportunities/Sportvot-removebg-preview.pn
 import sportzInteractive from "@/assets/Career Opportunities/Sportz_Interactive-removebg-preview.png";
 import sportzVillage from "@/assets/Career Opportunities/Sportz_Village-removebg-preview.png";
 import untitledDesign from "@/assets/Career Opportunities/Untitled_design-removebg-preview.png";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Careers = () => {
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Careers", url: "/careers" }
+      ]} />
       <Header />
       <ScrollProgressBar />
 

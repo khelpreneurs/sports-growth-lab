@@ -9,6 +9,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { useParallax } from "@/hooks/use-parallax";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const About = () => {
   const { toast } = useToast();
@@ -22,6 +23,10 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "About", url: "/about" }
+      ]} />
       <Header />
 
       {/* Hero */}

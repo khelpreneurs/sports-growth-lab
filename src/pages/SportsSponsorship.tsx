@@ -15,6 +15,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CTASection from "@/components/CTASection";
 import sponsorshipHero from "@/assets/sponsorship-hero.jpg";
 import mentorImage from "@/assets/mentor-sagar.jpeg";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 // Extend Window type for gtag
 declare global {
@@ -156,6 +157,11 @@ const SportsSponsorship = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Cohorts", url: "/cohorts" },
+        { name: "Sports Sponsorship", url: "/cohorts/sports-sponsorship" }
+      ]} />
       <Header />
       <ScrollProgressBar />
 

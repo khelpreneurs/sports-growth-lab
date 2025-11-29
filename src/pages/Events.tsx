@@ -36,6 +36,7 @@ import pic13 from "@/assets/hyderabad_event/pic13.jpeg";
 import pic14 from "@/assets/hyderabad_event/pic14.jpeg";
 import pic15 from "@/assets/hyderabad_event/pic15.jpeg";
 import { Link } from "react-router-dom";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const HyderabadGallery = ({ mediaGallery }: { mediaGallery: Array<{ type: string; url: string }> }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -318,6 +319,10 @@ const Events = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Events", url: "/events" }
+      ]} />
       <Header />
       <ScrollProgressBar />
 
