@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const FAQs = () => {
   const faqCategories = [
@@ -111,6 +112,10 @@ const FAQs = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "FAQs", url: "/faqs" }
+      ]} />
       <Header />
 
       {/* Hero */}

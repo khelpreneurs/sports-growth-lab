@@ -38,6 +38,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Cohorts = () => {
   const courseContent = [
@@ -206,6 +207,10 @@ const Cohorts = () => {
   ];
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Cohorts", url: "/cohorts" }
+      ]} />
       <Header />
       <ScrollProgressBar />
       {/* Hero Section */}

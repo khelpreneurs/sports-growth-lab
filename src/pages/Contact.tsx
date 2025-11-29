@@ -9,6 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Contact", url: "/contact" }
+      ]} />
       <Header />
 
       {/* Hero */}
