@@ -77,6 +77,7 @@ const Footer = () => {
       { to: "/about", label: "About Us" },
       { to: "/faqs", label: "FAQs" },
       { to: "/contact", label: "Contact" },
+      { to: "/privacy-policy", label: "Privacy Policy" },
     ],
   };
 
