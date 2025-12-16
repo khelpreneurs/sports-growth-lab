@@ -304,12 +304,9 @@ const PrivacyPolicy = () => {
               <Shield className="w-7 h-7" />
             </div>
             <h1 className="mb-3">Privacy Policy</h1>
-            <p className="text-muted-foreground mb-2">
+            <p className="text-muted-foreground">
               Your privacy matters to us
             </p>
-            <span className="inline-block text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-              Last Updated: November 2025
-            </span>
           </div>
         </div>
       </section>
