@@ -434,55 +434,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Outcomes & Social Proof */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="mb-4 text-primary-foreground">
-              Real Outcomes, Real Impact
-            </h2>
-            <p className="text-lg text-primary-foreground/80">
-              Our cohorts are designed for placement and career acceleration
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
-                <Award className="text-primary-foreground w-8 h-8" />
-              </div>
-              <AnimatedCounter
-                end={50}
-                suffix="+"
-                className="text-4xl font-bold mb-2 block"
-              />
-              <div className="text-primary-foreground/80">Cohort Seats</div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
-                <Briefcase className="text-primary-foreground w-8 h-8" />
-              </div>
-              <AnimatedCounter
-                end={10000}
-                prefix="₹"
-                className="text-4xl font-bold mb-2 block"
-              />
-              <div className="text-primary-foreground/80">
-                Monthly Internship Stipend
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-foreground/10 mb-4">
-                <TrendingUp className="text-primary-foreground w-8 h-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">PPO</div>
-              <div className="text-primary-foreground/80">
-                Pathways Available
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Featured Mentor */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
         <div className="container mx-auto px-4">

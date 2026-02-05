@@ -60,64 +60,6 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Placement Stats */}
-      <section className="section-spacing">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection animation="fade-up">
-              <h2 className="mb-8 text-center">Our Impact</h2>
-            </AnimatedSection>
-
-            <div className="grid md:grid-cols-4 gap-8 mb-16">
-              {[
-                {
-                  icon: <Users />,
-                  value: "50+",
-                  label: "Cohort Seats",
-                  description: "Per program batch",
-                },
-                {
-                  icon: <Briefcase />,
-                  value: "8 Weeks",
-                  label: "Paid Internship",
-                  description: "At KIBI Sports",
-                },
-                {
-                  icon: <Award />,
-                  value: "₹10K",
-                  label: "Monthly Stipend",
-                  description: "During internship",
-                },
-                {
-                  icon: <TrendingUp />,
-                  value: "PPO",
-                  label: "Pathways",
-                  description: "Based on performance",
-                },
-              ].map((stat, index) => (
-                <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-                <Card
-                  key={index}
-                  className="shadow-medium text-center border-none">
-                  <CardContent className="p-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4">
-                      {stat.icon}
-                    </div>
-                    <div className="text-4xl md:text-2xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md">
-                      {stat.value}
-                    </div>
-                    <div className="font-semibold mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {stat.description}
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Success Stories
       <section className="py-16 md:py-24 bg-secondary/50">
