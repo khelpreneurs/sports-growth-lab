@@ -275,7 +275,7 @@ const Cohorts = () => {
                         {
                           label: "Structure",
                           value:
-                            "8 weeks live sessions + 8-week paid internship (₹10,000/month stipend)",
+                            "8 weeks live sessions + 8-week paid internship",
                         },
                         {
                           label: "Format",
@@ -287,10 +287,6 @@ const Cohorts = () => {
                         },
                         //{ label: "Fee", value: "₹40,000 (incl. taxes)" },
                         { label: "Seats", value: "50 (first-come basis)" },
-                        {
-                          label: "Stipend",
-                          value: "₹10,000/month during internship",
-                        },
                       ].map((item) => (
                         <div
                           key={item.label}
