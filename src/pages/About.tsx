@@ -131,45 +131,6 @@ const About = () => {
         </div>
       </section> */}
 
-      {/* Outcomes */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-6">Our Impact</h2>
-            <p className="text-lg text-muted-foreground mb-12">
-              Building pathways from learning to careers in the sports industry
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <AnimatedCounter
-                  end={50}
-                  suffix="+"
-                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
-                />
-                <div className="text-muted-foreground">Cohort Seats</div>
-              </div>
-              <div>
-                <AnimatedCounter
-                  end={16}
-                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
-                />
-                <div className="text-muted-foreground">Week Program</div>
-              </div>
-              <div>
-                <AnimatedCounter
-                  end={10}
-                  prefix="₹"
-                  suffix="K"
-                  className="text-4xl md:text-5xl font-bold mb-2 text-white bg-primary-light/100 px-4 py-1 rounded-xl shadow-md inline-block"
-                />
-                <div className="text-muted-foreground">Monthly Stipend</div>
-              </div>
-          </div>
-          </div>
-        </div>
-      </section>
-
-
       {/* CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-light to-primary-dark text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
